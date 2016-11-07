@@ -8,16 +8,20 @@ use App\Traits\ActivateableTrait;
 use App\Traits\HasImages;
 use Request;
 use File;
+use Carbon\Carbon;
 class Event extends Repository
 {
-     use HasTranslations,Presenterable, HasImages ,ActivateableTrait;
+     use HasTranslations, Presenterable, HasImages, ActivateableTrait;
 
     /**
      * @var MenuTranslations
      */
     public $translationModel = EventTranslation::class;
     protected $presenter = EventPresenter::class;
-
+    protected $dates = [
+        'public_date',
+        'expire_date'
+      ];
     /**
      * @var string
      */
@@ -27,7 +31,7 @@ class Event extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','image','category_event_id'];
+    protected $fillable = ['active','image','category_event_id','public_date','expire_date'];
 
     /**
      * @var array
@@ -47,6 +51,11 @@ class Event extends Repository
       if (!empty($value)) {
         return '/'.$value;
       }
+    }
+    
+    public function categoryEvent()
+    {
+        return $this->belongsTo(CategoryEvent::class);
     }
     public function setImageAttribute($value)
     {

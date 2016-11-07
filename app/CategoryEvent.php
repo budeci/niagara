@@ -2,11 +2,12 @@
 namespace App;
 use Keyhunter\Administrator\Repository;
 use Keyhunter\Translatable\HasTranslations;
+use App\Traits\ActivateableTrait;
 use Request;
 use File;
 class CategoryEvent extends Repository
 {
-    use HasTranslations;
+    use HasTranslations,ActivateableTrait;
 
     /**
      * @var MenuTranslations
@@ -37,6 +38,11 @@ class CategoryEvent extends Repository
       if (!empty($value)) {
         return '/'.$value;
       }
+    }
+
+    public function scopePublished($query)
+    {
+        return $query->whereActive(1);
     }
     public function setImageAttribute($value)
     {

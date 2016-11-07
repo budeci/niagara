@@ -4,7 +4,6 @@ namespace App\Repositories;
 
 use App\Event;
 use App\EventTranslation;
-
 class EventRepository extends Repository
 {
     /**
@@ -81,4 +80,29 @@ class EventRepository extends Repository
     {
         $post->increment('view_count');
     }
+    
+    public function reformatDateString($date, $delimiter = '.')
+    {
+        $datas = explode($delimiter, $date);
+
+        $new_date['d'] = $datas[0];
+        $new_date['m'] = $datas[1];
+        $new_date['y'] = $datas[2];
+
+        return $new_date;
+    }
+
+    /**
+     * Convert string date to \Carbon/Carbon timestamp.
+     *
+     * @param $date
+     * @return static
+     */
+    public function dateToTimestamp($date)
+    {
+        $dates = $this->reformatDateString($date);
+
+        return Carbon::createFromDate($dates['y'], $dates['m'], $dates['d']);
+    }
+
 }

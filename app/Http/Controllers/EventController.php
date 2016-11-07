@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\EventRepository;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Event as Event;
 
 class EventController extends Controller
 {
+
+    protected $events;
+
+    public function __construct(EventRepository $eventRepository)
+    {
+        $this->events = $eventRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +25,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        //$events = $this->events->getPublic();
+        //return view('event.index');
     }
 
     /**

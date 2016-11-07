@@ -75,6 +75,12 @@ return [
             ]
         ]
     ],
+    'team' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
+    'partner' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
     'Menu' => [
         'icon' => 'fa fa-bars',
         'pages' => [

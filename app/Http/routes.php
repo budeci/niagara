@@ -1,5 +1,6 @@
 <?php
-
+ error_reporting(E_ALL);
+ ini_set('display_errors', 1);
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -19,24 +20,40 @@ Route::multilingual(function () {
 		'as' => 'home',
 		'uses' => 'HomeController@index'
 	]);
-
-	Route::get('training', [
-		'as' => 'training',
-		'uses' => 'TrainingController@index'
-	]);
     Route::get('page/{static_page}.html', [
         'as' => 'show_page',
         'uses' => 'PagesController@show'
     ]);
-    Route::get('training/{post}', [
+
+/*	Route::get('events', [
+		'as' => 'events',
+		'uses' => 'EventController@index'
+	]);*/
+    Route::get('events/{category?}', [
+        'as' => 'view_events',
+        'uses' => 'CategoryEventsController@index'
+    ]);
+    Route::get('event/{event}', [
+        'as' => 'view_event',
+        'uses' => 'EventController@show'
+    ]);
+
+    Route::get('trainings/{category?}', [
+        'as' => 'view_trainings',
+        'uses' => 'CategoryTrainingsController@index'
+    ]);
+    Route::get('training/{training}', [
         'as' => 'view_training',
         'uses' => 'TrainingController@show'
     ]);
-
-	Route::get('events', [
-		'as' => 'events',
-		'uses' => 'EventController@index'
-	]);
+    Route::get('teams/{trener?}', [
+        'as' => 'view_team',
+        'uses' => 'TeamController@index'
+    ]);
+    Route::get('partners/{partner?}', [
+        'as' => 'view_partner',
+        'uses' => 'PartnerController@index'
+    ]);
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {
     Route::get('login', 'Keyhunter\Administrator\AuthController@getLogin');

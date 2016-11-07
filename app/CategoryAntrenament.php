@@ -2,11 +2,12 @@
 namespace App;
 use Keyhunter\Administrator\Repository;
 use Keyhunter\Translatable\HasTranslations;
+use App\Traits\ActivateableTrait;
 use Request;
 use File;
 class CategoryAntrenament extends Repository
 {
-    use HasTranslations;
+    use HasTranslations,ActivateableTrait;
 
     /**
      * @var MenuTranslations
