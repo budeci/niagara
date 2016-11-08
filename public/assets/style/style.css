@@ -1576,19 +1576,46 @@ footer img {
     background: #f6f6f6;
 }
 
-.advertising p {
+.advertising h3 {
+    font-size: 34px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: 600;
+    color: #312f3d;
+}
+
+.advertising ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.advertising li {
+    list-style: none;
+    float: left;
+    margin: 0 15px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #312f3d;
+    overflow: hidden;
+    width:31%;
+}
+
+.advertising li:before {
+    content: '•';
+    font-weight: 400;
+    font-size: 25px;
+    color: #f07626;
+}
+
+/*.advertising p {
     font-weight: 400;
     font-size: 14px;
     color: #312f3d;
     padding-left: 20px;
     overflow: hidden;
-}
-
-.advertising span {
-    font-weight: 400;
-    float: left;
-    color: #f07626;
-}
+    max-width:400px;
+}*/
 
 .advertising_last h3 {
     font-weight: 600;
@@ -4104,6 +4131,15 @@ text-transform: uppercase;
         width: 100px;
         height: 100px;
     }
+    .advertising li {
+        width:31%;
+        height:150px;
+    }
+    .advertising li:before {
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -20px;
+    }
     .menu a {
         padding: 0 26px;
     }
@@ -4219,9 +4255,6 @@ text-transform: uppercase;
     }
     .advertising_last img {
         padding-bottom: 50px;
-    }
-    .advertisting_block {
-        padding-bottom: 100px;
     }
     .advertising span {
         font-size: 24px;
@@ -4858,6 +4891,15 @@ text-transform: uppercase;
     .head_block button {
         padding: 20px 8px;
     }
+    .advertising li {
+        width:31%;
+        height:150px;
+    }
+    .advertising li:before {
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -20px;
+    }
     .head_block button:hover {
         background-color: #05376c;
     }
@@ -4978,9 +5020,6 @@ text-transform: uppercase;
     }
     .advertising_last img {
         padding-bottom: 50px;
-    }
-    .advertisting_block {
-        padding-bottom: 100px;
     }
     .advertising span {
         font-size: 24px;
@@ -5631,6 +5670,15 @@ text-transform: uppercase;
         margin-top: 20px;
         font-size: 12px;
     }
+    .advertising li {
+        width:31%;
+        height:150px;
+    }
+    .advertising li:before {
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -20px;
+    }
     .head_block h3 {
         font-size: 22px;
         padding-top: 17px;
@@ -5665,6 +5713,15 @@ text-transform: uppercase;
     /*-- For header---*/
     header {
         height: 120px;
+    }
+    .advertising li {
+        width:48%;
+        height:100px;
+    }
+    .advertising li:before {
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -15px;
     }
     .head_block button {
         padding: 20px 8px;
@@ -5785,9 +5842,7 @@ text-transform: uppercase;
     .advertising_last img {
         padding-bottom: 50px;
     }
-    .advertisting_block {
-        padding-bottom: 10px;
-    }
+
     .advertising span {
         font-size: 24px;
     }
@@ -6635,6 +6690,16 @@ text-transform: uppercase;
     .head_block {
         padding-top: 10px;
     }
+
+    .advertising li {
+        width:100%;
+        height:100px;
+    }
+    .advertising li:before {
+        position: absolute;
+        margin-top: -7px;
+        margin-left: -15px;
+    }
     .corporative_contacts_contain {
         margin: 20px;
         padding: 30px;
@@ -6757,9 +6822,7 @@ text-transform: uppercase;
     .advertising_last img {
         padding-bottom: 20px;
     }
-    .advertisting_block {
-        padding-bottom: 20px;
-    }
+
     .advertising span {
         font-size: 24px;
     }

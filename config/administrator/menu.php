@@ -29,9 +29,9 @@ return [
 //          'route' => 'admin_dashboard',
 //          ]
 //     ]
-/*    'Roles' => [
+  /* 'Roles' => [
         'page_header' => 'not working',
-//        'icon' => 'fa fa-circle-o',
+       'icon' => 'fa fa-circle-o',
         'pages' => [
             'admins' => [
                 'icon' => 'fa fa-user'
@@ -51,6 +51,9 @@ return [
         ]
     ]*/
     'pages' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
+    'advertisement' => [
         'icon' => 'fa fa-file-text-o'
     ],
     'Event' => [

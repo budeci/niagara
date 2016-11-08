@@ -63,6 +63,10 @@ Route::multilingual(function () {
         'as' => 'view_post',
         'uses' => 'PostController@show'
     ]);
+    Route::get('advertisement', [
+        'as' => 'advertisement_page',
+        'uses' => 'PagesController@advertisement'
+    ]);
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {
     Route::get('login', 'Keyhunter\Administrator\AuthController@getLogin');

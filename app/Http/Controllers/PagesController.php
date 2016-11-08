@@ -2,12 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\AdvertisementRepository;
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 
 class PagesController extends Controller
 {
+
+    /**
+     * @var AdvertisementRepository
+     */
+    protected $advertisement;
+
+    /**
+     * PagesController constructor.
+     * @param AdvertisementRepository $advertisementRepository
+     */
+    public function __construct(AdvertisementRepository $advertisementRepository)
+    {
+        $this->advertisement=$advertisementRepository;
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,6 +32,14 @@ class PagesController extends Controller
     public function index()
     {
         //
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function advertisement() {
+
+        return view('pages.advertisement',['advertisement'=>$this->advertisement->getPublic()]);
     }
 
     /**
