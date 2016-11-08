@@ -54,6 +54,15 @@ Route::multilingual(function () {
         'as' => 'view_partner',
         'uses' => 'PartnerController@index'
     ]);
+
+    Route::get('news/{category?}', [
+        'as' => 'view_news',
+        'uses' => 'CategoryNewsController@index'
+    ]);
+    Route::get('post/{new}', [
+        'as' => 'view_post',
+        'uses' => 'PostController@show'
+    ]);
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {
     Route::get('login', 'Keyhunter\Administrator\AuthController@getLogin');

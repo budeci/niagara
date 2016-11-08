@@ -1,8 +1,8 @@
 <?php
-use App\CategoryAntrenament;
+use App\Opportunities;
 return [
-    'title'  => 'Categories Antrenament',
-    'model'  => CategoryAntrenament::class,
+    'title'  => 'Add oportunitați',
+    'model'  => Opportunities::class,
 
     /*
     |-------------------------------------------------------
@@ -16,7 +16,14 @@ return [
     'columns' => [
         'id',
         'name',
-        'image' => column_element('', true, '<img src="(:image)" width="100" />'),
+/*        'belongs' => [
+            'title' => 'Belongs to',
+            'output' => function($row) {
+                return sprintf('<a href="/admin/categoriesEvent?id=%s">%s</a>', $row->categoryEvent->id, $row->categoryEvent->name);
+            }
+        ],*/
+        //'image' => column_element('', true, '<img src="(:image)" width="100" />'),
+
 /*        'user_id' => [
             'title' => 'Participant',
             'output' => function ($row) {
@@ -75,7 +82,7 @@ return [
     |
     */
     'filters' => [
-
+        'id' => filter_hidden(),
     ],
 
     /*
@@ -87,9 +94,9 @@ return [
     |
     */
     'edit_fields' => [
-        'id'          => ['type' => 'key'],
-        'name'        => form_text() + translatable(),
-        'slug'        => form_text() + translatable(),
+        'id'   => ['type' => 'key'],
+        'name' => form_text() + translatable(),
+        //'link' => form_text(),
         'image' => [
             'type' => 'image',
             'location' => '/',
@@ -97,7 +104,7 @@ return [
 //                'big'     => '1024x1024',
 //            ]
         ],
-        'description' => form_textarea() + translatable(),
-        'active'        => form_boolean(),
+        'body'   => form_ckeditor() + translatable(),
+        'active' => form_boolean(),
     ]
 ];

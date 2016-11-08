@@ -75,6 +75,20 @@ return [
             ]
         ]
     ],
+    'News' => [
+        'icon' => 'fa fa-calendar-o',
+        'pages' => [
+            'categoriesNews' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'article' => [
+                'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
+    'opportunities' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
     'team' => [
         'icon' => 'fa fa-file-text-o'
     ],

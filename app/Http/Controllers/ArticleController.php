@@ -1,31 +1,30 @@
 <?php
-
 namespace App\Http\Controllers;
+
+use App\Repositories\ArticleRepository;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Article as Article;
 
-use App\Repositories\OpportunitiesRepository;
-class HomeController extends Controller
+class ArticleController extends Controller
 {
+    protected $article;
+
+    public function __construct(ArticleRepository $articleRepository)
+    {
+        $this->article = $articleRepository;
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    private $opportunities;
-    
-    public function __construct(OpportunitiesRepository $opportunitiesRepository)
-    {
-        $this->opportunities = $opportunitiesRepository;
-    }
-
     public function index()
     {
-        //dd($request->session()->all());
-        $opportunities = $this->opportunities->getPublic();
-        return view('home.index', compact('opportunities'));
+        $article = $this->article->getPublic();
+        return view('news.article_show', compact('article'));
     }
 
     /**
@@ -93,5 +92,4 @@ class HomeController extends Controller
     {
         //
     }
-
 }

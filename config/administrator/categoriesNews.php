@@ -1,8 +1,8 @@
 <?php
-use App\CategoryAntrenament;
+use App\CategoryNews;
 return [
-    'title'  => 'Categories Antrenament',
-    'model'  => CategoryAntrenament::class,
+    'title'  => 'Categories News',
+    'model'  => CategoryNews::class,
 
     /*
     |-------------------------------------------------------

@@ -1,8 +1,9 @@
 <?php
-use App\CategoryAntrenament;
+use App\Article;
+use App\CategoryNews;
 return [
-    'title'  => 'Categories Antrenament',
-    'model'  => CategoryAntrenament::class,
+    'title'  => 'Create Article',
+    'model'  => Article::class,
 
     /*
     |-------------------------------------------------------
@@ -16,7 +17,14 @@ return [
     'columns' => [
         'id',
         'name',
+/*        'belongs' => [
+            'title' => 'Belongs to',
+            'output' => function($row) {
+                return sprintf('<a href="/admin/categoriesEvent?id=%s">%s</a>', $row->categoryEvent->id, $row->categoryEvent->name);
+            }
+        ],*/
         'image' => column_element('', true, '<img src="(:image)" width="100" />'),
+
 /*        'user_id' => [
             'title' => 'Participant',
             'output' => function ($row) {
@@ -75,7 +83,13 @@ return [
     |
     */
     'filters' => [
-
+        'id' => filter_hidden(),
+        'category_news_id' => filter_select('Belongs to', function () {
+            return CategoryNews::select('*')
+                ->get()
+                ->pluck('name', 'id')
+                ->prepend('-- Any --', '');
+        }),
     ],
 
     /*
@@ -90,6 +104,15 @@ return [
         'id'          => ['type' => 'key'],
         'name'        => form_text() + translatable(),
         'slug'        => form_text() + translatable(),
+        'category_news_id' => [
+            'label' => 'Choose category',
+            'type' => 'select',
+            'options' => function () {
+                return CategoryNews::select('*')
+                    ->get()
+                    ->pluck('name', 'id');
+            }
+        ],
         'image' => [
             'type' => 'image',
             'location' => '/',
@@ -97,7 +120,7 @@ return [
 //                'big'     => '1024x1024',
 //            ]
         ],
-        'description' => form_textarea() + translatable(),
+        'body'          => form_ckeditor() + translatable(),
         'active'        => form_boolean(),
     ]
 ];
