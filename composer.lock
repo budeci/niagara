@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "04f650f6882c92cfc71f3a6fc9fd0504",
+    "hash": "7794d51feec2af14821d926af2356cc1",
     "content-hash": "920cf60c67263a0ac1900856ec7ccea1",
     "packages": [
         {
@@ -869,13 +869,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nyacide/administrator.git",
-                "reference": "802c36a2af2de7b5df3ad7bfee1c9c0a0e6f39a7"
+                "url": "https://github.com/WebStra/administrator.git",
+                "reference": "664dd4f8128b380b262f91a0623a4507da864828"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nyacide/administrator/zipball/802c36a2af2de7b5df3ad7bfee1c9c0a0e6f39a7",
-                "reference": "802c36a2af2de7b5df3ad7bfee1c9c0a0e6f39a7",
+                "url": "https://api.github.com/repos/WebStra/administrator/zipball/664dd4f8128b380b262f91a0623a4507da864828",
+                "reference": "664dd4f8128b380b262f91a0623a4507da864828",
                 "shasum": ""
             },
             "require": {
@@ -906,20 +906,20 @@
                     "email": "withoutgmail@gmail.com"
                 }
             ],
-            "time": "2016-08-27 07:20:25"
+            "time": "2016-11-08 09:22:32"
         },
         {
             "name": "keyhunter/multilingual",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nyacide/multilingual.git",
-                "reference": "1f3d1766221c1564103b0e840f3b1b181c481db7"
+                "url": "https://github.com/WebStra/multilingual.git",
+                "reference": "d70066630caafd8136ae32a9f89e018d221c8154"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nyacide/multilingual/zipball/1f3d1766221c1564103b0e840f3b1b181c481db7",
-                "reference": "1f3d1766221c1564103b0e840f3b1b181c481db7",
+                "url": "https://api.github.com/repos/WebStra/multilingual/zipball/d70066630caafd8136ae32a9f89e018d221c8154",
+                "reference": "d70066630caafd8136ae32a9f89e018d221c8154",
                 "shasum": ""
             },
             "require": {
@@ -942,20 +942,20 @@
                     "email": "withoutgmail@gmail.com"
                 }
             ],
-            "time": "2016-06-10 07:51:39"
+            "time": "2016-11-08 09:27:56"
         },
         {
             "name": "keyhunter/translatable",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/nyacide/translatable.git",
-                "reference": "4f990cc9919146699779e6d20195d910a700c839"
+                "url": "https://github.com/WebStra/translatable.git",
+                "reference": "cd575d67f35a73e0245b225023d881744b4e49f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nyacide/translatable/zipball/4f990cc9919146699779e6d20195d910a700c839",
-                "reference": "4f990cc9919146699779e6d20195d910a700c839",
+                "url": "https://api.github.com/repos/WebStra/translatable/zipball/cd575d67f35a73e0245b225023d881744b4e49f5",
+                "reference": "cd575d67f35a73e0245b225023d881744b4e49f5",
                 "shasum": ""
             },
             "require": {
@@ -991,7 +991,7 @@
                 "laravel",
                 "translation"
             ],
-            "time": "2016-06-01 14:53:29"
+            "time": "2016-11-08 09:30:19"
         },
         {
             "name": "laravel/framework",
@@ -1125,16 +1125,16 @@
         },
         {
             "name": "laravel/socialite",
-            "version": "v2.0.19",
+            "version": "v2.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/socialite.git",
-                "reference": "4efbdb1e9e45ee0d21d1bc1ad35370c0eee5adb2"
+                "reference": "aca8de9a93a28a119714e289c8bc599bd81aa88d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/socialite/zipball/4efbdb1e9e45ee0d21d1bc1ad35370c0eee5adb2",
-                "reference": "4efbdb1e9e45ee0d21d1bc1ad35370c0eee5adb2",
+                "url": "https://api.github.com/repos/laravel/socialite/zipball/aca8de9a93a28a119714e289c8bc599bd81aa88d",
+                "reference": "aca8de9a93a28a119714e289c8bc599bd81aa88d",
                 "shasum": ""
             },
             "require": {
@@ -1175,7 +1175,7 @@
                 "laravel",
                 "oauth"
             ],
-            "time": "2016-10-24 13:06:51"
+            "time": "2016-11-01 18:49:10"
         },
         {
             "name": "laravelcollective/html",
