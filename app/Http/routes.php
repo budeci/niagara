@@ -67,6 +67,11 @@ Route::multilingual(function () {
         'as' => 'advertisement_page',
         'uses' => 'PagesController@advertisement'
     ]);
+    Route::get('presa', [
+        'as' => 'press_show',
+        'uses' => 'PressController@show'
+    ]);
+
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {
     Route::get('login', 'Keyhunter\Administrator\AuthController@getLogin');

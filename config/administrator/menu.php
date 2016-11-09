@@ -53,9 +53,20 @@ return [
     'pages' => [
         'icon' => 'fa fa-file-text-o'
     ],
+
     'advertisement' => [
         'icon' => 'fa fa-file-text-o'
     ],
+
+    'Presa' => [
+      'icon' => 'fa fa-file-text-o',
+        'pages' => [
+            'press' => [
+              'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
+
     'Event' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
