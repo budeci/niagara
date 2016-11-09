@@ -1,6 +1,8 @@
 <?php
  error_reporting(E_ALL);
  ini_set('display_errors', 1);
+
+use App\Repositories\OffertRepository;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,6 +13,10 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+Route::bind('offert',function($slug){
+    return (new OffertRepository)->findBySlug($slug);
+});
 
 /*Route::get('/', function () {
     return view('welcome');
@@ -75,6 +81,16 @@ Route::multilingual(function () {
         'as' => 'vacancy_show',
         'uses' => 'VacancyController@show'
     ]);
+    Route::get('oferts-page', [
+        'as' => 'show_oferts',
+        'uses' => 'OffertController@show'
+    ]);
+    Route::get('ofert-page/{offert}', [
+        'as' => 'show_ofert',
+        'uses' => 'OffertController@showSingle'
+    ]);
+
+
 
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {

@@ -62,6 +62,10 @@ return [
         'icon' => 'fa fa-file-text-o'
     ],
 
+    'offert' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
+
     'Presa' => [
       'icon' => 'fa fa-file-text-o',
         'pages' => [

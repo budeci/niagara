@@ -44,7 +44,7 @@
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Club Carduri</a></li>
-                        <li><a href="/special_oferts.php">Alege Card</a></li>
+                        <li><a href="{{route('show_oferts')}}">Alege Card</a></li>
                         <li><a href="/corporativ.php">Carduri Corporative</a></li>
                         <li><a href="">Program de Loialitate</a></li>
                         <li><a href="/partners_members.php">Privilegii de la Parteneri</a></li>

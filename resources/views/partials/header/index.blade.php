@@ -30,7 +30,7 @@
 </div>
 <header class="header_nav">
     <div class="container">
-        <a class="header__logo" href="/index.php"><img class="img-responsive" src="/assets/images/logo.png" alt=""></a>
+        <a class="header__logo" href="/"><img class="img-responsive" src="/assets/images/logo.png" alt=""></a>
         <div class="menu-collapsed_header">
             <div class="bar_header"></div>
             <!--a href="#" class="header__icon" id="header__icon"></a-->
