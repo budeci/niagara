@@ -58,6 +58,10 @@ return [
         'icon' => 'fa fa-file-text-o'
     ],
 
+    'vacancy' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
+
     'Presa' => [
       'icon' => 'fa fa-file-text-o',
         'pages' => [

@@ -71,6 +71,10 @@ Route::multilingual(function () {
         'as' => 'press_show',
         'uses' => 'PressController@show'
     ]);
+    Route::get('vacancy', [
+        'as' => 'vacancy_show',
+        'uses' => 'VacancyController@show'
+    ]);
 
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {

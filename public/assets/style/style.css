@@ -1768,6 +1768,10 @@ footer img {
     padding-bottom: 25px;
 }
 
+.for_jobs p {
+    margin: 0;
+}
+
 .for_jobs a {
     display: block;
     font-weight: 400;
@@ -1785,7 +1789,7 @@ footer img {
     font-weight: 400;
     font-size: 14px;
     color: #908e98;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .for_jobs_line {
