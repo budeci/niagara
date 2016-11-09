@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Event;
 use App\EventTranslation;
+use Carbon\Carbon;
 class EventRepository extends Repository
 {
     /**
@@ -27,15 +28,34 @@ class EventRepository extends Repository
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPublic()
+    public function getPublic($paginate = 20)
     {
         return self::getModel()
             ->published()
             ->active()
             ->orderBy('id', self::DESC)
-            ->get();
+            ->paginate($paginate);
     }
 
+    public function getExpire($paginate = 20)
+    {
+        return self::getModel()
+            ->published()
+            ->active()
+            ->orderBy('expire_date', self::ASC)
+            ->where('expire_date','>=',Carbon::now())
+            ->paginate($paginate);
+    }
+    public function getTopHome($paginate = 4)
+    {
+        return self::getModel()
+            ->published()
+            ->active()
+            ->orderBy('home_show', self::DESC)
+            ->orderBy('expire_date', self::ASC)
+            ->where('expire_date','>=',Carbon::now())
+            ->paginate($paginate);
+    }
     /**
      * Get popular public posts.
      *

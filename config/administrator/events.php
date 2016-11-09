@@ -115,14 +115,16 @@ return [
         ],
         'image' => [
             'type' => 'image',
-            'location' => '/',
-//            'sizes' => [
-//                'big'     => '1024x1024',
-//            ]
+            'location' => '/upload/event',
+            'sizes'    => [
+                'medium'     => '320x216'
+            ],
         ],
-        'body'   => form_ckeditor() + translatable(),
-        'public_date'   => form_date(),
-        'expire_date'   => form_date(),
-        'active' => form_boolean(),
+        'about'       => form_ckeditor() + translatable(),
+        'program'     => form_ckeditor() + translatable(),
+        'public_date' => form_date(),
+        'expire_date' => form_date(),
+        'home_show'   => form_boolean(),
+        'active'      => form_boolean(),
     ]
 ];

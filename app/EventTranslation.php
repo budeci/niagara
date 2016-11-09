@@ -12,7 +12,7 @@ class EventTranslation extends TranslatableModel implements SluggableInterface
      */
     public $timestamps = false;
     protected $table = 'event_translations';
-    protected $fillable = ['name','slug','body','meta_title','meta_description','meta_keyword','language_id'];
+    protected $fillable = ['name','slug','about','program','meta_title','meta_description','meta_keyword','language_id'];
     /**
      * @var array
      */

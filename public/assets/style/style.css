@@ -373,6 +373,7 @@ label {
 .for_new_block strong {
     font-weight: 700;
     color: #fff;
+    text-transform: capitalize;
 }
 
 .for_new_block h3 {

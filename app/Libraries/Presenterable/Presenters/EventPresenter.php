@@ -4,20 +4,21 @@ namespace App\Libraries\Presenterable\Presenters;
 
 use App\Traits\HasImagesPresentable;
 use Jenssegers\Date\Date;
-
+use Carbon\Carbon;
+use File;
 class EventPresenter extends Presenter
 {
     use HasImagesPresentable;
 
     /**
-     * Render short description from post's body.
+     * Render short description from post's about.
      *
      * @param $range
      * @return string
      */
     public function renderShortDescription($range = 75)
     {
-        return sprintf('%s... </p>', substr($this->model->body, 0, $range));
+        return sprintf('%s... </p>', substr($this->model->about, 0, $range));
     }
 
     /**
@@ -51,6 +52,7 @@ class EventPresenter extends Presenter
 
         return $date->format($format);
     }
+
     public function renderExpiredDate($format = 'd F Y')
     {
         Date::setLocale(\Lang::slug());
@@ -58,7 +60,25 @@ class EventPresenter extends Presenter
         $date = Date::createFromTimestamp(
             $this->model->expire_date->timestamp
         );
+        return $date->format($format);
+    }
+    public function renderPublishedDateShort($format = 'd F Y')
+    {
+        Date::setLocale(\Lang::slug());
 
+        $date = Date::createFromTimestamp(
+            $this->model->public_date->timestamp
+        );
+
+        return $date->format($format);
+    }
+    public function renderExpiredDateShort($format = 'd F Y')
+    {
+        Date::setLocale(\Lang::slug());
+
+        $date = Date::createFromTimestamp(
+            $this->model->expire_date->timestamp
+        );
         return $date->format($format);
     }
     /**
@@ -69,5 +89,17 @@ class EventPresenter extends Presenter
     public function renderPostViews()
     {
         return $this->model->view_count;
+    }
+    public function renderImageMedium()
+    {
+        $image = $this->model->image;
+        if(File::exists(public_path($image))){
+            $medium = explode('.', $image);
+            $mediumFile = $medium[0].'_medium.'.$medium[1];
+            if (File::exists(public_path($mediumFile))) {
+                return $mediumFile;
+            }
+        }
+        return $image;
     }
 }

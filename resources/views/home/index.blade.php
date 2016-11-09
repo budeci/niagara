@@ -6,50 +6,25 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="content_slide">
                         <div class="news_slide">
-                            <div class="item"><img src="/assets/images/slide1.jpg" alt=""></div>
-                            <div class="item"><img src="/assets/images/slide1.jpg" alt=""></div>
-                            <div class="item"><img src="/assets/images/slide1.jpg" alt=""></div>
+                        @foreach($slides as $item)
+                            <div class="item"><img src="{{file_exists(public_path($item->image)) && $item->image != '' ? URL::to($item->image) : 'http://loremflickr.com/680/440/world,sport/all?random=100'}}" alt="{{$item->name}}"></div>
+                        @endforeach
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6  col-sm-12 col-xs-12 news_block">
                     <div class="content_slide">
-                        <div class="for_new">
-                            <a href="">
-                                <div class="for_new_block">
-                                    <span><strong>02</strong> май - <strong>12</strong> май</span>
-                                    <h3>Благотворительный Забег <br>“Помощь Детям”</h3>
-                                </div>
-                                <img class="img-responsive" src="/assets/images/1.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="for_new">
-                            <a href="">
-                                <div class="for_new_block">
-                                    <span><strong>20</strong> май - <strong>25</strong> май</span>
-                                    <h3>Фитнес-тур Niagara Fitness Club “Быстрее, Выше, Сильнее”</h3>
-                                </div>
-                                <img class="img-responsive" src="/assets/images/2.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="for_new">
-                            <a href="">
-                                <div class="for_new_block">
-                                    <span><strong>12</strong> май - <strong>15</strong> май</span>
-                                    <h3>Интенсивный тренировочный сбор по триатлону в Niagara</h3>
-                                </div>
-                                <img class="img-responsive" src="/assets/images/3.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="for_new ">
-                            <a href="">
-                                <div class="for_new_block">
-                                    <span><strong>26</strong> май - <strong>30</strong> май</span>
-                                    <h3>Мастер-класс по<br>Кик-Боксингу</h3>
-                                </div>
-                                <img class="img-responsive" src="/assets/images/4.jpg" alt="">
-                            </a>
-                        </div>
+                        @foreach($events_top as $item)
+                            <div class="for_new">
+                                <a href="{{ route('view_event', ['slug' => $item->slug]) }}">
+                                    <div class="for_new_block">
+                                        <span><strong>{{ $item->present()->renderPublishedDate($format = 'd M') }}</strong> - <strong>{{ $item->present()->renderExpiredDate($format = 'd M') }}</strong></span>
+                                        <h3>{{ $item->present()->renderTitle() }}</h3>
+                                    </div>
+                                    <img class="img-responsive" src="{{file_exists(public_path($item->image)) ? $item->present()->renderImageMedium() : 'http://loremflickr.com/400/200/world,sport/all?random=100'}}" alt="">
+                                </a>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -62,48 +37,20 @@
             </h4>
             <div class="row">
                 <div class="news_niagara_slide">
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="news_niagara_block">
-                            <a href="/news_article.php">Cupa Chișinăului la Squash</a>
-                            <span>20 Aprilie</span>
+                    @foreach($news as $item)
+                        <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="news_niagara_block">
+                                <a href="{{ route('view_post', ['slug' => $item->slug]) }}">{{ $item->present()->renderTitle() }}</a>
+                                <span>{{ $item->present()->renderPublishedDate($format = 'd F') }}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="news_niagara_block">
-                            <a href="">Aleargă și câștigă! Trei Club Carduri „Niagara Fitness Club” vor fi oferite gratuit</a>
-                            <span>20 Aprilie</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="news_niagara_block">
-                            <a href="">Împreună cream o viață mai bună</a>
-                            <span>20 Аprilie</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="news_niagara_block">
-                            <a href="">Competiția de Înot „Peștișorul de Aur” Ediția de vară</a>
-                            <span>20 Mai</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="news_niagara_block">
-                            <a href="">Competiția de Fotbal „Tată Fiu” Ediția de vară</a>
-                            <span>20 Mai</span>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="news_niagara_block">
-                            <a href="">Fitness Tour Rimini Wellness</a>
-                            <span>20 Iunie</span>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
                 <div class=" hidden-xs hidden-sm prev"></div>
                 <div class=" hidden-xs hidden-sm next"></div>
             </div>
             <div class="news_niagara_link">
-                <a href="/news.php">Toate noutatile</a></div>
+                <a href="{{ route('view_news') }}">Toate noutatile</a></div>
             </div>
         </div>
     </section>
@@ -111,296 +58,41 @@
         <h4 class="sub_title">Evenimente</h4>
         <div class="index_center_slide_border"></div>
         <div class="index_center_slide">
-            <div class="events_block">
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
+            @foreach($events as $item)
+                <div class="events_block">
+                    <div class="events_for_img">
+                        <img src="{{file_exists(public_path($item->image)) && $item->image != '' ? URL::to($item->image) : 'http://loremflickr.com/1024/756/world,sport/all?random=100'}}" data-src="{{URL::to($item->image)}}" alt="">
+                    </div>
+                    <a href="{{ route('view_event', ['slug' => $item->slug]) }}">
+                        <span>{{ $item->present()->renderPublishedDate($format = 'd') }} - {{ $item->present()->renderExpiredDate($format = 'd') }}</span>
+                        <h5>{{ $item->present()->renderExpiredDate($format = 'F') }}</h5>
+                        <h4>{{ $item->present()->renderTitle() }}</h4>
+                    </a>
                 </div>
-                <a href="/events_article.php">
-                    <span>28 - 12</span>
-                    <h5>Martie</h5>
-                    <h4>Cupa Chișinăului <br>la Squash</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="/events_article.php">
-                    <span>28 - 12</span>
-                    <h5>Aprilie</h5>
-                    <h4>Aleargă și câștigă</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="/events_article.php">
-                    <span>28 - 12</span>
-                    <h5>Aprilie</h5>
-                    <h4>Împreună cream o viață mai bună</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="/events_article.php">
-                    <span>28 - 12</span>
-                    <h5>Mai</h5>
-                    <h4>Competiția de Înot „Peștișorul de Aur” Ediția de vară</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="/events_article.php">
-                    <span>28 - 12</span>
-                    <h5>Mai</h5>
-                    <h4>Competiția de Fotbal „Tată Fiu” Ediția de vară</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                <div class="events_for_img ">
-                    <img src="/assets/images/slider/1.jpg " alt=" ">
-                </div>
-                <a href=/events_article.php ">
-                    <span>28 - 12</span>
-                    <h5>Iunie</h5>
-                    <h4>Fitness Tour Rimini Wellness </h4>
-                </a>
-            </div>
-            <div class="events_block ">
-                <div class="events_for_img ">
-                    <img src="/assets/images/slider/1.jpg " alt=" ">
-                </div>
-                <a href="/events_article.php ">
-                    <span>28 - 12</span>
-                    <h5>Iunie</h5>
-                    <h4>Deschiderea Taberei de vară și Sărbătoarea Copiilor </h4>
-                </a>
-            </div>
-            <div class="events_block ">
-                
-                <div class="events_for_img ">
-                    <img src="/assets/images/slider/1.jpg " alt=" ">
-                </div>
-                <a href=" ">
-                    <span>28 - 12</span>
-                    <h5>Iunie</h5>
-                    <h4>"CUPA CHIȘINĂU 2016” pe ritmuri de SQUASH, ediția a II-a </h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>Iunie</h5>
-                    <h4>Seminar de Înot  În apă deschisă</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>Iunie</h5>
-                    <h4>Prima ediție a Taberei de vară a luat sfârșit </h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/events/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>Iulie</h5>
-                    <h4>Antrenamente noi la Niagata: X-FIT și BODYROCK </h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>Iulie</h5>
-                    <h4>Sea Mile 2016 17 iulie</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>Iulie</h5>
-                    <h4>Campionatul „Tenis Summer Kids 2016”</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>Iulie</h5>
-                    <h4>Încheierea Taberei de Vară Ediția II </h4>
-                </a>
-            </div>
-            <div class="events_block">
-                
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>August</h5>
-                    <h4>Campionatul pentru copii la SQUASH</h4>
-                </a>
-            </div>
-            <div class="events_block">
-                <div class="events_for_img">
-                    <img src="/assets/images/slider/1.jpg" alt="">
-                </div>
-                <a href="">
-                    <span>28 - 12</span>
-                    <h5>August</h5>
-                    <h4>Campionatul de vară la înot pentru amatori și veterani</h4>
-                </a>
-            </div>
+            @endforeach
         </div>
-        <a href="/events.php">Toate evenimentele si competitiile</a>
+        <a href="{{ route('view_events') }}">Toate evenimentele si competitiile</a>
     </section>
     <section class="home_main">
         <div class=" container ">
             <div id="my-tab-content" class="tab-content">
-                <div class="tab-pane " id="nav1">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Fitness</h3>
-                    <p>Niagara Fitness club - unicul loc în Chișinău ce oferă o gamă largă de servicii
-                        necesare pentru menținerea formei fizice a corpului într-o stare perfectă. Mai mult
-                        de 10 ani în lumea fitness-ului Niagara Fitness Club s-a preocupat în permanență de dotarea
-                    sălilor cu cele mai moderne tehnologii existente pe piață.</p>
-                </div>
-                <div class="tab-pane" id="nav2">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Фитнеc</h3>
-                    <p>Сеть фитнес-клубов Niagara на протяжении 10 лет является
-                        <br> признанным экспертом и лидером в области фитнеса в Модове.
-                        <br> В клубах Niagara Fitness представлено более 50 специально
-                        <br> отобранных программ а так же авторские методики,
-                    <br> разработанные экспертами Niagara.</p>
-                </div>
-                <div class="tab-pane" id="nav3">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Фитнеc</h3>
-                    <p>Сеть фитнес-клубов Niagara на протяжении 10 лет является
-                        <br> признанным экспертом и лидером в области фитнеса в Модове.
-                        <br> В клубах Niagara Fitness представлено более 50 специально
-                        <br> отобранных программ а так же авторские методики,
-                    <br> разработанные экспертами Niagara.</p>
-                </div>
-                <div class="tab-pane active" id="nav4">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Фитнеc</h3>
-                    <p>Сеть фитнес-клубов Niagara на протяжении 10 лет является
-                        <br> признанным экспертом и лидером в области фитнеса в Модове.
-                        <br> В клубах Niagara Fitness представлено более 50 специально
-                        <br> отобранных программ а так же авторские методики,
-                    <br> разработанные экспертами Niagara.</p>
-                </div>
-                <div class="tab-pane" id="nav5">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Фитнеc</h3>
-                    <p>Сеть фитнес-клубов Niagara на протяжении 10 лет является
-                        <br> признанным экспертом и лидером в области фитнеса в Модове.
-                        <br> В клубах Niagara Fitness представлено более 50 специально
-                        <br> отобранных программ а так же авторские методики,
-                    <br> разработанные экспертами Niagara.</p>
-                </div>
-                <div class="tab-pane" id="nav6">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Фитнеc</h3>
-                    <p>Сеть фитнес-клубов Niagara на протяжении 10 лет является
-                        <br> признанным экспертом и лидером в области фитнеса в Модове.
-                        <br> В клубах Niagara Fitness представлено более 50 специально
-                        <br> отобранных программ а так же авторские методики,
-                    <br> разработанные экспертами Niagara.</p>
-                </div>
-                <div class="tab-pane" id="nav7">
-                    <img src="/assets/images/ic2.png" alt="">
-                    <h3>Фитнеc</h3>
-                    <p>Сеть фитнес-клубов Niagara на протяжении 10 лет является
-                        <br> признанным экспертом и лидером в области фитнеса в Модове.
-                        <br> В клубах Niagara Fitness представлено более 50 специально
-                        <br> отобранных программ а так же авторские методики,
-                    <br> разработанные экспертами Niagara.</p>
-                </div>
+                @foreach($opportunities as $key => $item)
+                    <div class="tab-pane {{$key == 0 ? 'active' : ''}}" id="nav{{$key}}">
+                        <img src="/assets/images/ic2.png" alt="">
+                        {!!$item->body!!}
+                    </div>
+                @endforeach 
             </div>
             <ul id="tabs" class="nav_main" data-tabs="tabs">
-                <li class="active">
-                    <a href="#nav1" data-toggle="tab">
-                        <div class="nav_main_img">
-                            <img src="/assets/images/main/1.png">
-                        </div>
-                    <h5>Loialitate</h5></a>
-                </li>
-                <li>
-                    <a href="#nav2" data-toggle="tab">
-                        <div class="nav_main_img ">
-                            <img src="/assets/images/main/2.png">
-                        </div>
-                        <h5>Recunoaștere</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="#nav3" data-toggle="tab">
-                        <div class="nav_main_img">
-                            <img src="/assets/images/main/3.png">
-                        </div>
-                        <h5>Premii</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="#nav4" data-toggle="tab">
-                        <div class="nav_main_img tab-active">
-                            <img src="/assets/images/main/4.png">
-                        </div>
-                        <h5>Programe-fitness</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="#nav5" data-toggle="tab">
-                        <div class="nav_main_img">
-                        <img src="/assets/images/main/5.png"></div>
-                        <h5>Bonusuri</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="#nav6" data-toggle="tab">
-                        <div class="nav_main_img">
-                            <img src="/assets/images/main/6.png">
-                        </div>
-                        <h5>Calitate</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="#nav7" data-toggle="tab">
-                        <div class="nav_main_img">
-                        <img src="/assets/images/main/7.png"></div>
-                    <h5>Profesionalism</h5></a>
-                </li>
+                @foreach($opportunities as $key => $item)
+                    <li class="{{$key == 0 ? 'active' : ''}}">
+                        <a href="#nav{{$key}}" data-toggle="tab">
+                            <div class="nav_main_img">
+                                <img src="{{$item->image}}">
+                            </div>
+                        <h5>{{$item->name}}</h5></a>
+                    </li>
+                 @endforeach 
             </ul>
         </div>
     </section>

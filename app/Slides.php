@@ -1,56 +1,37 @@
 <?php
 namespace App;
 use Keyhunter\Administrator\Repository;
-use Keyhunter\Translatable\HasTranslations;
-use App\Libraries\Presenterable\Presenterable;
-use App\Libraries\Presenterable\Presenters\EventPresenter;
 use App\Traits\ActivateableTrait;
-use App\Traits\HasImages;
 use Request;
 use File;
-use Carbon\Carbon;
-class Event extends Repository
+class Slides extends Repository
 {
-     use HasTranslations, Presenterable, HasImages, ActivateableTrait;
+     use ActivateableTrait;
 
-    /**
-     * @var MenuTranslations
-     */
-    public $translationModel = EventTranslation::class;
-    protected $presenter = EventPresenter::class;
-    protected $dates = [
-        'public_date',
-        'expire_date'
-      ];
-    /**
-     * @var string
-     */
-    protected $table = 'event';
+
+    protected $table = 'slides';
 
     /**
      * @var array
      */
 
-    protected $fillable = ['active','image','home_show','category_event_id','public_date','expire_date'];
-
-    /**
-     * @var array
-     */
-
-    public $translatedAttributes = ['name','slug','about','program','meta_title','meta_description','meta_keyword'];
-    //public $imgPath  = 'upload/event/';
+    protected $fillable = ['name','active','image','link'];
+    public $imgPath  = 'upload/slides/';
 
     public function scopePublished($query)
     {
         return $query->whereActive(1);
     }
 
-    
-/*    public function categoryEvent()
+    public function getImageAttribute($value)
     {
-        return $this->belongsTo(CategoryEvent::class);
-    }*/
-    /*public function setImageAttribute($value)
+        //add full path to image
+      if (!empty($value)) {
+        return '/'.$value;
+      }
+    }
+
+    public function setImageAttribute($value)
     {
         //remove file
         if (is_null($value) or $value == "") {
@@ -87,19 +68,17 @@ class Event extends Repository
                
             }
         }
-    }*/
+    }
 
     public function delete(){
-
-        if($this->attributes['image']){
+        if(isset($this->attributes['image'])){
             $file = $this->attributes['image'];
-            if(File::exists(public_path($file))){
-                $medium = explode('.', $file);
-                $mediumFile = $medium[0].'_medium.'.$medium[1];
-                \File::delete(public_path($mediumFile));
-                \File::delete(public_path($file));
+            if(File::exists($file)){
+                \File::delete($file);
             }
         }
         parent::delete();
     }
 }
+
+

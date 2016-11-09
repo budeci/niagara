@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 
 use App\Repositories\OpportunitiesRepository;
+use App\Repositories\EventRepository;
+use App\Repositories\ArticleRepository;
+use App\Repositories\SlidesRepository;
 class HomeController extends Controller
 {
     /**
@@ -15,17 +18,28 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $opportunities;
-    
-    public function __construct(OpportunitiesRepository $opportunitiesRepository)
+    private $events;
+    private $events_top;
+    private $news;
+    private $slides;
+
+    public function __construct(OpportunitiesRepository $opportunitiesRepository, EventRepository $eventsRepository, ArticleRepository $newsRepository, SlidesRepository $slidesRepository)
     {
         $this->opportunities = $opportunitiesRepository;
+        $this->events        = $eventsRepository;
+        $this->news          = $newsRepository;
+        $this->slides        = $slidesRepository;
     }
 
     public function index()
     {
         //dd($request->session()->all());
         $opportunities = $this->opportunities->getPublic();
-        return view('home.index', compact('opportunities'));
+        $events        = $this->events->getExpire();
+        $events_top    = $this->events->getTopHome();
+        $news          = $this->news->getPublic();
+        $slides        = $this->slides->getPublic();
+        return view('home.index', compact('opportunities','events','events_top','news','slides'));
     }
 
     /**

@@ -27,13 +27,13 @@ class ArticleRepository extends Repository
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPublic()
+    public function getPublic($paginate = 20)
     {
         return self::getModel()
             ->published()
             ->active()
             ->orderBy('id', self::DESC)
-            ->get();
+            ->paginate($paginate);
     }
 
     /**

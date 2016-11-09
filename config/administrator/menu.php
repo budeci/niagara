@@ -95,6 +95,9 @@ return [
     'partner' => [
         'icon' => 'fa fa-file-text-o'
     ],
+    'slides' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
     'Menu' => [
         'icon' => 'fa fa-bars',
         'pages' => [

@@ -41,6 +41,7 @@ class ArticlePresenter extends Presenter
      * @param string
      * @return string
      */
+    
     public function renderPublishedDate($format = 'd F Y')
     {
         Date::setLocale(\Lang::slug());

@@ -16,19 +16,19 @@
     return view('welcome');
 });*/
 Route::multilingual(function () {
-	Route::get('/', [
-		'as' => 'home',
-		'uses' => 'HomeController@index'
-	]);
+    Route::get('/', [
+        'as' => 'home',
+        'uses' => 'HomeController@index'
+    ]);
     Route::get('page/{static_page}.html', [
         'as' => 'show_page',
         'uses' => 'PagesController@show'
     ]);
 
-/*	Route::get('events', [
-		'as' => 'events',
-		'uses' => 'EventController@index'
-	]);*/
+/*  Route::get('events', [
+        'as' => 'events',
+        'uses' => 'EventController@index'
+    ]);*/
     Route::get('events/{category?}', [
         'as' => 'view_events',
         'uses' => 'CategoryEventsController@index'
@@ -38,9 +38,9 @@ Route::multilingual(function () {
         'uses' => 'EventController@show'
     ]);
 
-    Route::get('trainings/{category?}', [
+    Route::get('trainings', [
         'as' => 'view_trainings',
-        'uses' => 'CategoryTrainingsController@index'
+        'uses' => 'TrainingController@index'
     ]);
     Route::get('training/{training}', [
         'as' => 'view_training',

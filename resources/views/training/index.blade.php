@@ -6,8 +6,7 @@
             <h4>Alege Fitness Antrenamente</h4>
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
-                     @foreach($category_trainings as $category)
-                        @foreach($category->antrenament as $item)
+                        @foreach($trainings as $item)
                             @if($item->offer == 1)
                                 <div class="col-md-4 col-sm-4">
                                     <div class="for_fitnes">
@@ -36,14 +35,12 @@
                                 </div>
                             @endif
                         @endforeach 
-                    @endforeach
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="fitnes_containt">
                         <h3>Oportunitatile clubului</h3>
 
-                        @foreach($category_trainings as $category)
-                            @foreach($category->antrenament as $item)
+                            @foreach($trainings as $item)
                                 @if($item->opportunities == 1)
                                     <div class="fitnes_ofert">
                                         <a href="/bazin.php">
@@ -54,7 +51,6 @@
                                     </div>
                                 @endif
                             @endforeach    
-                        @endforeach
                     </div>
                 </div>
             </div>
