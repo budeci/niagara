@@ -160,6 +160,10 @@ return [
             'type' => 'text'
         ],
 
+        'password' => [
+            'type' => 'text'
+        ],
+
         'active' => [
             'title' => 'Active',
             'type' => 'select',

@@ -180,25 +180,27 @@ $(document).ready(function() {
   });
 
 
+  $('.for_press .tab-pane').children('div.row:nth-child(-n+3)').css('display','block');
 	var x=3;
     $('.show_div').click(function() {
         var parent =  $(this).parents('.tab-pane');
         var row_hidden = parent.children('div.row:hidden').length;
+        if (row_hidden <= 3) {
+          $(this).parents('div.row').hide();
+        }
         if (row_hidden >= 1) {
           parent.children('div.row:hidden:lt('+x+')').slideDown();
-          var row_hidden2 = parent.children('div.row:hidden').length
+          var row_hidden2 = parent.children('div.row:hidden').length;
           if (row_hidden2 < 1) {
             $(this).parents('div.row').hide();
           }
         }
     });
 
+
  $('.citrus_products_list_items li').click(function(){
- 	
  	var item = $(this);
-
  	if(!item.hasClass('list_active')) {
-
  		$(this).addClass('list_active');
  	}
  	else {

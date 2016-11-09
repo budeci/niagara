@@ -17,9 +17,9 @@
                         <li><a href="/mission.php">Misiune</a></li>
                         <li><a href="/management.php">Administrația</a></li>
                         <li><a href="/partners.php">Parteneri</a></li>
-                        <li><a href="/advertising.php">Publicitate</a></li>
-                        <li><a href="/press.php">Presa</a></li>
-                        <li><a href="/jobs.php">Posturi vacante</a></li>
+                        <li><a href="{{route('advertisement_page')}}">Publicitate</a></li>
+                        <li><a href="{{route('press_show')}}">Presa</a></li>
+                        <li><a href="{{route('vacancy_show')}}">Posturi vacante</a></li>
                         <li><a href="/contacts.php">Contacte</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
