@@ -15,7 +15,7 @@ class CreatePressTable extends Migration
         Schema::create('press', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('view_count')->unsigned();
-            $table->string('category_slug',255);
+            $table->string('category_id',255);
             $table->text('link');
             $table->boolean('active')->default(1)->index();
             $table->timestamps();

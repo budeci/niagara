@@ -30,6 +30,7 @@ class PressRepository extends Repository
     public function getPublic()
     {
         return self::getModel()
+            ->orderBy('id','DESC')
             ->active()
             ->get();
     }
@@ -37,7 +38,7 @@ class PressRepository extends Repository
     public function getBySlug($slug)
     {
         return self::getModel()
-            ->where('category_slug', $slug)
+            ->where('category_id', $slug)
             ->get();
     }
 

@@ -20,18 +20,20 @@
         </ul>
         <div class="tab-content">
             <div id="press_about" class="tab-pane fade in active">
-                @foreach($press->getBySlug('press_releases') as $item)
-                    <div class="row" style="display: none;">
-                        <div class="press_block">
-                            <div class="col-md-2">
-                                <span>{{\Carbon\Carbon::now()->parse($item->created_at)->format('d F')}}</span>
-                            </div>
-                            <div class="col-md-10">
-                                <a href="{{$item->link}}" target="_blank">{!! $item->name !!}</a>
-                                <p>{!! $item->body !!}</p>
+                @foreach($press as $item)
+                    @if($item->category_id == 1)
+                        <div class="row" style="display: none;">
+                            <div class="press_block">
+                                <div class="col-md-2">
+                                    <span>{{\Carbon\Carbon::now()->parse($item->created_at)->format('d F')}}</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <a href="{{$item->link}}" target="_blank">{!! $item->name !!}</a>
+                                    <p>{!! $item->body !!}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
                 <div class="row">
                     <div class="col-md-12">
@@ -40,18 +42,20 @@
                 </div>
             </div>
             <div id="press_releases" class="tab-pane">
-                @foreach($press->getBySlug('press_about_us') as $item)
-                    <div class="row" style="display: none;">
-                        <div class="press_block">
-                            <div class="col-md-2">
-                                <span>{{\Carbon\Carbon::now()->parse($item->created_at)->format('d F')}}</span>
-                            </div>
-                            <div class="col-md-10">
-                                <a href="{{$item->link}}" target="_blank">{!! $item->name !!}</a>
-                                <p>{!! $item->body !!}</p>
+                @foreach($press as $item)
+                    @if($item->category_id == 2)
+                        <div class="row" style="display: none;">
+                            <div class="press_block">
+                                <div class="col-md-2">
+                                    <span>{{\Carbon\Carbon::now()->parse($item->created_at)->format('d F')}}</span>
+                                </div>
+                                <div class="col-md-10">
+                                    <a href="{{$item->link}}" target="_blank">{!! $item->name !!}</a>
+                                    <p>{!! $item->body !!}</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endif
                 @endforeach
                 <div class="row">
                     <div class="col-md-12">

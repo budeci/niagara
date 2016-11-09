@@ -23,7 +23,7 @@ class Press extends Repository
      * @var array
      */
 
-    protected $fillable = ['category_slug','active','view_count'];
+    protected $fillable = ['category_id','active','view_count'];
 
     /**
      * @var array

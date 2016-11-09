@@ -17,9 +17,6 @@ return [
     'columns' => [
         'id',
         'name',
-        'category_slug' => [
-            'title' => 'Category'
-        ],
         'body'=> [
             'output'=> function($row){
                 return sprintf('%s ...', substr($row->body, 0, 275));
@@ -86,14 +83,14 @@ return [
     */
     'edit_fields' => [
           'id'          => ['type' => 'key'],
-          'category_slug' => [
+          'category_id' => [
                'required',
                'label' => 'Choose category',
                'type' => 'select',
                   'options' =>[
                       ''=>'Choose category',
-                      'press_releases'=>'Press Releases',
-                      'press_about_us'=>'Press about us',
+                      '1'=>'Press Releases',
+                      '2'=>'Press about us',
                   ],
           ],
         'name'        => form_text() + translatable(),

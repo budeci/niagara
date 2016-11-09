@@ -17,6 +17,6 @@ class PressController extends Controller
 
     public function show()
     {
-        return view('Press.show',['press'=>$this->press]);
+        return view('Press.show',['press'=>$this->press->getPublic()]);
     }
 }
