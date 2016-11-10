@@ -3190,6 +3190,7 @@ footer img {
     color: #757575;
     margin-top: 24px;
     text-align: right;
+    text-transform: capitalize;
 }
 
 .news_tab_content a {
@@ -3226,6 +3227,7 @@ footer img {
     color: #757575;
     text-align: right;
     margin-top: 20px;
+    text-transform: capitalize;
 }
 
 .news_article_page h3 {

@@ -56,7 +56,6 @@ class PostController extends Controller
 
     public function show($post)
     {
-        dd($post);
         return view('news.show', compact('post'));
     }
     /**
