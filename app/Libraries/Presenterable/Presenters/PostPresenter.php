@@ -5,7 +5,7 @@ namespace App\Libraries\Presenterable\Presenters;
 use App\Traits\HasImagesPresentable;
 use Jenssegers\Date\Date;
 
-class ArticlePresenter extends Presenter
+class PostPresenter extends Presenter
 {
     use HasImagesPresentable;
 

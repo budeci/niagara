@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\Repositories\OpportunitiesRepository;
 use App\Repositories\EventRepository;
-use App\Repositories\ArticleRepository;
+use App\Repositories\PostRepository;
 use App\Repositories\SlidesRepository;
 class HomeController extends Controller
 {
@@ -23,11 +23,11 @@ class HomeController extends Controller
     private $news;
     private $slides;
 
-    public function __construct(OpportunitiesRepository $opportunitiesRepository, EventRepository $eventsRepository, ArticleRepository $newsRepository, SlidesRepository $slidesRepository)
+    public function __construct(OpportunitiesRepository $opportunitiesRepository, EventRepository $eventsRepository, PostRepository $postRepository, SlidesRepository $slidesRepository)
     {
         $this->opportunities = $opportunitiesRepository;
         $this->events        = $eventsRepository;
-        $this->news          = $newsRepository;
+        $this->news          = $postRepository;
         $this->slides        = $slidesRepository;
     }
 

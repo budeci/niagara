@@ -3366,10 +3366,10 @@ footer img {
 
 /*--- Page events_article---*/
 
-.events_article_page {
+/* .events_article_page {
     background: url('../images/events_article.jpg') no-repeat center center;
     background-size: cover;
-}
+} */
 
 .events_article_page h3 {
     font-weight: 700;

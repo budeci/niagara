@@ -103,7 +103,7 @@ return [
             'categoriesNews' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'article' => [
+            'post' => [
                 'icon' => 'fa fa-circle-o'
             ]
         ]

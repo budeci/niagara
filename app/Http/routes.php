@@ -21,6 +21,18 @@ Route::bind('offert',function($slug){
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+use App\Repositories\EventRepository;
+use App\Repositories\PostRepository;
+
+Route::bind('event', function ($slug) {
+    return (new EventRepository)->findBySlug($slug);
+});
+
+Route::bind('post', function ($slug) {
+    return (new PostRepository)->findBySlug($slug);
+});
+
 Route::multilingual(function () {
     Route::get('/', [
         'as' => 'home',
@@ -48,24 +60,24 @@ Route::multilingual(function () {
         'as' => 'view_trainings',
         'uses' => 'TrainingController@index'
     ]);
-    Route::get('training/{training}', [
+    Route::get('training/{slug}', [
         'as' => 'view_training',
         'uses' => 'TrainingController@show'
     ]);
-    Route::get('teams/{trener?}', [
+    Route::get('teams/{slug?}', [
         'as' => 'view_team',
         'uses' => 'TeamController@index'
     ]);
-    Route::get('partners/{partner?}', [
+    Route::get('partners/{slug?}', [
         'as' => 'view_partner',
         'uses' => 'PartnerController@index'
     ]);
 
-    Route::get('news/{category?}', [
+    Route::get('news/{slug?}', [
         'as' => 'view_news',
         'uses' => 'CategoryNewsController@index'
     ]);
-    Route::get('post/{new}', [
+    Route::get('post/{post}', [
         'as' => 'view_post',
         'uses' => 'PostController@show'
     ]);

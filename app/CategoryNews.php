@@ -86,9 +86,9 @@ class CategoryNews extends Repository
         }
         parent::delete();
     }
-    public function antrenament()
+    public function post()
     {
-        return $this->hasMany(Antrenament::class);
+        return $this->hasMany(Post::class);
     }
 }
 
