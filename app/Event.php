@@ -16,6 +16,7 @@ class Event extends Repository
     /**
      * @var MenuTranslations
      */
+    
     public $translationModel = EventTranslation::class;
     protected $presenter = EventPresenter::class;
     protected $dates = [
@@ -90,14 +91,15 @@ class Event extends Repository
     }*/
 
     public function delete(){
-
         if($this->attributes['image']){
             $file = $this->attributes['image'];
             if(File::exists(public_path($file))){
+                \File::delete(public_path($file));
                 $medium = explode('.', $file);
                 $mediumFile = $medium[0].'_medium.'.$medium[1];
-                \File::delete(public_path($mediumFile));
-                \File::delete(public_path($file));
+                if(File::exists(public_path($mediumFile))){
+                    \File::delete(public_path($mediumFile));
+                }
             }
         }
         parent::delete();

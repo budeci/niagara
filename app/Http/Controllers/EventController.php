@@ -56,9 +56,16 @@ class EventController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($event)
     {
-        //
+        //dd($event);
+        //Event::fire(new PostWasViewed($post));
+
+        //$post  = $this->posts->find($post->id);
+        
+        //return view('blog.post')->withItem($post);
+
+        return view('event.show', compact('event'));
     }
 
     /**

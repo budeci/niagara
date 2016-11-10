@@ -33,7 +33,7 @@
                         <div class="col-md-3 col-sm-6 data-item {{$category->slug}} {{$item->expire_date > Carbon\Carbon::now() ? 'soon' : 'past'}}">
                             <div class="events_block_tab">
                                 <div class="for_events_head">
-                                    <img src="{{file_exists(public_path($item->image)) && $item->image != '' ? URL::to($item->image) : 'http://loremflickr.com/400/200/world,sport/all?random=100'}}" data-src="{{URL::to($item->image)}}" alt="">
+                                    <img src="{{file_exists(public_path($item->image)) && $item->image != '' ? URL::to($item->image) : 'http://loremflickr.com/400/200/world,sport/all?random=100'}}" alt="">
                                 </div>
                                 <div class="events_cotent">
                                     <a href="{{ route('view_event', ['slug' => $item->slug]) }}">{{ $item->present()->renderTitle() }}</a>

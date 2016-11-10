@@ -1,9 +1,9 @@
 <?php
-use App\Article;
+use App\Post;
 use App\CategoryNews;
 return [
     'title'  => 'Create Article',
-    'model'  => Article::class,
+    'model'  => Post::class,
 
     /*
     |-------------------------------------------------------
@@ -115,10 +115,10 @@ return [
         ],
         'image' => [
             'type' => 'image',
-            'location' => '/',
-//            'sizes' => [
-//                'big'     => '1024x1024',
-//            ]
+            'location' => '/upload/news',
+            'sizes'    => [
+                'medium' => '320x216'
+            ],
         ],
         'body'          => form_ckeditor() + translatable(),
         'active'        => form_boolean(),

@@ -1,20 +1,20 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Repositories\ArticleRepository;
+use App\Repositories\PostRepository;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Article as Article;
+use App\Post as Post;
 
-class ArticleController extends Controller
+class PostController extends Controller
 {
-    protected $article;
+    protected $post;
 
-    public function __construct(ArticleRepository $articleRepository)
+    public function __construct(PostRepository $postRepository)
     {
-        $this->article = $articleRepository;
+        $this->post = $postRepository;
     }
     /**
      * Display a listing of the resource.
@@ -23,8 +23,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $article = $this->article->getPublic();
-        return view('news.article_show', compact('article'));
+        
     }
 
     /**
@@ -54,11 +53,12 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
 
+    public function show($post)
+    {
+        dd($post);
+        return view('news.show', compact('post'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

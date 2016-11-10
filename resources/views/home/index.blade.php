@@ -61,7 +61,7 @@
             @foreach($events as $item)
                 <div class="events_block">
                     <div class="events_for_img">
-                        <img src="{{file_exists(public_path($item->image)) && $item->image != '' ? URL::to($item->image) : 'http://loremflickr.com/1024/756/world,sport/all?random=100'}}" data-src="{{URL::to($item->image)}}" alt="">
+                        <img src="{{file_exists(public_path($item->image)) ? $item->present()->renderImageMedium() : 'http://loremflickr.com/400/200/world,sport/all?random=100'}}" data-src="{{URL::to($item->image)}}" alt="">
                     </div>
                     <a href="{{ route('view_event', ['slug' => $item->slug]) }}">
                         <span>{{ $item->present()->renderPublishedDate($format = 'd') }} - {{ $item->present()->renderExpiredDate($format = 'd') }}</span>

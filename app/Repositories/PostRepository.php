@@ -2,24 +2,24 @@
 
 namespace App\Repositories;
 
-use App\Article;
-use App\ArticleTranslation;
-class ArticleRepository extends Repository
+use App\Post;
+use App\PostTranslation;
+class PostRepository extends Repository
 {
     /**
      * @return Post
      */
     public function getModel()
     {
-        return new Article();
+        return new Post();
     }
 
     /**
-     * @return ArticleTranslation
+     * @return PostTranslation
      */
     public function getTranslatableModel()
     {
-        return new ArticleTranslation();
+        return new PostTranslation();
     }
 
     /**
