@@ -66,6 +66,10 @@ return [
         'icon' => 'fa fa-file-text-o'
     ],
 
+    'lifestyle' => [
+        'icon' => 'fa fa-file-text-o'
+    ],
+
     'Presa' => [
       'icon' => 'fa fa-file-text-o',
         'pages' => [

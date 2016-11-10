@@ -65,7 +65,7 @@
                         <li><a>Lumea Niagara</a></li>
                         <li><a href="/news.php">Noutăți</a></li>
                         <li><a href="/events.php">Evenimente și competiții</a></li>
-                        <li><a href="/style_life.php">Life Style</a></li>
+                        <li><a href="{{route('life_style')}}">Life Style</a></li>
                     </ul>
                 </div>
             </div>

@@ -9,7 +9,7 @@
                 <div class="col-md-6 col-sm-6 special_oferts_block">
                     <a href="{{route('show_ofert',['slug'=>$item->slug])}}">
                         <img src="{{$item->image}}" alt="">
-                        <span>до {{\Carbon\Carbon::now()->parse($item->expire_date)->format('d F Y')}}</span>
+                        <span>до {{ $item->present()->renderExpiredDate() }}</span>
                         <div class="special_oferts_contain">
                             <h4>{!! $item->name !!}</h4>
                         </div>

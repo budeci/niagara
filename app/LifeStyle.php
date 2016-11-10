@@ -7,38 +7,31 @@ use App\Libraries\Presenterable\Presenterable;
 use App\Libraries\Presenterable\Presenters\MainPresenter;
 use Request;
 
-class Offert extends Repository
+class LifeStyle extends Repository
 {
     use HasTranslations, ActivateableTrait, Presenterable;
 
-    /**
-     * @var
-     */
-    public $translationModel = OffertTranslation::class;
+    protected $presenter = MainPresenter::class;
 
     /**
      * @var
      */
-    protected $presenter = MainPresenter::class;
+    public $translationModel = LifeStyleTranslation::class;
 
     /**
      * @var array
      */
-    protected $dates = [
-        'public_date',
-        'expire_date'
-    ];
 
     /**
      * @var string
      */
-    protected $table = 'offert';
+    protected $table = 'lifestyle';
 
     /**
      * @var array
      */
 
-    protected $fillable = ['image','active','view_count','public_date','expire_date'];
+    protected $fillable = ['image','active','view_count'];
 
     /**
      * @var array

@@ -13,7 +13,7 @@
             <div class="row oferts_article_list">
                 <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 article_img">
                     <img class="img-responsive" src="{{$offert->image}}" alt="">
-                    <span>до {{\Carbon\Carbon::now()->parse($offert->expire_date)->format('d F Y')}}</span>
+                    <span>до {{ $offert->present()->renderExpiredDate() }}</span>
                 </div>
                 <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
                    {!! $offert->body !!}
@@ -29,8 +29,8 @@
                 @foreach($randomOffert as $item)
                     <div class="col-md-4 col-sm-4 special_oferts_block">
                         <a href="{{route('show_ofert',['slug'=>$item->slug])}}">
-                            <img src="{{$offert->image}}" alt="">
-                            <span>до {{\Carbon\Carbon::now()->parse($item->expire_date)->format('d F Y')}}</span>
+                            <img src="{{$item->image}}" alt="">
+                            <span>до {{ $item->present()->renderExpiredDate() }}</span>
                             <div class="special_oferts_contain_article">
                                 <h4>{!! $item->name !!}</h4>
                             </div>

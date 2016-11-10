@@ -3,6 +3,7 @@
  ini_set('display_errors', 1);
 
 use App\Repositories\OffertRepository;
+use App\Repositories\LifeStyleRepository;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -16,6 +17,9 @@ use App\Repositories\OffertRepository;
 
 Route::bind('offert',function($slug){
     return (new OffertRepository)->findBySlug($slug);
+});
+Route::bind('lifestyle',function($slug){
+    return (new LifeStyleRepository)->findBySlug($slug);
 });
 
 /*Route::get('/', function () {
@@ -100,6 +104,14 @@ Route::multilingual(function () {
     Route::get('ofert-page/{offert}', [
         'as' => 'show_ofert',
         'uses' => 'OffertController@showSingle'
+    ]);
+    Route::get('life-style', [
+        'as' => 'life_style',
+        'uses' => 'LifeStyleController@show'
+    ]);
+    Route::get('life-style-article/{lifestyle}', [
+        'as' => 'life_style_article',
+        'uses' => 'LifeStyleController@showSingle'
     ]);
 
 
