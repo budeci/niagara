@@ -104,6 +104,7 @@ return [
             ]
         ]
     ],
+    
     'News' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
