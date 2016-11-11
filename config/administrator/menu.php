@@ -116,6 +116,20 @@ return [
             ]
         ]
     ],
+    'Beauty & Spa' => [
+        'icon' => 'fa fa-calendar-o',
+        'pages' => [
+            'beautycategory' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'beauty' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'beautyslide' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+        ]
+    ],
     'opportunities' => [
         'icon' => 'fa fa-file-text-o'
     ],
