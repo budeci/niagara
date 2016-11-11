@@ -28,12 +28,12 @@ class Antrenament extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','image1','image2','image3','category_antrenament_id'];
+    protected $fillable = ['active','type','category_antrenament_id'];
 
     /**
      * @var array
      */
-    public $translatedAttributes = ['name','annotation1','annotation2','annotation3','slug','body','meta_title','meta_description','meta_keyword'];
+    public $translatedAttributes = ['name','slug','body','meta_title','meta_description','meta_keyword'];
     //public $imgPath  = '/upload/antrenament/';
 
     public function scopePublished($query)

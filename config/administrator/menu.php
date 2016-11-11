@@ -96,7 +96,10 @@ return [
             'categoriesAntrenament' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'antrenament' => [
+            'antrenamentAdult' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'antrenamentKids' => [
                 'icon' => 'fa fa-circle-o'
             ]
         ]

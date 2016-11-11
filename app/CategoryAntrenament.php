@@ -23,7 +23,7 @@ class CategoryAntrenament extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','image'];
+    protected $fillable = ['active','image','type'];
 
     /**
      * @var array

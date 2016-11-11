@@ -1,8 +1,9 @@
 <?php
+use App\Antrenament;
 use App\CategoryAntrenament;
 return [
-    'title'  => 'Categories Antrenament',
-    'model'  => CategoryAntrenament::class,
+    'title'  => 'Create Antrenament Kids',
+    'model'  => Antrenament::class,
 
     /*
     |-------------------------------------------------------
@@ -16,7 +17,14 @@ return [
     'columns' => [
         'id',
         'name',
+/*        'belongs' => [
+            'title' => 'Belongs to',
+            'output' => function($row) {
+                return sprintf('<a href="/admin/categoriesEvent?id=%s">%s</a>', $row->categoryEvent->id, $row->categoryEvent->name);
+            }
+        ],*/
         'image' => column_element('', true, '<img src="(:image)" width="100" />'),
+
 /*        'user_id' => [
             'title' => 'Participant',
             'output' => function ($row) {
@@ -63,7 +71,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query;
+        return $query->where('type', 0);
     },
 
     /*
@@ -75,7 +83,14 @@ return [
     |
     */
     'filters' => [
-
+        'id' => filter_hidden(),
+        'category_antrenament_id' => filter_select('Belongs to', function () {
+            return CategoryAntrenament::select('*')
+                ->whereType(0)
+                ->get()
+                ->pluck('name', 'id')
+                ->prepend('-- Any --', '');
+        }),
     ],
 
     /*
@@ -90,19 +105,24 @@ return [
         'id'          => ['type' => 'key'],
         'name'        => form_text() + translatable(),
         'slug'        => form_text() + translatable(),
-        'type' => [
-            'label' => 'Category Type',
+        'category_antrenament_id' => [
+            'label' => 'Choose category',
             'type' => 'select',
-            'options' => ['1'=>'Adult','0'=>'Kids']
+            'options' => function () {
+                return CategoryAntrenament::select('*')
+                    ->whereType(0)
+                    ->get()
+                    ->pluck('name', 'id');
+            }
         ],
         'image' => [
             'type' => 'image',
-            'location' => '/',
-//            'sizes' => [
-//                'big'     => '1024x1024',
-//            ]
+            'location' => '/upload/antrenament',
+/*            'sizes'    => [
+                'medium'     => '320x216'
+            ],*/
         ],
-        'description' => form_textarea() + translatable(),
+        'body'          => form_ckeditor() + translatable(),
         'active'        => form_boolean(),
     ]
 ];

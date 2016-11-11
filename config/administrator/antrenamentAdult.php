@@ -2,7 +2,7 @@
 use App\Antrenament;
 use App\CategoryAntrenament;
 return [
-    'title'  => 'Create Antrenament',
+    'title'  => 'Create Antrenament Adult',
     'model'  => Antrenament::class,
 
     /*
@@ -23,7 +23,7 @@ return [
                 return sprintf('<a href="/admin/categoriesEvent?id=%s">%s</a>', $row->categoryEvent->id, $row->categoryEvent->name);
             }
         ],*/
-        'image' => column_element('', true, '<img src="(:image1)" width="100" />'),
+        'image' => column_element('', true, '<img src="(:image)" width="100" />'),
 
 /*        'user_id' => [
             'title' => 'Participant',
@@ -71,7 +71,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query;
+        return $query->where('type', 1);
     },
 
     /*
@@ -86,6 +86,7 @@ return [
         'id' => filter_hidden(),
         'category_antrenament_id' => filter_select('Belongs to', function () {
             return CategoryAntrenament::select('*')
+                ->whereType(1)
                 ->get()
                 ->pluck('name', 'id')
                 ->prepend('-- Any --', '');
@@ -109,38 +110,19 @@ return [
             'type' => 'select',
             'options' => function () {
                 return CategoryAntrenament::select('*')
+                    ->whereType(1)
                     ->get()
                     ->pluck('name', 'id');
             }
         ],
-        'image1' => [
+        'image' => [
             'type' => 'image',
-            'location' => '/upload/antrenament/(:id)',
+            'location' => '/upload/antrenament',
 /*            'sizes'    => [
                 'medium'     => '320x216'
             ],*/
         ],
-        'annotation1'        => form_text() + translatable(),
-        'image2' => [
-            'type' => 'image',
-            'location' => '/upload/antrenament/(:id)',
-/*            'sizes'    => [
-                'medium'     => '320x216'
-            ],*/
-        ],
-        'annotation2'        => form_text() + translatable(),
-        'image3' => [
-            'type' => 'image',
-            'location' => '/upload/antrenament/(:id)',
-            ''
-/*            'sizes'    => [
-                'medium'     => '320x216'
-            ],*/
-        ],
-        'annotation3'   => form_text() + translatable(),
         'body'          => form_ckeditor() + translatable(),
-        'offer'         => form_boolean(),
-        'opportunities' => form_boolean(),
         'active'        => form_boolean(),
     ]
 ];
