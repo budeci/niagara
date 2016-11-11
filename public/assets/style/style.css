@@ -4903,6 +4903,14 @@ text-transform: uppercase;
         font-size: 14px;
         padding: 10px;
     }
+
+    .beauty_btn.filter_active {
+       background: #f07626;
+        color: #fff;
+
+    }
+
+
     .style_for_img span {
         float: right;
         margin-top: 20px;
