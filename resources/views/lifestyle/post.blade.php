@@ -1,8 +1,6 @@
 @extends('layout')
 
 @section('content')
-
-
 <section class="news_article_page">
     <div class="container">
         <h3 class="title">Статьи</h3>
@@ -21,5 +19,4 @@
         </div>
     </div>
 </section>
-
 @endsection

@@ -36,7 +36,7 @@
             <!--a href="#" class="header__icon" id="header__icon"></a-->
             <ul class="menu">
                 <li><a href="/fitnes_ofert.php">Fitness</a></li>
-                <li><a href="/fitnes_ofert.php">Kids Club</a></li>
+                <li><a href="{{route('view_kids_trainings')}}">Kids Club</a></li>
                 <li><a href="/cartele.php">Club Carduri</a></li>
                 <li><a href="/beauty.php">Spa&Beauty</a></li>
                 <li><a href="/world.php">Lumea Niagara Club</a></li>
