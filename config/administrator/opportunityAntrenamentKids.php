@@ -2,7 +2,7 @@
 use App\OpportunityAntrenament;
 
 return [
-    'title'  => 'Create Opportunity',
+    'title'  => 'Create Opportunity Kids',
     'model'  => OpportunityAntrenament::class,
 
     /*
@@ -56,7 +56,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query;
+        return $query->whereCategoryType(0);
     },
 
     /*
@@ -80,10 +80,13 @@ return [
     |
     */
     'edit_fields' => [
-        'id'          => ['type' => 'key'],
-        'name'        => form_text() + translatable(),
-        'slug'        => form_text() + translatable(),
-
+        'id'   => ['type' => 'key'],
+        'name' => form_text() + translatable(),
+        'slug' => form_text() + translatable(),
+        'category_type' =>[
+            'type' => 'hidden',
+            'value' => '0'
+        ],
         'image1' => [
             'type' => 'image',
             'location' => '/upload/kids/(:id)/',
@@ -101,8 +104,6 @@ return [
             'location' => '/upload/kids/(:id)/',
         ],
         'annotation3'   => form_text() + translatable(),
-
-
 
         'body'          => form_ckeditor() + translatable(),
         'opportunities' => form_boolean(),

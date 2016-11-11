@@ -35,10 +35,10 @@ class Post extends Repository
      */
     public $translatedAttributes = ['name','slug','body','meta_title','meta_description','meta_keyword'];
     
-    public function scopePublished($query)
+    /*public function scopePublished($query)
     {
         return $query->whereActive(1);
-    }
+    }*/
 
     public function delete(){
         if($this->attributes['image']){

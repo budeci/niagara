@@ -31,7 +31,6 @@ class EventRepository extends Repository
     public function getPublic($paginate = 20)
     {
         return self::getModel()
-            ->published()
             ->active()
             ->orderBy('id', self::DESC)
             ->paginate($paginate);
@@ -40,7 +39,6 @@ class EventRepository extends Repository
     public function getExpire($paginate = 20)
     {
         return self::getModel()
-            ->published()
             ->active()
             ->orderBy('expire_date', self::ASC)
             ->where('expire_date','>=',Carbon::now())
@@ -49,7 +47,6 @@ class EventRepository extends Repository
     public function getTopHome($paginate = 4)
     {
         return self::getModel()
-            ->published()
             ->active()
             ->orderBy('home_show', self::DESC)
             ->orderBy('expire_date', self::ASC)
@@ -66,7 +63,6 @@ class EventRepository extends Repository
     {
         // todo: popular featured posts.
        return $this->getModel()
-           ->published()
            ->active()
            ->orderBy('view_count', self::DESC)
            ->orderBy('id', self::DESC)
@@ -86,7 +82,6 @@ class EventRepository extends Repository
             ->select('*')
             ->translated()
             ->whereSlug($slug)
-            ->published()
             ->active()
             ->first();
     }

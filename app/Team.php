@@ -33,11 +33,6 @@ class Team extends Repository
     public $translatedAttributes = ['name','slug','body','job','meta_title','meta_description','meta_keyword'];
     public $imgPath  = 'upload/team/';
 
-    public function scopePublished($query)
-    {
-        return $query->whereActive(1);
-    }
-
     public function getImageAttribute($value)
     {
         //add full path to image

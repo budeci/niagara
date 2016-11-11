@@ -116,9 +116,6 @@ return [
         'image' => [
             'type' => 'image',
             'location' => '/upload/event',
-            'sizes'    => [
-                'medium'     => '320x216'
-            ],
         ],
         'about'       => form_ckeditor() + translatable(),
         'program'     => form_ckeditor() + translatable(),

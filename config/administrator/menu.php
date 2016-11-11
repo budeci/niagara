@@ -99,7 +99,13 @@ return [
             'antrenamentAdult' => [
                 'icon' => 'fa fa-circle-o'
             ],
+            'opportunityAntrenamentAdult' => [
+                'icon' => 'fa fa-circle-o'
+            ],
             'antrenamentKids' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'opportunityAntrenamentKids' => [
                 'icon' => 'fa fa-circle-o'
             ]
         ]

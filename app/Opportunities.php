@@ -33,10 +33,10 @@ class Opportunities extends Repository
     public $translatedAttributes = ['name','body','opportunities_id'];
     public $imgPath  = 'upload/opportunities/';
 
-    public function scopePublished($query)
+/*    public function scopePublished($query)
     {
         return $query->whereActive(1);
-    }
+    }*/
 
     public function getImageAttribute($value)
     {

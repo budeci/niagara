@@ -2,24 +2,24 @@
 
 namespace App\Repositories;
 
-use App\KidsOpportunity;
-use App\KidsOpportunityTranslation;
-class KidsOpportunityRepository extends Repository
+use App\OpportunityAntrenament;
+use App\OpportunityAntrenamentTranslation;
+class OpportunityAntrenamentRepository extends Repository
 {
     /**
      * @return KidsOpportunity
      */
     public function getModel()
     {
-        return new KidsOpportunity();
+        return new OpportunityAntrenament();
     }
 
     /**
-     * @return KidsOpportunityTranslation
+     * @return OpportunityAntrenamentTranslation
      */
     public function getTranslatableModel()
     {
-        return new KidsOpportunityTranslation();
+        return new OpportunityAntrenamentTranslation();
     }
 
     /**
@@ -27,14 +27,22 @@ class KidsOpportunityRepository extends Repository
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPublic()
+    public function getAdultPublic()
     {
         return self::getModel()
             ->active()
+            ->whereCategoryType(1)
             ->orderBy('id', self::DESC)
             ->get();
     }
-
+    public function getKidsPublic()
+    {
+        return self::getModel()
+            ->active()
+            ->whereCategoryType(0)
+            ->orderBy('id', self::DESC)
+            ->get();
+    }
     /**
      * Get popular public posts.
      *
@@ -64,7 +72,6 @@ class KidsOpportunityRepository extends Repository
             ->select('*')
             ->translated()
             ->whereSlug($slug)
-            ->published()
             ->active()
             ->first();
     }

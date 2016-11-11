@@ -1,9 +1,9 @@
 <?php
-use App\Antrenament;
-use App\CategoryAntrenament;
+use App\OpportunityAntrenament;
+
 return [
-    'title'  => 'Create Antrenament Kids',
-    'model'  => Antrenament::class,
+    'title'  => 'Create Opportunity Adult',
+    'model'  => OpportunityAntrenament::class,
 
     /*
     |-------------------------------------------------------
@@ -17,23 +17,8 @@ return [
     'columns' => [
         'id',
         'name',
-/*        'belongs' => [
-            'title' => 'Belongs to',
-            'output' => function($row) {
-                return sprintf('<a href="/admin/categoriesEvent?id=%s">%s</a>', $row->categoryEvent->id, $row->categoryEvent->name);
-            }
-        ],*/
-        'image' => column_element('', true, '<img src="(:image)" width="100" />'),
+        'image' => column_element('', true, '<img src="(:image1)" width="100" />'),
 
-/*        'user_id' => [
-            'title' => 'Participant',
-            'output' => function ($row) {
-                if($user = $row->user)
-                    return $user->name;
-
-                return 'no user';
-            }
-        ]*/
     ],
 
     /*
@@ -71,7 +56,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query->whereCategoryType(0);
+        return $query->whereCategoryType(1);
     },
 
     /*
@@ -84,13 +69,6 @@ return [
     */
     'filters' => [
         'id' => filter_hidden(),
-        'category_antrenament_id' => filter_select('Belongs to', function () {
-            return CategoryAntrenament::select('*')
-                ->whereType(0)
-                ->get()
-                ->pluck('name', 'id')
-                ->prepend('-- Any --', '');
-        }),
     ],
 
     /*
@@ -102,31 +80,33 @@ return [
     |
     */
     'edit_fields' => [
-        'id'          => ['type' => 'key'],
-        'name'        => form_text() + translatable(),
-        'slug'        => form_text() + translatable(),
+        'id'   => ['type' => 'key'],
+        'name' => form_text() + translatable(),
+        'slug' => form_text() + translatable(),
         'category_type' =>[
             'type' => 'hidden',
-            'value' => '0'
+            'value' => '1'
         ],
-        'category_antrenament_id' => [
-            'label' => 'Choose category',
-            'type' => 'select',
-            'options' => function () {
-                return CategoryAntrenament::select('*')
-                    ->whereType(0)
-                    ->get()
-                    ->pluck('name', 'id');
-            }
-        ],
-        'image' => [
+        'image1' => [
             'type' => 'image',
-            'location' => '/upload/antrenament',
-/*            'sizes'    => [
-                'medium'     => '320x216'
-            ],*/
+            'location' => '/upload/kids/(:id)/',
         ],
+        'annotation1'   => form_text() + translatable(),
+
+        'image2' => [
+            'type' => 'image',
+            'location' => '/upload/kids/(:id)/',
+        ],
+        'annotation2'   => form_text() + translatable(),
+
+        'image3' => [
+            'type' => 'image',
+            'location' => '/upload/kids/(:id)/',
+        ],
+        'annotation3'   => form_text() + translatable(),
+
         'body'          => form_ckeditor() + translatable(),
+        'opportunities' => form_boolean(),
         'active'        => form_boolean(),
     ]
 ];

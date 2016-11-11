@@ -30,7 +30,6 @@ class TrainingRepository extends Repository
     public function getPublic()
     {
         return self::getModel()
-            ->published()
             ->active()
             ->orderBy('offer', self::DESC)
             ->orderBy('id', self::DESC)
@@ -47,7 +46,6 @@ class TrainingRepository extends Repository
     {
         // todo: popular featured posts.
        return $this->getModel()
-           ->published()
            ->active()
            ->orderBy('view_count', self::DESC)
            ->orderBy('id', self::DESC)
@@ -67,7 +65,6 @@ class TrainingRepository extends Repository
             ->select('*')
             ->translated()
             ->whereSlug($slug)
-            ->published()
             ->active()
             ->first();
     }

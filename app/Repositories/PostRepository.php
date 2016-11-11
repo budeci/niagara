@@ -30,7 +30,6 @@ class PostRepository extends Repository
     public function getPublic($paginate = 20)
     {
         return self::getModel()
-            ->published()
             ->active()
             ->orderBy('id', self::DESC)
             ->paginate($paginate);
@@ -46,7 +45,6 @@ class PostRepository extends Repository
     {
         // todo: popular featured posts.
        return $this->getModel()
-           ->published()
            ->active()
            ->orderBy('view_count', self::DESC)
            ->orderBy('id', self::DESC)
@@ -66,7 +64,6 @@ class PostRepository extends Repository
             ->select('*')
             ->translated()
             ->whereSlug($slug)
-            ->published()
             ->active()
             ->first();
     }

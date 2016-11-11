@@ -18,11 +18,6 @@ class Slides extends Repository
     protected $fillable = ['name','active','image','link'];
     public $imgPath  = 'upload/slides/';
 
-    public function scopePublished($query)
-    {
-        return $query->whereActive(1);
-    }
-
     public function getImageAttribute($value)
     {
         //add full path to image

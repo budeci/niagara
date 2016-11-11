@@ -7,7 +7,9 @@
                     <div class="content_slide">
                         <div class="news_slide">
                         @foreach($slides as $item)
-                            <div class="item"><img src="{{file_exists(public_path($item->image)) && $item->image != '' ? URL::to($item->image) : 'http://loremflickr.com/680/440/world,sport/all?random=100'}}" alt="{{$item->name}}"></div>
+                            @if(file_exists(public_path($item->image)))
+                                <div class="item"><img src="{{Image::url($item->image,680,440,array('crop',false))}}" alt="{{$item->name}}"></div>
+                            @endif
                         @endforeach
                         </div>
                     </div>
@@ -21,7 +23,7 @@
                                         <span><strong>{{ $item->present()->renderPublishedDate($format = 'd M') }}</strong> - <strong>{{ $item->present()->renderExpiredDate($format = 'd M') }}</strong></span>
                                         <h3>{{ $item->present()->renderTitle() }}</h3>
                                     </div>
-                                    <img class="img-responsive" src="{{file_exists(public_path($item->image)) ? $item->present()->renderImageMedium() : 'http://loremflickr.com/400/200/world,sport/all?random=100'}}" alt="">
+                                    <img class="img-responsive" src="{{file_exists(public_path($item->image)) ? Image::url($item->image,320,217,array('crop',false)) : 'http://loremflickr.com/320/217/world,sport/all?random=100'}}" alt="">
                                 </a>
                             </div>
                         @endforeach
@@ -61,7 +63,7 @@
             @foreach($events as $item)
                 <div class="events_block">
                     <div class="events_for_img">
-                        <img src="{{file_exists(public_path($item->image)) ? $item->present()->renderImageMedium() : 'http://loremflickr.com/400/200/world,sport/all?random=100'}}" data-src="{{URL::to($item->image)}}" alt="">
+                        <img src="{{file_exists(public_path($item->image)) ? Image::url($item->image,400,200,array('crop',false)) : 'http://loremflickr.com/320/217/world,sport/all?random=100'}}" data-src="{{URL::to($item->image)}}" alt="">
                     </div>
                     <a href="{{ route('view_event', ['slug' => $item->slug]) }}">
                         <span>{{ $item->present()->renderPublishedDate($format = 'd') }} - {{ $item->present()->renderExpiredDate($format = 'd') }}</span>

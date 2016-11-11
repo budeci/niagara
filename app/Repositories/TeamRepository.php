@@ -30,7 +30,6 @@ class TeamRepository extends Repository
     public function getPublic()
     {
         return self::getModel()
-            ->published()
             ->active()
             ->orderBy('id', self::DESC)
             ->get();
@@ -46,7 +45,6 @@ class TeamRepository extends Repository
     {
         // todo: popular featured posts.
        return $this->getModel()
-           ->published()
            ->active()
            ->orderBy('view_count', self::DESC)
            ->orderBy('id', self::DESC)
@@ -66,7 +64,6 @@ class TeamRepository extends Repository
             ->select('*')
             ->translated()
             ->whereSlug($slug)
-            ->published()
             ->active()
             ->first();
     }

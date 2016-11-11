@@ -22,13 +22,13 @@ class OpportunityAntrenament extends Repository
     /**
      * @var string
      */
-    protected $table = 'opportunity_antrenament_translation';
+    protected $table = 'opportunity_antrenament';
 
     /**
      * @var array
      */
 
-    protected $fillable = ['opportunities','active','image1','image2','image3','category_id'];
+    protected $fillable = ['opportunities','active','image1','image2','image3','category_type','category_id'];
 
     /**
      * @var array
@@ -38,10 +38,16 @@ class OpportunityAntrenament extends Repository
 
 
     public function delete(){
-        if($this->attributes['image']){
-            $file = $this->attributes['image'];
-            if(File::exists($file)){
-                \File::delete($file);
+        if($this->attributes['image1']){
+            $file1 = $this->attributes['image1'];
+            $file2 = $this->attributes['image2'];
+            $file3 = $this->attributes['image3'];
+            if(File::exists(public_path($file1))){
+                \File::delete(public_path($file1));
+                \File::delete(public_path($file2));
+                \File::delete(public_path($file3));
+                $dir = explode("\\", $file1);
+                rmdir(public_path($dir[0]));
             }
         }
         parent::delete();

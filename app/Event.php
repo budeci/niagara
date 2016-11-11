@@ -41,10 +41,6 @@ class Event extends Repository
     public $translatedAttributes = ['name','slug','about','program','meta_title','meta_description','meta_keyword'];
     //public $imgPath  = 'upload/event/';
 
-    public function scopePublished($query)
-    {
-        return $query->whereActive(1);
-    }
 
     
 /*    public function categoryEvent()
@@ -95,11 +91,11 @@ class Event extends Repository
             $file = $this->attributes['image'];
             if(File::exists(public_path($file))){
                 \File::delete(public_path($file));
-                $medium = explode('.', $file);
+/*                $medium = explode('.', $file);
                 $mediumFile = $medium[0].'_medium.'.$medium[1];
                 if(File::exists(public_path($mediumFile))){
                     \File::delete(public_path($mediumFile));
-                }
+                }*/
             }
         }
         parent::delete();

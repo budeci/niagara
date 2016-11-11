@@ -71,7 +71,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query->where('type', 1);
+        return $query->whereCategoryType(1);
     },
 
     /*
@@ -105,6 +105,10 @@ return [
         'id'          => ['type' => 'key'],
         'name'        => form_text() + translatable(),
         'slug'        => form_text() + translatable(),
+        'category_type' =>[
+            'type' => 'hidden',
+            'value' => '1'
+        ],
         'category_antrenament_id' => [
             'label' => 'Choose category',
             'type' => 'select',

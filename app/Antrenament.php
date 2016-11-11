@@ -28,7 +28,7 @@ class Antrenament extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','type','category_antrenament_id'];
+    protected $fillable = ['active','category_type','category_antrenament_id'];
 
     /**
      * @var array
@@ -36,26 +36,7 @@ class Antrenament extends Repository
     public $translatedAttributes = ['name','slug','body','meta_title','meta_description','meta_keyword'];
     //public $imgPath  = '/upload/antrenament/';
 
-    public function scopePublished($query)
-    {
-        return $query->whereActive(1);
-    }
-
-    public function getImage1Attribute($value)
-    {
-        //add full path to image
-      if (!empty($value)) {
-        return str_replace('\\', '/', $value);
-      }
-    }
-    public function getImage2Attribute($value)
-    {
-        //add full path to image
-      if (!empty($value)) {
-        return str_replace('\\', '/', $value);
-      }
-    }
-    public function getImage3Attribute($value)
+    public function getImageAttribute($value)
     {
         //add full path to image
       if (!empty($value)) {
@@ -104,7 +85,7 @@ class Antrenament extends Repository
 
         }
     }*/
-    public function delete(){
+/*    public function delete(){
         if($this->attributes['image1']){
             $file1 = $this->attributes['image1'];
             $file2 = $this->attributes['image2'];
@@ -115,6 +96,20 @@ class Antrenament extends Repository
                 \File::delete(public_path($file3));
                 $dir = explode("\\", $file1);
                 rmdir(public_path($dir[0]));
+            }
+        }
+        parent::delete();
+    }*/
+    public function delete(){
+        if($this->attributes['image']){
+            $file = $this->attributes['image'];
+            if(File::exists(public_path($file))){
+                \File::delete(public_path($file));
+/*                $medium = explode('.', $file);
+                $mediumFile = $medium[0].'_medium.'.$medium[1];
+                if(File::exists(public_path($mediumFile))){
+                    \File::delete(public_path($mediumFile));
+                }*/
             }
         }
         parent::delete();

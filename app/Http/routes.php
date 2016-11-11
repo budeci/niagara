@@ -28,6 +28,7 @@ Route::bind('lifestyle',function($slug){
 
 use App\Repositories\EventRepository;
 use App\Repositories\PostRepository;
+use App\Repositories\OpportunityAntrenamentRepository;
 
 Route::bind('event', function ($slug) {
     return (new EventRepository)->findBySlug($slug);
@@ -35,6 +36,10 @@ Route::bind('event', function ($slug) {
 
 Route::bind('post', function ($slug) {
     return (new PostRepository)->findBySlug($slug);
+});
+
+Route::bind('service', function ($slug) {
+    return (new OpportunityAntrenamentRepository)->findBySlug($slug);
 });
 
 Route::multilingual(function () {
@@ -122,6 +127,18 @@ Route::multilingual(function () {
     Route::get('life-style-article/{lifestyle}', [
         'as' => 'life_style_article',
         'uses' => 'LifeStyleController@showSingle'
+    ]);
+    Route::get('fitness-oferte', [
+        'as' => 'view_fitness_adult',
+        'uses' => 'FitnessOferteController@indexAdult'
+    ]);
+    Route::get('kids-club', [
+        'as' => 'view_fitness_kids',
+        'uses' => 'FitnessOferteController@indexKids'
+    ]);
+    Route::get('fitness/{service}', [
+        'as' => 'view_fitness',
+        'uses' => 'FitnessOferteController@show'
     ]);
 
 });

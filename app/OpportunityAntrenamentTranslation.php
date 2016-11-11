@@ -11,7 +11,7 @@ class OpportunityAntrenamentTranslation extends TranslatableModel implements Slu
      * @var string
      */
     public $timestamps = false;
-    protected $table = 'opportunity_antrenament_translation';
+    protected $table = 'opportunity_antrenament_translations';
     protected $fillable = ['annotation1','annotation2','annotation3','name','slug','body','meta_title','meta_description','meta_keyword','language_id'];
     /**
      * @var array
