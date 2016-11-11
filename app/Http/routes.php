@@ -68,6 +68,16 @@ Route::multilingual(function () {
         'as' => 'view_training',
         'uses' => 'TrainingController@show'
     ]);
+
+    Route::get('kids-trainings', [
+        'as' => 'view_kids_trainings',
+        'uses' => 'KidsController@index'
+    ]);
+    Route::get('kids-training/{slug}', [
+        'as' => 'view_kids_training',
+        'uses' => 'KidsController@show'
+    ]);
+
     Route::get('teams/{slug?}', [
         'as' => 'view_team',
         'uses' => 'TeamController@index'
@@ -113,8 +123,6 @@ Route::multilingual(function () {
         'as' => 'life_style_article',
         'uses' => 'LifeStyleController@showSingle'
     ]);
-
-
 
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {
