@@ -23,7 +23,7 @@ return [
                 return sprintf('<a href="/admin/categoriesEvent?id=%s">%s</a>', $row->categoryEvent->id, $row->categoryEvent->name);
             }
         ],*/
-        'image' => column_element('', true, '<img src="(:image)" width="100" />'),
+        'image' => column_element('', true, '<img src="(:image1)" width="100" />'),
 
 /*        'user_id' => [
             'title' => 'Participant',
@@ -113,13 +113,31 @@ return [
                     ->pluck('name', 'id');
             }
         ],
-        'image' => [
+        'image1' => [
             'type' => 'image',
-            'location' => '/',
-//            'sizes' => [
-//                'big'     => '1024x1024',
-//            ]
+            'location' => '/upload/antrenament/(:id)',
+/*            'sizes'    => [
+                'medium'     => '320x216'
+            ],*/
         ],
+        'annotation1'        => form_text() + translatable(),
+        'image2' => [
+            'type' => 'image',
+            'location' => '/upload/antrenament/(:id)',
+/*            'sizes'    => [
+                'medium'     => '320x216'
+            ],*/
+        ],
+        'annotation2'        => form_text() + translatable(),
+        'image3' => [
+            'type' => 'image',
+            'location' => '/upload/antrenament/(:id)',
+            ''
+/*            'sizes'    => [
+                'medium'     => '320x216'
+            ],*/
+        ],
+        'annotation3'   => form_text() + translatable(),
         'body'          => form_ckeditor() + translatable(),
         'offer'         => form_boolean(),
         'opportunities' => form_boolean(),

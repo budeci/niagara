@@ -165,6 +165,7 @@ return [
         Unisharp\Laravelfilemanager\LaravelFilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
+        Folklore\Image\ImageServiceProvider::class,
 
     ],
 
@@ -215,6 +216,7 @@ return [
         'Share'     => Chencha\Share\ShareFacade::class,
         'Image'     => Intervention\Image\Facades\Image::class,
         'Date'      => Jenssegers\Date\Date::class,
+        'Image'     => Folklore\Image\Facades\Image::class,
 
     ],
 
