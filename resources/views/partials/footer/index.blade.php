@@ -30,7 +30,7 @@
                         <li><a href="">Zone de antrenament</a></li>
                         <li><a href="">Aqua Zone</a></li>
                         <li><a href="">Fitness testare</a></li>
-                        <li><a href="/calculator.php">Calculator IMC</a></li>
+                        <li><a href="{{ route('view_calc') }}">Calculator IMC</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Kids Club</a></li>

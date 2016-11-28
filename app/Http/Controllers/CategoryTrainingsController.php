@@ -28,9 +28,14 @@ class CategoryTrainingsController extends Controller
      * @return $this
      */
 
-    public function index()
+    public function indexAdult()
     {
-        $category_trainings = $this->category_trainings->getPublic();
+        $category_trainings = $this->category_trainings->getPublicAdult();
+        return view('training.index', compact('category_trainings'));
+    }
+    public function indexKids()
+    {
+        $category_trainings = $this->category_trainings->getPublicKids();
         return view('training.index', compact('category_trainings'));
     }
 }

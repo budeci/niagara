@@ -13,7 +13,7 @@
                             </div>
                             <div class="fitness_content_t">
                                 <p>În funcție de recomandările făcute în cadrul procesului de testare, te îndemnăm să alegi unul dintre antrenamentele de mai jos</p>
-                                <a href="/fitness_program.php">Alege Fitness Antrenamente</a>
+                                <a href="{{ route('view_trainings') }}">Alege Fitness Antrenamente</a>
                             </div>
                         </div>
                     </div>

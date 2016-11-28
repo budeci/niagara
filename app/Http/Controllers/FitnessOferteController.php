@@ -26,12 +26,12 @@ class FitnessOferteController extends Controller
     public function indexAdult()
     {
         $services = $this->services->getAdultPublic();
-        return view('fitness.index', compact('services'));
+        return view('fitness.index-adult', compact('services'));
     }
     public function indexKids()
     {
         $services = $this->services->getKidsPublic();
-        return view('fitness.index', compact('services'));
+        return view('fitness.index-kids', compact('services'));
     }
 
     /**

@@ -1,7 +1,4 @@
 <?php
- error_reporting(E_ALL);
- ini_set('display_errors', 1);
-
 use App\Repositories\OffertRepository;
 use App\Repositories\LifeStyleRepository;
 /*
@@ -27,6 +24,7 @@ Route::bind('lifestyle',function($slug){
 });*/
 
 use App\Repositories\EventRepository;
+use App\Repositories\TrainingRepository;
 use App\Repositories\PostRepository;
 use App\Repositories\OpportunityAntrenamentRepository;
 
@@ -34,6 +32,9 @@ Route::bind('event', function ($slug) {
     return (new EventRepository)->findBySlug($slug);
 });
 
+Route::bind('training', function ($slug) {
+    return (new TrainingRepository)->findBySlug($slug);
+});
 Route::bind('post', function ($slug) {
     return (new PostRepository)->findBySlug($slug);
 });
@@ -60,6 +61,14 @@ Route::multilingual(function () {
         'as' => 'view_events',
         'uses' => 'CategoryEventsController@index'
     ]);
+    Route::get('calc', [
+        'as' => 'view_calc',
+        'uses' => 'CalcController@calc'
+    ]);
+    Route::get('calc/calories', [
+        'as' => 'view_calories',
+        'uses' => 'CalcController@calories'
+    ]);
     Route::get('event/{event}', [
         'as' => 'view_event',
         'uses' => 'EventController@show'
@@ -67,9 +76,13 @@ Route::multilingual(function () {
 
     Route::get('trainings', [
         'as' => 'view_trainings',
-        'uses' => 'TrainingController@index'
+        'uses' => 'CategoryTrainingsController@indexAdult'
     ]);
-    Route::get('training/{slug}', [
+    Route::get('trainings-kids', [
+        'as' => 'view_trainings_kids',
+        'uses' => 'CategoryTrainingsController@indexKids'
+    ]);
+    Route::get('training/{training}', [
         'as' => 'view_training',
         'uses' => 'TrainingController@show'
     ]);
@@ -100,6 +113,12 @@ Route::multilingual(function () {
         'as' => 'press_show',
         'uses' => 'PressController@show'
     ]);
+
+    Route::get('world', [
+        'as' => 'view_world',
+        'uses' => 'WorldController@index'
+    ]);
+
     Route::get('vacancy', [
         'as' => 'vacancy_show',
         'uses' => 'VacancyController@show'

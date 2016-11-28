@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\TrainingRepository;
+use App\Repositories\CategoryTrainingRepository;
 
 use Illuminate\Http\Request;
 
@@ -11,11 +12,14 @@ use App\Antrenament as Antrenament;
 class TrainingController extends Controller
 {
     protected $trainings;
+    protected $category_trainings;
 
-    public function __construct(TrainingRepository $trainingRepository)
+    public function __construct(TrainingRepository $trainingRepository, CategoryTrainingRepository $categoryTraining)
     {
         $this->trainings = $trainingRepository;
+        $this->category_trainings = $categoryTraining;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -54,9 +58,10 @@ class TrainingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($training)
     {
-        //
+        $trainings_same = $this->trainings->getSameTraining($training->id, $training->category_antrenament_id);
+        return view('training.show', compact('training', 'trainings_same'));
     }
 
     /**

@@ -19,7 +19,6 @@ class HomeController extends Controller
      */
     private $opportunities;
     private $events;
-    private $events_top;
     private $news;
     private $slides;
 

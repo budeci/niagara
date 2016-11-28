@@ -53,6 +53,15 @@ class TrainingRepository extends Repository
            ->get();
     }
 
+    public function getSameTraining($id, $category_id)
+    {
+        return self::getModel()
+            ->active()
+            ->orderBy('id', self::DESC)
+            ->where('id','!=',$id)
+            ->where('category_antrenament_id','=',$category_id)
+            ->get();
+    }
     /**
      * Get post by slug.
      *

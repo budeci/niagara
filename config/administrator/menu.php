@@ -82,7 +82,7 @@ return [
     'Event' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
-            'categoriesEvent' => [
+            'categories-event' => [
                 'icon' => 'fa fa-circle-o'
             ],
             'events' => [
@@ -93,19 +93,19 @@ return [
     'Antrenament' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
-            'categoriesAntrenament' => [
+            'categories-antrenament' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'antrenamentAdult' => [
+            'antrenament-adult' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'opportunityAntrenamentAdult' => [
+            'opportunity-antrenament-adult' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'antrenamentKids' => [
+            'antrenament-kids' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'opportunityAntrenamentKids' => [
+            'opportunity-antrenament-kids' => [
                 'icon' => 'fa fa-circle-o'
             ]
         ]
@@ -114,7 +114,7 @@ return [
     'News' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
-            'categoriesNews' => [
+            'categories-news' => [
                 'icon' => 'fa fa-circle-o'
             ],
             'post' => [
@@ -136,6 +136,17 @@ return [
             ],
         ]
     ],
+    'Calc' => [
+        'icon' => 'fa fa-calculator',
+        'pages' => [
+            'categories-food' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'food' => [
+                'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
     'opportunities' => [
         'icon' => 'fa fa-file-text-o'
     ],
@@ -151,10 +162,10 @@ return [
     'Menu' => [
         'icon' => 'fa fa-bars',
         'pages' => [
-            'createMenu' => [
+            'create-menu' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'menuItem' => [
+            'menu-item' => [
                 'icon' => 'fa fa-circle-o'
             ]
         ]

@@ -115,10 +115,7 @@ return [
         ],
         'image' => [
             'type' => 'image',
-            'location' => '/upload/news',
-            'sizes'    => [
-                'medium' => '320x216'
-            ],
+            'location' => '/upload/news'
         ],
         'body'          => form_ckeditor() + translatable(),
         'active'        => form_boolean(),

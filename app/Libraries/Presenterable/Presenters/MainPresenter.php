@@ -17,6 +17,21 @@ class MainPresenter extends Presenter
     public function renderShortDescription($range = 75)
     {
         return sprintf('%s... </p>', substr($this->model->body, 0, $range));
+    }    
+
+    /**
+     * Render post name.
+     *
+     * @return string
+     */
+    public function renderTitle($upper = false)
+    {
+        $name = $this->model->name;
+
+        if($upper)
+            return strtoupper($name);
+
+        return ucfirst($name);
     }
 
     /**

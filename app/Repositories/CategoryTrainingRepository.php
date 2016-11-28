@@ -40,10 +40,19 @@ class CategoryTrainingRepository extends Repository implements TranslatableRepos
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPublic()
+    public function getPublicAdult()
     {
         return self::getModel()
             ->active()
+            ->whereType(1)
+            ->get();
+    }
+
+    public function getPublicKids()
+    {
+        return self::getModel()
+            ->active()
+            ->whereType(0)
             ->get();
     }
 
