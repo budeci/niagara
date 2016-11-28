@@ -16,11 +16,11 @@
                         <li><a>Niagara Club</a></li>
                         <li><a href="/mission.php">Misiune</a></li>
                         <li><a href="/management.php">Administrația</a></li>
-                        <li><a href="/partners.php">Parteneri</a></li>
+                        <li><a href="{{route('view_partner') }}">Parteneri</a></li>
                         <li><a href="{{route('advertisement_page')}}">Publicitate</a></li>
                         <li><a href="{{route('press_show')}}">Presa</a></li>
                         <li><a href="{{route('vacancy_show')}}">Posturi vacante</a></li>
-                        <li><a href="/contacts.php">Contacte</a></li>
+                        <li><a href="{{route('contact_page')}}">Contacte</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Fitness</a></li>
@@ -69,11 +69,11 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="col-md-12">
                 <div class="footer_social">
                     <ul>
-                        <li> <a href=""> <img class="img-responsive" src="/assets/images/social1.png" alt=""></a></li>
+                        <li><a href=""> <img class="img-responsive" src="/assets/images/social1.png" alt=""></a></li>
                         <li><span class="footer_content_bord"> </span></li>
                         <li><a href=""><img class="img-responsive" src="/assets/images/social2.png" alt=""></a></li>
                         <li><span class="footer_content_bord"> </span></li>
@@ -81,94 +81,98 @@
                             <a href=""><img class="img-responsive" src="/assets/images/social3.png" alt=""></a>
                         </li>
                     </ul>
-                    <p>© Copyright 2016 Niagara. All rights reserved.   </p>
+                    <p>© Copyright 2016 Niagara. All rights reserved. </p>
                 </div>
             </div>
         </div>
-        
+
     </div>
 </footer>
 <!-- </div>
 </div> -->
 <!-- Modal -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
-<div class="modal-dialog modal-lg" role="document">
-<div class="modal-content my_modal">
-    <div class="modal_head">
-        <h3>Заказ клубного тура</h3>
-        <div class="modal_line"></div>
-    </div>
-    <div class="my_content">
-        <div class="row">
-            <div class="col-md-6">
-                <form>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="name">Nume</label>
-                            <input type="text" class="form-control" id="name" name="name">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="phone">Telefon</label>
-                            <input type="text" class="form-control"  id="phone" name="phone">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="club">Клуб Niagara</label>
-                            <select class="form-control">
-                                <option id="club" class="selected"></option>
-                                <option>1</option>
-                            </select>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="checkbox" name="accord" id="accord" value="accord">
-                            <label for="accord">Я согласен на обработку персональных данных</label>
-                        </div>
-                        <div class="col-md-12">
-                            <input type="submit" value="Отправить">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content my_modal">
+            <div class="modal_head">
+                <h3>Заказ клубного тура</h3>
+                <div class="modal_line"></div>
+            </div>
+            <div class="my_content">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="name">Nume</label>
+                                    <input type="text" class="form-control" id="name" name="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="phone">Telefon</label>
+                                    <input type="text" class="form-control" id="phone" name="phone">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="club">Клуб Niagara</label>
+                                    <select class="form-control">
+                                        <option id="club" class="selected"></option>
+                                        <option>1</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="checkbox" name="accord" id="accord" value="accord">
+                                    <label for="accord">Я согласен на обработку персональных данных</label>
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="submit" value="Отправить">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="for_modal_block">
+                            <p>Хотите увидеть, как мир Niagara устроен изнутри? Какие тренажеры стоят в выбранном вами
+                                клубе и как проходят занятия?
+                                <br>
+                                <br>Воспользуйтесь бесплатной услугой «Клубный тур», и вас ждет познавательная экскурсия
+                                по выбранному вами фитнес-клубу.
+                                <br>
+                                <br>Почувствуйте атмосферу Niagara!</p>
                         </div>
                     </div>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <div class="for_modal_block">
-                    <p>Хотите увидеть, как мир Niagara устроен изнутри? Какие тренажеры стоят в выбранном вами клубе и как проходят занятия?
-                        <br>
-                        <br>Воспользуйтесь бесплатной услугой «Клубный тур», и вас ждет познавательная экскурсия по выбранному вами фитнес-клубу.
-                        <br>
-                    <br>Почувствуйте атмосферу Niagara!</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-</div>
 <!--  end Modal -->
 <!-- Modal 2 -->
 <div class="modal fade" id="myModal2" role="dialog">
-<div class="modal-dialog modal-sm modal_write">
-<div class="modal-content">
-    <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Написать Нам</h4>
-    <div class="modal_write_border"></div>
-    <div class="modal-body">
-        
-        <form>
-            <div class="form-group">
-                <label for="name">Nume</label>
-                <input type="text" class="form-control" id="name"  >
+    <div class="modal-dialog modal-sm modal_write">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Написать Нам</h4>
+            <div class="modal_write_border"></div>
+            <div id="error-validation"></div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="name">Nume</label>
+                        <input type="text" class="form-control" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teefon</label>
+                        <input type="text" class="form-control" id="phone" name="phone">
+                    </div>
+                    <input type="hidden" name="form" value="Call Us">
+                    <div class="form-group">
+                        <label for="textarea">Example textarea</label>
+                        <textarea class="form-control" id="textarea" rows="3" name="message"></textarea>
+                    </div>
+                    {{csrf_field()}}
+                    <input class="send-form" type="submit" value="Trimite">
+                </form>
             </div>
-            <div class="form-group">
-            <label for="phone">Telefon</phone>
-            <input type="text" class="form-control" id="phone" >
         </div>
-        <div class="form-group">
-            <label for="textarea">Example textarea</label>
-            <textarea class="form-control" id="textarea" rows="3"></textarea>
-        </div>
-        
-        <input type="submit" value="Trimite" >
-    </form>
+    </div>
 </div>
-</div>
-</div>
-</div>
+
