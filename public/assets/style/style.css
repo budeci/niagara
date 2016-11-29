@@ -1968,6 +1968,38 @@ footer img {
     padding-bottom: 50px;
 }
 
+.contact-page-errors .alert-danger {
+    background-color: transparent;
+    border: none;
+}
+
+.contact-page-errors {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.contact-page-errors li{
+    background-color: #f2dede;
+    border-color: #ebccd1;
+    color: #a94442;
+    padding: 10px;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.contact_form_succes {
+    position:absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+}
+
 .contacts_page h3 {
     font-weight: 600;
     color: #312f3d;
@@ -7913,4 +7945,26 @@ label.error{display:none !important;position:absolute;font:12px/1.1 Arial, sans-
 }
 .dk-select-options, .dk-touch .dk-options {
     max-height: 600px;
+}
+
+.alert {
+    margin-top: 20px;
+}
+
+.alert ul {
+    list-style: none;
+}
+
+.enter-club-form-validation .alert-danger{
+    background-color: transparent;
+    border-color: transparent;
+}
+.enter-club-form-validation .alert{
+   padding: 0;
+}
+
+.enter-club-form-validation li {
+   background-color:#f2dede;
+    padding: 10px 20px;
+    margin-top: 5px;
 }

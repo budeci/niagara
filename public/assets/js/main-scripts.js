@@ -234,6 +234,43 @@ $(document).ready(function() {
   	}
 
   });
+
+  $('.send-form').click(function(event){
+    event.preventDefault();
+    var form = $(this).parents('form').serialize();
+    var response = $(this).parents('form').find('.response');
+    var thisForm = $(this).parents('form');
+    $.ajax({
+      url : '/call-us',
+      method : 'POST',
+      dataType : 'json',
+      data : form,
+      success : function(data){
+        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent Succesful!</li> </ul> </div>');
+      },
+      error: function (data) {
+        var r = jQuery.parseJSON(data.responseText);
+        if(!r.name) {
+          r.name = '';
+        }
+        if(!r.phone) {
+          r.phone = '';
+        }
+        thisForm.append('<div class="alert alert-danger"><ul><li>' +r.name + '</li><li>' + r.phone + '</li></ul></div>');
+        setTimeout(function(){
+          $("div").remove(".alert");
+        } , 4000);
+      }
+    });
+  });
+
+
+
+
+
+
+
+
 });
 
 

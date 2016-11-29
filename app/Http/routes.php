@@ -87,7 +87,6 @@ Route::multilingual(function () {
         'uses' => 'TrainingController@show'
     ]);
 
-
     Route::get('teams/{slug?}', [
         'as' => 'view_team',
         'uses' => 'TeamController@index'
@@ -155,6 +154,31 @@ Route::multilingual(function () {
         'as' => 'beauty_show',
         'uses' => 'BeautyController@show'
     ]);
+
+    Route::get('contacts', [
+            'as' =>'contact_page',
+            'uses' => 'ContactController@index'
+        ]);
+    Route::get('enter-club', [
+        'as' =>'join_member',
+        'uses' => 'ContactController@member'
+    ]);
+    Route::post('send-contact', [
+        'as' =>'send_contact_form',
+        'uses' => 'ContactController@sendForm'
+    ]);
+
+    Route::post('call-us', [
+        'as' =>'send_call_ajax',
+        'uses' => 'ContactController@ajaxForm'
+    ]);
+    Route::post('enter-club-send', [
+        'as' =>'enter_club_send_form',
+        'uses' => 'ContactController@joinClub'
+    ]);
+
+
+
 
 });
 /*Route::group(['prefix' => 'admin', 'middleware' => 'web'], function () {

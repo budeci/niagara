@@ -40,7 +40,7 @@
                 <li><a href="/cartele.php">Club Carduri</a></li>
                 <li><a href="{{route('beauty_show')}}">Spa&Beauty</a></li>
                 <li><a href="{{ route('view_world') }}">Lumea Niagara Club</a></li>
-                <li><a href="/enter_club.php">Devină membru</a></li>
+                <li><a href="{{route('join_member')}}">Devină membru</a></li>
                 <li class="visible-xs"><a href="">Orar</a></li>
                 <li class="visible-xs"><a href="">Hot offer</a></li>
                 <li class="visible-xs"><a href="">Sună-mă</a></li>
