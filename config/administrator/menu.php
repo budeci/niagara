@@ -91,7 +91,7 @@ return [
         ]
     ],
     'Antrenament' => [
-        'icon' => 'fa fa-calendar-o',
+        'icon' => 'fa-futbol-o',
         'pages' => [
             'categories-antrenament' => [
                 'icon' => 'fa fa-circle-o'
@@ -112,7 +112,7 @@ return [
     ],
     
     'News' => [
-        'icon' => 'fa fa-calendar-o',
+        'icon' => 'fa fa-newspaper-o',
         'pages' => [
             'categories-news' => [
                 'icon' => 'fa fa-circle-o'
@@ -123,7 +123,7 @@ return [
         ]
     ],
     'Beauty & Spa' => [
-        'icon' => 'fa fa-calendar-o',
+        'icon' => 'fa fa-diamond',
         'pages' => [
             'beautycategory' => [
                 'icon' => 'fa fa-circle-o'
@@ -162,7 +162,7 @@ return [
     'slides' => [
         'icon' => 'fa fa-file-text-o'
     ],
-    'Menu' => [
+  /*  'Menu' => [
         'icon' => 'fa fa-bars',
         'pages' => [
             'create-menu' => [
@@ -172,7 +172,7 @@ return [
                 'icon' => 'fa fa-circle-o'
             ]
         ]
-    ],
+    ],*/
     'General settings' => [
         'icon' => 'fa fa-gears',
         'pages' => [

@@ -3,7 +3,7 @@
 use Illuminate\Contracts\Auth\Guard;
 return [
     'prefix'          => 'admin',
-    'title'           => 'Admin <b>panel</b>',
+    'title'           => 'Panelul de Administrare',
     'title_mini'      => '<b>AP</b>',
     'auth_identity'   => 'email',
     'auth_credential' => 'password',

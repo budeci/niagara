@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Database\Eloquent\Builder;
 return [
-    'title'  => 'Add slide',
+    'title'  => 'Add home slide',
     'model'  => \App\Slides::class,
 
     /*

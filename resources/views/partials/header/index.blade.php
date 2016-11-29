@@ -13,10 +13,10 @@
                     <li>
                         <button class=" pulsate" style="font-size: 20px;">Hot offer</button>
                     </li>
-                    <li class="hidden-xs ">
+                    {{--<li class="hidden-xs ">
                         <a href="/orar.php">
                         <img class="hidden-xs" src="/assets/images/ic1.png" alt="">Orar</a>
-                    </li>
+                    </li>--}}
                     <li class="hidden-xs">
                         <button  data-target="#myModal2" data-toggle="modal"> Sună-mă</button>
                     </li>

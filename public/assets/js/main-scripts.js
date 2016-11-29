@@ -257,8 +257,10 @@ $(document).ready(function() {
           r.phone = '';
         }
         thisForm.append('<div class="alert alert-danger"><ul><li>' +r.name + '</li><li>' + r.phone + '</li></ul></div>');
+        thisForm.find('input[type=submit]').prop('disabled', true);
         setTimeout(function(){
-          $("div").remove(".alert");
+            $("div").remove(".alert");
+            thisForm.find('input[type=submit]').prop('disabled', false);
         } , 4000);
       }
     });

@@ -1,7 +1,7 @@
 <?php
 use App\Opportunities;
 return [
-    'title'  => 'Add oportunitați',
+    'title'  => 'Add home oportunitați',
     'model'  => Opportunities::class,
 
     /*
