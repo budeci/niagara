@@ -3713,7 +3713,7 @@ ul.wrap_list li.visible {
     z-index: 1000;
     background-color: rgba(54, 53, 52, 0.9);
     padding-top: 10px;
-    min-width: 400px;
+    /* min-width: 400px; */
 }
 .calcul_list{
     white-space: nowrap;

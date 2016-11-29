@@ -144,6 +144,9 @@ return [
             ],
             'food' => [
                 'icon' => 'fa fa-circle-o'
+            ],
+            'result-calories' => [
+                'icon' => 'fa fa-circle-o'
             ]
         ]
     ],

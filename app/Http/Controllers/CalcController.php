@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Repositories\CategoryCalcRepository;
 use App\Repositories\CalcRepository;
+use App\Repositories\ResultCaloriesRepository;
 class CalcController extends Controller
 {
 
@@ -15,15 +16,17 @@ class CalcController extends Controller
      */
     protected $category_food;
     protected $food;
+    protected $result_calories;
 
     /**
      * CategoriesController constructor.
      * @param CategoriesCalc $categoryRepository
      */
-    public function __construct(CategoryCalcRepository $categoryCalc, CalcRepository $food)
+    public function __construct(CategoryCalcRepository $categoryCalc, CalcRepository $food, ResultCaloriesRepository $result_calories)
     {
         $this->category_food = $categoryCalc;
         $this->food = $food;
+        $this->result_calories = $result_calories;
     }
     /**
      * Display a listing of the resource.
@@ -41,7 +44,8 @@ class CalcController extends Controller
     {
         $id = ($request->get('food') != '') ? explode(',',$request->get('food')) : '';
         $food = $this->food->getPublic($id, $paginate = 100);
-        return view('calc.calories', compact('food'));
+        $result_calories = $this->result_calories->getPublic();
+        return view('calc.calories', compact('food','result_calories'));
     }
 
     /**

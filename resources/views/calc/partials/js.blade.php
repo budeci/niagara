@@ -143,13 +143,13 @@
                     resultCalories = Math.round(tableCalories - formCalories);
                     el.calcResultTitle.html(el.calcResultTitle.data('template').replace('[resultCalories]', tableCalories));
                     if (resultCalories >= (formCalories * 0.1 * (-1)) && resultCalories <= (formCalories * 0.1)) {
-                        resultPanel = 1;
+                        resultPanel = 0;
                     } else if (resultCalories <= (formCalories * 0.3) && resultCalories > 0) {
-                        resultPanel = 2;
+                        resultPanel = 1;
                     } else if (resultCalories > (formCalories * 0.3)) {
-                        resultPanel = 3;
+                        resultPanel = 2;
                     } else {
-                        resultPanel = 4;
+                        resultPanel = 3;
                     }
                     el.calcResultVariantCalories.text(formCalories);
                     el.calcResultVariant.removeClass('active').filter(function() {
