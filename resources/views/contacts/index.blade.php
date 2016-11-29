@@ -59,14 +59,9 @@
                                     <label for="e-mail">Электронная почта</label>
                                     <input type="text" id="e-mail" name="email" value="{{old('email')}}">
                                 </div>
-                                <div class="col-md-6 col-sm-6 ">
-                                    <label for="select">Тема сообщения</label>
-                                    <select name="theme">
-                                        <option value="">Selectati Tema</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                    </select>
+                                <div class="col-md-12 col-sm-12 ">
+                                    <label for="e-mail">Тема собшения</label>
+                                    <input type="text" name="theme" value="{{old('theme')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <label for="message">Сообщение</label>

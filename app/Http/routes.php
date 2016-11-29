@@ -159,6 +159,10 @@ Route::multilingual(function () {
             'as' =>'contact_page',
             'uses' => 'ContactController@index'
         ]);
+    Route::get('enter-club', [
+        'as' =>'join_member',
+        'uses' => 'ContactController@member'
+    ]);
     Route::post('send-contact', [
         'as' =>'send_contact_form',
         'uses' => 'ContactController@sendForm'
@@ -166,7 +170,11 @@ Route::multilingual(function () {
 
     Route::post('call-us', [
         'as' =>'send_call_ajax',
-        'uses' => 'ContactController@sendTourForm'
+        'uses' => 'ContactController@ajaxForm'
+    ]);
+    Route::post('enter-club-send', [
+        'as' =>'enter_club_send_form',
+        'uses' => 'ContactController@joinClub'
     ]);
 
 

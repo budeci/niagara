@@ -2,7 +2,7 @@
 
 namespace App\Http\Requests;
 
-class CallUsAjaxRequest extends Request
+class AjaxFormRequest extends Request
 {
     /**
      * @return bool
@@ -22,7 +22,6 @@ class CallUsAjaxRequest extends Request
         return [
             'name'   => 'required|min:3',
             'phone'   => 'required',
-            'message' => 'required',
         ];
     }
 }

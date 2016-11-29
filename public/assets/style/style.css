@@ -7947,7 +7947,24 @@ label.error{display:none !important;position:absolute;font:12px/1.1 Arial, sans-
     max-height: 600px;
 }
 
+.alert {
+    margin-top: 20px;
+}
 
-#myModal2 .modal-content #error-validation ul {
+.alert ul {
     list-style: none;
+}
+
+.enter-club-form-validation .alert-danger{
+    background-color: transparent;
+    border-color: transparent;
+}
+.enter-club-form-validation .alert{
+   padding: 0;
+}
+
+.enter-club-form-validation li {
+   background-color:#f2dede;
+    padding: 10px 20px;
+    margin-top: 5px;
 }

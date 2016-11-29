@@ -101,7 +101,7 @@
             <div class="my_content">
                 <div class="row">
                     <div class="col-md-6">
-                        <form>
+                        <form method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="name">Nume</label>
@@ -113,17 +113,19 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="club">Клуб Niagara</label>
-                                    <select class="form-control">
-                                        <option id="club" class="selected"></option>
-                                        <option>1</option>
+                                    <select class="form-control" id="club" name="club">
+                                        <option value="Club Niagara">Club Niagara</option>
+                                        <option value="Club Fitness">Club Fitness</option>
                                     </select>
                                 </div>
                                 <div class="col-md-12">
-                                    <input type="checkbox" name="accord" id="accord" value="accord">
+                                    <input type="checkbox" name="check" id="accord" value="checked" required>
                                     <label for="accord">Я согласен на обработку персональных данных</label>
                                 </div>
+                                <input type="hidden" name="form" value="Club Tour">
+                                {{csrf_field()}}
                                 <div class="col-md-12">
-                                    <input type="submit" value="Отправить">
+                                    <input class="send-form" type="submit" value="Отправить">
                                 </div>
                             </div>
                         </form>
@@ -152,7 +154,6 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">Написать Нам</h4>
             <div class="modal_write_border"></div>
-            <div id="error-validation"></div>
             <div class="modal-body">
                 <form method="post">
                     <div class="form-group">

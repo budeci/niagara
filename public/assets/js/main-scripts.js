@@ -239,27 +239,14 @@ $(document).ready(function() {
     event.preventDefault();
     var form = $(this).parents('form').serialize();
     var response = $(this).parents('form').find('.response');
-    var clicked = $(this);
+    var thisForm = $(this).parents('form');
     $.ajax({
       url : '/call-us',
       method : 'POST',
       dataType : 'json',
       data : form,
       success : function(data){
-        if(data.error){
-          response.addClass('error');
-          setTimeout(function(){
-            response.removeClass('error');
-          } , 3000);
-          response.text(data.error);
-        }else{
-          response.addClass('success').removeClass('error').removeClass('hide');
-          setTimeout(function(){
-            response.removeClass('success');
-          } , 3000);
-          response.text(data.success);
-          clicked.parents('form')[0].reset();
-        }
+        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent Succesful!</li> </ul> </div>');
       },
       error: function (data) {
         var r = jQuery.parseJSON(data.responseText);
@@ -269,10 +256,7 @@ $(document).ready(function() {
         if(!r.phone) {
           r.phone = '';
         }
-        if(!r.message) {
-          r.message = '';
-        }
-        $('#error-validation').append('<div class="alert alert-danger"><ul><li>' +r.name + '</li><li>' + r.phone + '</li><li>' + r.message + '</li></ul></div>');
+        thisForm.append('<div class="alert alert-danger"><ul><li>' +r.name + '</li><li>' + r.phone + '</li></ul></div>');
         setTimeout(function(){
           $("div").remove(".alert");
         } , 4000);
