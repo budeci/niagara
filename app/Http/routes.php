@@ -52,7 +52,6 @@ Route::multilingual(function () {
         'as' => 'show_page',
         'uses' => 'PagesController@show'
     ]);
-
 /*  Route::get('events', [
         'as' => 'events',
         'uses' => 'EventController@index'
@@ -77,7 +76,10 @@ Route::multilingual(function () {
         'as' => 'view_event',
         'uses' => 'EventController@show'
     ]);
-
+    Route::get('faq', [
+        'as' => 'view_faq',
+        'uses' => 'FaqController@index'
+    ]);
     Route::get('trainings', [
         'as' => 'view_trainings',
         'uses' => 'CategoryTrainingsController@indexAdult'
@@ -111,6 +113,10 @@ Route::multilingual(function () {
     Route::get('advertisement', [
         'as' => 'advertisement_page',
         'uses' => 'PagesController@advertisement'
+    ]);
+    Route::get('mission', [
+        'as' => 'mission_page',
+        'uses' => 'PagesController@mission'
     ]);
     Route::get('presa', [
         'as' => 'press_show',

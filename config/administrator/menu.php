@@ -69,6 +69,19 @@ return [
     'lifestyle' => [
         'icon' => 'fa fa-file-text-o'
     ],
+    'Pages' => [
+        'icon' => 'fa fa-file-text-o',
+        'pages'=> [
+            'mission' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'faq' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+        ],
+
+    ],
+
 
     'Presa' => [
       'icon' => 'fa fa-file-text-o',

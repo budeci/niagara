@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\AdvertisementRepository;
 use Illuminate\Http\Request;
+use App\Mission;
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -42,6 +43,9 @@ class PagesController extends Controller
         return view('pages.advertisement',['advertisement'=>$this->advertisement->getPublic()]);
     }
 
+    public function mission() {
+        return view('pages.mission',['item'=>Mission::first()]);
+    }
     /**
      * Show the form for creating a new resource.
      *

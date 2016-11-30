@@ -1,7 +1,7 @@
 <!-- </div> -->
 <section class="faq">
     <div class="container">
-        <a href="/faq.php">Часто задаваемые вопросы</a>
+        <a href="{{route('view_faq')}}">Часто задаваемые вопросы</a>
     </div>
 </section>
 <footer>
@@ -14,7 +14,7 @@
                     <div class="bar_footer"></div>
                     <ul class="col-md-2 col-sm-4 ">
                         <li><a>Niagara Club</a></li>
-                        <li><a href="/mission.php">Misiune</a></li>
+                        <li><a href="{{route('mission_page')}}">Misiune</a></li>
                         <li><a href="/management.php">Administrația</a></li>
                         <li><a href="{{route('view_partner') }}">Parteneri</a></li>
                         <li><a href="{{route('advertisement_page')}}">Publicitate</a></li>
@@ -48,7 +48,7 @@
                         <li><a href="/corporativ.php">Carduri Corporative</a></li>
                         <li><a href="">Program de Loialitate</a></li>
                         <li><a href="/partners_members.php">Privilegii de la Parteneri</a></li>
-                        <li><a href="/terms&conditions.php">Reguli și norme de conduită</a></li>
+                        <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">Reguli și norme de conduită</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Beauty SPA</a></li>
