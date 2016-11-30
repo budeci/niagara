@@ -108,6 +108,10 @@ Route::multilingual(function () {
         'as' => 'advertisement_page',
         'uses' => 'PagesController@advertisement'
     ]);
+    Route::get('mission', [
+        'as' => 'mission_page',
+        'uses' => 'PagesController@mission'
+    ]);
     Route::get('presa', [
         'as' => 'press_show',
         'uses' => 'PressController@show'

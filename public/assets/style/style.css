@@ -2271,7 +2271,7 @@ footer img {
     background: #f6f6f6;
 }
 
-.mission h4 {
+.mission h3 {
     font-weight: 600;
     color: #312f3d;
     text-align: center;
@@ -4587,7 +4587,7 @@ text-transform: uppercase;
     .mission {
         padding-bottom: 80px;
     }
-    .mission h4 {
+    .mission h3 {
         font-size: 24px;
     }
     .mission p {
@@ -5362,7 +5362,7 @@ text-transform: uppercase;
     .mission {
         padding-bottom: 80px;
     }
-    .mission h4 {
+    .mission h3 {
         font-size: 24px;
     }
     .mission p {
@@ -6187,7 +6187,7 @@ text-transform: uppercase;
     .mission {
         padding-bottom: 80px;
     }
-    .mission h4 {
+    .mission h3 {
         font-size: 24px;
     }
     .mission p {
@@ -7179,7 +7179,7 @@ text-transform: uppercase;
     .mission {
         padding-bottom: 20px;
     }
-    .mission h4 {
+    .mission h3 {
         font-size: 18px;
     }
     .mission p {

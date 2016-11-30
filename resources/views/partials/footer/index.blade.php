@@ -14,7 +14,7 @@
                     <div class="bar_footer"></div>
                     <ul class="col-md-2 col-sm-4 ">
                         <li><a>Niagara Club</a></li>
-                        <li><a href="/mission.php">Misiune</a></li>
+                        <li><a href="{{route('mission_page')}}">Misiune</a></li>
                         <li><a href="/management.php">Administrația</a></li>
                         <li><a href="{{route('view_partner') }}">Parteneri</a></li>
                         <li><a href="{{route('advertisement_page')}}">Publicitate</a></li>
