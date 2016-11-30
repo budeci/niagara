@@ -39,10 +39,6 @@
                                         <option value="">Card2</option>
                                     </select>
                                 </div>
-                                <div class="col-md-12 col-sm-12">
-                                    <label for="message">Сообщение</label>
-                                    <textarea id="message" name="message">{{old('message')}}</textarea>
-                                </div>
                                 <div class="col-md-12 col-sm-12  contacts_for_checkbox ">
                                     <input type="checkbox" id="check" name="check" >
                                     <label for="check">Я согласен на обработку персональных данных </label>
