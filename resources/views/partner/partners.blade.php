@@ -8,7 +8,9 @@
                 <div class="for_partners_members">
                     <div class="row">
                         <div class="col-md-2">
-                            <img src="{{$item->image}}" alt="">
+                            <div class="partner_image_vertical">
+                                <img src="{{$item->image}}" alt="">
+                            </div>
                         </div>
                         <div class="col-md-10">
                             <h3>{!! $item->name !!}</h3>
@@ -37,7 +39,7 @@
                 @endforeach
                 <div class="col-md-12">
                     <div class="for_partners_btn">
-                        <a href="/enter_club.php">Стать партнёром</a>
+                        <a href="{{route('join_member')}}">Стать партнёром</a>
                     </div>
                 </div>
             </div>

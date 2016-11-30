@@ -3194,6 +3194,16 @@ footer img {
 
 /*--- end  Page News ---*/
 
+.partner_image_vertical{
+    min-height:150px;
+    position: relative;
+}
+.partner_image_vertical img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
 
 /*---  Page News_Article ---*/
 

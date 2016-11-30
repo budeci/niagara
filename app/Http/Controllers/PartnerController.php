@@ -31,7 +31,7 @@ class PartnerController extends Controller
     public function partner()
     {
         $general = $this->partners->getByGeneral(1);
-        $notgeneral = $this->partners->getByGeneral(0);
+        $notgeneral = $this->partners->getByGeneral(null);
         return view('partner.partners', compact('general','notgeneral'));
     }
 
