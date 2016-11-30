@@ -1,7 +1,7 @@
 <!-- </div> -->
 <section class="faq">
     <div class="container">
-        <a href="/faq.php">Часто задаваемые вопросы</a>
+        <a href="{{route('view_faq')}}">Часто задаваемые вопросы</a>
     </div>
 </section>
 <footer>
@@ -48,7 +48,7 @@
                         <li><a href="/corporativ.php">Carduri Corporative</a></li>
                         <li><a href="">Program de Loialitate</a></li>
                         <li><a href="/partners_members.php">Privilegii de la Parteneri</a></li>
-                        <li><a href="/terms&conditions.php">Reguli și norme de conduită</a></li>
+                        <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">Reguli și norme de conduită</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Beauty SPA</a></li>

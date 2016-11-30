@@ -72,7 +72,10 @@ Route::multilingual(function () {
         'as' => 'view_event',
         'uses' => 'EventController@show'
     ]);
-
+    Route::get('faq', [
+        'as' => 'view_faq',
+        'uses' => 'FaqController@index'
+    ]);
     Route::get('trainings', [
         'as' => 'view_trainings',
         'uses' => 'CategoryTrainingsController@indexAdult'
