@@ -52,7 +52,6 @@ Route::multilingual(function () {
         'as' => 'show_page',
         'uses' => 'PagesController@show'
     ]);
-
 /*  Route::get('events', [
         'as' => 'events',
         'uses' => 'EventController@index'
