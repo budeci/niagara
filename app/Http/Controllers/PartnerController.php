@@ -28,6 +28,13 @@ class PartnerController extends Controller
         return view('partner.index', compact('partners'));
     }
 
+    public function partner()
+    {
+        $general = $this->partners->getByGeneral(1);
+        $notgeneral = $this->partners->getByGeneral(0);
+        return view('partner.partners', compact('general','notgeneral'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

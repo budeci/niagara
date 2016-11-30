@@ -109,5 +109,6 @@ return [
         ],
         'body'   => form_ckeditor() + translatable(),
         'active' => form_boolean(),
+        'general' => form_boolean(),
     ]
 ];

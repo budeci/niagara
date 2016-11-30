@@ -97,7 +97,10 @@ Route::multilingual(function () {
         'as' => 'view_partner',
         'uses' => 'PartnerController@index'
     ]);
-
+    Route::get('all-partners', [
+        'as' => 'view_all_partners',
+        'uses' => 'PartnerController@partner'
+    ]);
     Route::get('news/{slug?}', [
         'as' => 'view_news',
         'uses' => 'CategoryNewsController@index'

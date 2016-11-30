@@ -36,6 +36,14 @@ class PartnerRepository extends Repository
             ->get();
     }
 
+    public function getByGeneral($general)
+    {
+        return self::getModel()
+            ->active()
+            ->where('general', $general)
+            ->get();
+    }
+
     /**
      * Get popular public posts.
      *

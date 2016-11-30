@@ -47,7 +47,7 @@
                         <li><a href="{{route('show_oferts')}}">Alege Card</a></li>
                         <li><a href="/corporativ.php">Carduri Corporative</a></li>
                         <li><a href="">Program de Loialitate</a></li>
-                        <li><a href="/partners_members.php">Privilegii de la Parteneri</a></li>
+                        <li><a href="{{route('view_all_partners')}}">Privilegii de la Parteneri</a></li>
                         <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">Reguli și norme de conduită</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">

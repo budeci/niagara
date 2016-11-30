@@ -50,25 +50,7 @@ return [
             ]
         ]
     ]*/
-    'pages' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
 
-    'advertisement' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
-
-    'vacancy' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
-
-    'offert' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
-
-    'lifestyle' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
     'Pages' => [
         'icon' => 'fa fa-file-text-o',
         'pages'=> [
@@ -77,6 +59,37 @@ return [
             ],
             'faq' => [
                 'icon' => 'fa fa-circle-o'
+            ],
+            'pages' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+
+            'advertisement' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+
+            'vacancy' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+
+            'offert' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+
+            'lifestyle' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+            'opportunities' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+            'team' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+            'partner' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+            'slides' => [
+                'icon' => 'fa fa-file-text-o'
             ],
         ],
 
@@ -163,18 +176,7 @@ return [
             ]
         ]
     ],
-    'opportunities' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
-    'team' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
-    'partner' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
-    'slides' => [
-        'icon' => 'fa fa-file-text-o'
-    ],
+
   /*  'Menu' => [
         'icon' => 'fa fa-bars',
         'pages' => [
