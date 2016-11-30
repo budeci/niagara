@@ -172,6 +172,10 @@ Route::multilingual(function () {
             'as' =>'contact_page',
             'uses' => 'ContactController@index'
         ]);
+    Route::get('call-back', [
+        'as' =>'call_page',
+        'uses' => 'ContactController@callBack'
+    ]);
     Route::get('enter-club', [
         'as' =>'join_member',
         'uses' => 'ContactController@member'

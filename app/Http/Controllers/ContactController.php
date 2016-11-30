@@ -20,6 +20,11 @@ class ContactController extends Controller
         return view('contacts.member');
     }
 
+    public function callBack()
+    {
+        return view('contacts.call');
+    }
+
 
     public function sendForm(ContactFormRequest $request)
     {
