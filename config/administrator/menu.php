@@ -177,6 +177,21 @@ return [
         ]
     ],
 
+    'Carduri' => [
+        'icon' => 'fa fa-calendar-o',
+        'pages' => [
+            'categories-membership' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'membership' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'privilege' => [
+                'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
+
   /*  'Menu' => [
         'icon' => 'fa fa-bars',
         'pages' => [

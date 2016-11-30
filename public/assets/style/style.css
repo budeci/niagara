@@ -373,7 +373,6 @@ label {
 .for_new_block strong {
     font-weight: 700;
     color: #fff;
-    text-transform: capitalize;
 }
 
 .for_new_block h3 {
@@ -1045,9 +1044,9 @@ footer img {
     overflow: hidden;
 }
 
-/* .fitnes_block p {
+.fitnes_block p {
     height: 200px;
-} */
+}
 
 .fitnes_block a,
 .fitnes_ofert a {
@@ -1191,24 +1190,12 @@ footer img {
     margin: 0;
 }
 
-.parteneriat li {
-    list-style: none;
-    display: inline-block;
-}
-
-.parteneriat li:last-child {
-    margin-right: 0;
-}
-
-.parteneriat img {
-    max-width: 220px;
-    border-radius: 5px;
-}
 
 .parteneriat h5 {
     font-weight: 400;
     font-size: 16px;
     color: #514f5b;
+    margin-bottom: 40px;
 }
 
 .parteneriat a {
@@ -1228,6 +1215,19 @@ footer img {
     text-decoration: none;
 }
 
+.parteneriat button{
+    border: none;
+    padding: 10px;
+    width: 100%;
+    min-height: 125px;
+    display: block;
+    border-radius: 5px;
+     background: rgba(0,0,0,0.2);
+     margin-top: 40px;
+}
+.parteneriat button:hover{
+    background-color: rgba(253,110,1,0.8);
+}
 .cartele {
     margin-top: -85px;
     background-color: #96a2b0;
@@ -1577,46 +1577,19 @@ footer img {
     background: #f6f6f6;
 }
 
-.advertising h3 {
-    font-size: 34px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    font-weight: 600;
-    color: #312f3d;
-}
-
-.advertising ul {
-    margin:0;
-    padding:0;
-    list-style: none;
-}
-
-.advertising li {
-    list-style: none;
-    float: left;
-    margin: 0 15px;
-    font-weight: 400;
-    font-size: 14px;
-    color: #312f3d;
-    overflow: hidden;
-    width:31%;
-}
-
-.advertising li:before {
-    content: '•';
-    font-weight: 400;
-    font-size: 25px;
-    color: #f07626;
-}
-
-/*.advertising p {
+.advertising p {
     font-weight: 400;
     font-size: 14px;
     color: #312f3d;
     padding-left: 20px;
     overflow: hidden;
-    max-width:400px;
-}*/
+}
+
+.advertising span {
+    font-weight: 400;
+    float: left;
+    color: #f07626;
+}
 
 .advertising_last h3 {
     font-weight: 600;
@@ -1769,10 +1742,6 @@ footer img {
     padding-bottom: 25px;
 }
 
-.for_jobs p {
-    margin: 0;
-}
-
 .for_jobs a {
     display: block;
     font-weight: 400;
@@ -1790,7 +1759,7 @@ footer img {
     font-weight: 400;
     font-size: 14px;
     color: #908e98;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 
 .for_jobs_line {
@@ -1966,38 +1935,6 @@ footer img {
 .contacts_page {
     background: #f6f6f6;
     padding-bottom: 50px;
-}
-
-.contact-page-errors .alert-danger {
-    background-color: transparent;
-    border: none;
-}
-
-.contact-page-errors {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-}
-
-.contact-page-errors li{
-    background-color: #f2dede;
-    border-color: #ebccd1;
-    color: #a94442;
-    padding: 10px;
-    list-style: none;
-    margin-bottom: 5px;
-}
-
-.contact_form_succes {
-    position:absolute;
-    top: 0;
-    left:0;
-    right: 0;
-    width: 100%;
-    text-align: center;
 }
 
 .contacts_page h3 {
@@ -3183,8 +3120,10 @@ footer img {
     padding-bottom: 50px;
 }
 
+
 .for_news_page_tab li {
     display: inline-block;
+
     margin-bottom: 70px;
 }
 
@@ -3196,17 +3135,18 @@ footer img {
     text-decoration: none;
     padding: 15px;
 }
+
 .for_news_page_tab li.active,
 .for_news_page_tab li.active a{
     background-color: #f07626;
     border-radius: 5px;
     color: #fff;
-
 }
-
-.for_new_head {
+.news_tab_content {
+    padding-bottom: 80px;
+}
+.for_new_head{
     position: relative;
-
 }
 .for_new_head select {
     position: absolute;
@@ -3226,10 +3166,6 @@ footer img {
     outline: none;
 }
 
-.news_tab_content {
-    padding-bottom: 80px;
-}
-
 .news_tab_content span {
     display: block;
     font-weight: 300;
@@ -3237,7 +3173,6 @@ footer img {
     color: #757575;
     margin-top: 24px;
     text-align: right;
-    text-transform: capitalize;
 }
 
 .news_tab_content a {
@@ -3274,7 +3209,6 @@ footer img {
     color: #757575;
     text-align: right;
     margin-top: 20px;
-    text-transform: capitalize;
 }
 
 .news_article_page h3 {
@@ -3295,18 +3229,14 @@ footer img {
 }
 
 .for_news_print {
-    text-align: right;
-}
-.for_news_print a {
     font-weight: 300;
     font-size: 16px;
-    line-height: 1px;
     color: #f07626;
+    text-align: right;
 }
 
 .for_news_print img {
     margin-right: 15px;
-    vertical-align: middle;
 }
 
 
@@ -3419,10 +3349,10 @@ footer img {
 
 /*--- Page events_article---*/
 
-/* .events_article_page {
+.events_article_page {
     background: url('../images/events_article.jpg') no-repeat center center;
     background-size: cover;
-} */
+}
 
 .events_article_page h3 {
     font-weight: 700;
@@ -3644,6 +3574,7 @@ footer img {
     position: relative;
     vertical-align: top;
 }
+}
 
 ul.products_list_ .citrus_list {
     display: block;
@@ -3766,6 +3697,7 @@ ul.wrap_list li.visible {
     margin-right: 10px;
     float: right;
 }
+
 
 /*.calcul_description .item li :before {
     content: '';
@@ -4177,6 +4109,108 @@ text-transform: uppercase;
 }
 
 
+
+/* The Modal (background) */
+/* .modals {
+    display: none; Hidden by default
+    position: fixed; Stay in place
+    z-index: 1; Sit on top
+    Location of the box
+    left: 0;
+    top: 0;
+    width: 100%; Full width
+    height: 100%; Full height
+    overflow: auto; Enable scroll if needed
+    background-color: rgb(0,0,0); Fallback color
+    background-color: rgba(0,0,0,0.9); Black w/ opacity
+} */
+
+/* Modal Content */
+.modals-contents {
+    background-color: #fefefe;
+    margin: auto;
+    border: 1px solid #888;
+    width: 70%;
+}
+
+.closes {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 20px;
+}
+
+.closes:hover,
+.closes:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.head_modal{
+    background: url('../images/modal_cartele/cartele_bg.jpg')no-repeat center center;
+    background-size: cover;
+    padding: 45px;
+    text-align: center;
+}
+.head_modal_block{
+    border-style: dashed;
+    border-width: 2px;
+    border-color: #ada8b7;
+    margin: 0 75px;
+    padding: 20px 0 45px 0;
+}
+.head_modal_block h3{
+    font-weight: 400;
+    font-size: 54px;
+    color: #fff;
+    text-transform: uppercase;
+}
+.head_modal h4{
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    padding: 30px 0;
+}
+.head_modal a{
+    padding: 15px 70px;
+    background-color: #ef7626;
+    border-radius:5px;
+    border: 1px solid #985d57;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+}
+.body-modal-content{
+    padding: 40px 75px;
+}
+.body-modal-content p{
+    font-weight: 400;
+    font-size: 15px;
+    color: #7b7e84;
+}
+.modal_content_block{
+    margin-top: 45px;
+    min-height: 250px;
+    overflow: hidden;
+}
+.modal_content_block img{
+    margin: 0 auto;
+    display: block;
+}
+.modal_content_block h4{
+font-weight: 600;
+font-size: 17px;
+color: #231f20;
+text-align: center;
+padding: 25px 0;
+}
+.modal_content_block p{
+    font-weight: 300;
+    font-size: 15px;
+    color: #231f20;
+}
+
 /*--- for responsive ---*/
 
 @media screen and (min-width: 1340px) {
@@ -4191,15 +4225,6 @@ text-transform: uppercase;
     .corporative_clients_img img {
         width: 100px;
         height: 100px;
-    }
-    .advertising li {
-        width:31%;
-        height:150px;
-    }
-    .advertising li:before {
-        position: absolute;
-        margin-top: -7px;
-        margin-left: -20px;
     }
     .menu a {
         padding: 0 26px;
@@ -4316,6 +4341,9 @@ text-transform: uppercase;
     }
     .advertising_last img {
         padding-bottom: 50px;
+    }
+    .advertisting_block {
+        padding-bottom: 100px;
     }
     .advertising span {
         font-size: 24px;
@@ -4736,11 +4764,7 @@ text-transform: uppercase;
         font-size: 24px;
         padding-top: 20px;
     }
-    .parteneriat li {
-        margin-top: 30px;
-        padding-bottom: 40px;
-        margin-right: 48px;
-    }
+ 
     .cartele_block {
         padding: 150px 80px;
     }
@@ -4938,14 +4962,6 @@ text-transform: uppercase;
         font-size: 14px;
         padding: 10px;
     }
-
-    .beauty_btn.filter_active {
-       background: #f07626;
-        color: #fff;
-
-    }
-
-
     .style_for_img span {
         float: right;
         margin-top: 20px;
@@ -4959,15 +4975,6 @@ text-transform: uppercase;
     }
     .head_block button {
         padding: 20px 8px;
-    }
-    .advertising li {
-        width:31%;
-        height:150px;
-    }
-    .advertising li:before {
-        position: absolute;
-        margin-top: -7px;
-        margin-left: -20px;
     }
     .head_block button:hover {
         background-color: #05376c;
@@ -5089,6 +5096,9 @@ text-transform: uppercase;
     }
     .advertising_last img {
         padding-bottom: 50px;
+    }
+    .advertisting_block {
+        padding-bottom: 100px;
     }
     .advertising span {
         font-size: 24px;
@@ -5511,11 +5521,7 @@ text-transform: uppercase;
         font-size: 24px;
         padding-top: 20px;
     }
-    .parteneriat li {
-        margin-top: 30px;
-        padding-bottom: 40px;
-        margin-right: 20px;
-    }
+ 
     .cartele_block {
         padding: 140px 80px;
     }
@@ -5739,15 +5745,6 @@ text-transform: uppercase;
         margin-top: 20px;
         font-size: 12px;
     }
-    .advertising li {
-        width:31%;
-        height:150px;
-    }
-    .advertising li:before {
-        position: absolute;
-        margin-top: -7px;
-        margin-left: -20px;
-    }
     .head_block h3 {
         font-size: 22px;
         padding-top: 17px;
@@ -5782,15 +5779,6 @@ text-transform: uppercase;
     /*-- For header---*/
     header {
         height: 120px;
-    }
-    .advertising li {
-        width:48%;
-        height:100px;
-    }
-    .advertising li:before {
-        position: absolute;
-        margin-top: -7px;
-        margin-left: -15px;
     }
     .head_block button {
         padding: 20px 8px;
@@ -5911,7 +5899,9 @@ text-transform: uppercase;
     .advertising_last img {
         padding-bottom: 50px;
     }
-
+    .advertisting_block {
+        padding-bottom: 10px;
+    }
     .advertising span {
         font-size: 24px;
     }
@@ -6334,11 +6324,7 @@ text-transform: uppercase;
         font-size: 24px;
         padding-top: 20px;
     }
-    .parteneriat li {
-        margin-top: 30px;
-        padding-bottom: 40px;
-        margin-right: 20px;
-    }
+
     .cartele_block {
         padding: 50px 35px;
     }
@@ -6759,16 +6745,6 @@ text-transform: uppercase;
     .head_block {
         padding-top: 10px;
     }
-
-    .advertising li {
-        width:100%;
-        height:100px;
-    }
-    .advertising li:before {
-        position: absolute;
-        margin-top: -7px;
-        margin-left: -15px;
-    }
     .corporative_contacts_contain {
         margin: 20px;
         padding: 30px;
@@ -6891,7 +6867,9 @@ text-transform: uppercase;
     .advertising_last img {
         padding-bottom: 20px;
     }
-
+    .advertisting_block {
+        padding-bottom: 20px;
+    }
     .advertising span {
         font-size: 24px;
     }
@@ -7340,11 +7318,7 @@ text-transform: uppercase;
         font-size: 18px;
         padding-top: 20px;
     }
-    .parteneriat li {
-        margin-top: 15px;
-        padding-bottom: 15px;
-        margin-right: 20px;
-    }
+
     .cartele_block {
         margin-top: 15px;
         padding: 20px 20px;
@@ -7809,6 +7783,7 @@ text-transform: uppercase;
         top: 130px;
     }
 }
+
 .calories-calc-title{margin:0 0 30px;font-size:13px;}
 .calories-calc-title H3{margin:0 0 4px 0;}
 .calories-calc-title SUP.star{font-size:20px;color:#f07626;line-height:1;top:-2px;}
@@ -7967,4 +7942,13 @@ label.error{display:none !important;position:absolute;font:12px/1.1 Arial, sans-
    background-color:#f2dede;
     padding: 10px 20px;
     margin-top: 5px;
+}
+.modals-contents{
+    position: relative;
+}
+.card-modal .modal-header{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
 }
