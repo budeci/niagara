@@ -150,6 +150,20 @@ return [
             ]
         ]
     ],
+    'Carduri' => [
+        'icon' => 'fa fa-calendar-o',
+        'pages' => [
+            'categories-membership' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'membership' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'privilege' => [
+                'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
     'opportunities' => [
         'icon' => 'fa fa-file-text-o'
     ],

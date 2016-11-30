@@ -61,6 +61,10 @@ Route::multilingual(function () {
         'as' => 'view_events',
         'uses' => 'CategoryEventsController@index'
     ]);
+    Route::get('membership', [
+        'as' => 'view_membership',
+        'uses' => 'MembershipController@index'
+    ]);
     Route::get('calc', [
         'as' => 'view_calc',
         'uses' => 'CalcController@calc'

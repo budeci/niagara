@@ -127,5 +127,5 @@
 @section('js')
     {!!Html::script('/assets/plugins/jquery-validation/dist/jquery.validate.min.js')!!}
     {!!Html::script('/assets/plugins/dropkick/build/js/dropkick.min.js')!!}
-    @include('calc.partials.js')
+    @include('calc.partials.js-calories')
 @endsection

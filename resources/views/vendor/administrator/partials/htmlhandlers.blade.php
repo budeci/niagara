@@ -38,7 +38,7 @@ $(function()
             radioClass: 'iradio_minimal-purple',
             increaseArea: '20%' // optional
         });
-        $('input[name="1[slug]"]').parents('tr').hide();
+        $('input[name="1[slug]"], input[name="slug"]').parents('tr').hide();
     });
 });
 </script>

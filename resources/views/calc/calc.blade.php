@@ -41,5 +41,5 @@
 @endsection
 
 @section('js')
-    @include('calc.partials.js')
+    @include('calc.partials.js-calc')
 @endsection

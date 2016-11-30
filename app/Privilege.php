@@ -8,32 +8,32 @@ use App\Traits\ActivateableTrait;
 use App\Traits\HasImages;
 use Request;
 use File;
-class Membership extends Repository
+class Privilege extends Repository
 {
     use HasTranslations,Presenterable, HasImages ,ActivateableTrait;
 
     /**
      * @var MenuTranslations
      */
-    public $translationModel = MembershipTranslation::class;
+    public $translationModel = PrivilegeTranslation::class;
 
     protected $presenter = MainPresenter::class;
 
     /**
      * @var string
      */
-    protected $table = 'membership';
+    protected $table = 'privilege';
 
     /**
      * @var array
      */
 
-    protected $fillable = ['active','ico','category_membership_id'];
+    protected $fillable = ['active','image'];
 
     /**
      * @var array
      */
-    public $translatedAttributes = ['name','body'];
+    public $translatedAttributes = ['name','body','privilege_id','language_id'];
     
     public function getImageAttribute($value)
     {
@@ -41,10 +41,6 @@ class Membership extends Repository
       if (!empty($value)) {
         return str_replace('\\', '/', $value);
       }
-    }
-    public function categoryMembership()
-    {
-        return $this->belongsTo(categoryMembership::class);
     }
 
     public function delete(){
