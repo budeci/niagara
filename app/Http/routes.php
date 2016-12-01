@@ -163,7 +163,7 @@ Route::multilingual(function () {
         'as' => 'view_fitness',
         'uses' => 'FitnessOferteController@show'
     ]);
-    Route::get('beauty-spa/', [
+    Route::get('beauty-spa', [
         'as' => 'beauty_show',
         'uses' => 'BeautyController@show'
     ]);

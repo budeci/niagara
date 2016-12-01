@@ -54,7 +54,7 @@
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Beauty SPA</a></li>
-                        <li><a href="/bonus_card.php">Salon de Frumusețe</a></li>
+                        <li><a href="{{route('beauty_show')}}">Salon de Frumusețe</a></li>
                         <li><a href="">Cosmetologia Feței</a></li>
                         <li><a href="">Cosmetologia Corpului</a></li>
                         <li><a href="">Cosmetologie cu Laser</a></li>

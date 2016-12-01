@@ -86,7 +86,7 @@ return [
         'link' => form_text(),
         'image' => [
             'type' => 'image',
-            'location' => '/',
+            'location' => '/upload/slides',
 //            'sizes' => [
 //                'big'     => '1024x1024',
 //            ]
