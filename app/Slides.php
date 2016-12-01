@@ -15,7 +15,7 @@ class Slides extends Repository
      * @var array
      */
 
-    protected $fillable = ['name','active','image','link'];
+    protected $fillable = ['name','active','image','type','link'];
     public $imgPath  = 'upload/slides/';
 
     public function getImageAttribute($value)

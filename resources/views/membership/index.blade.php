@@ -53,7 +53,7 @@
                 </div>
             @endforeach
         </div>
-        <a href="">Заказать обратный звонок</a>
+        <a href="" data-target="#myModal2" data-toggle="modal">Заказать обратный звонок</a>
     </div>
     </div>
 </section>
@@ -100,11 +100,9 @@
                 <div class="cartele_last_block">
                     <h3>Частые вопросы</h3>
                     <ul>
-                        <li>Какова температура воды и в воздуха в зоне детского бассейна?</li>
-                        <li>Почему ребёнок не может ходить со мной в клуб после 21.00?</li>
-                        <li>Как записаться на фитнес-тестирование и на инструктаж, входящие в клубную карту?</li>
-                        <li>Сколько стоит карта? Какова стоимость услуг?</li>
-                        <li>Где можно посмотреть расписание групповых программ?</li>
+                        @foreach($faq as $item)
+                            <li><a href="{{route('view_faq')}}#tab{{$item->id}}">{{$item->name}}</a></li>
+                        @endforeach
                     </ul>
                     <a href="">Все вопросы</a>
                 </div>
@@ -135,7 +133,7 @@
                         <h3>{{$category->name}}</h3>
                     </div>
                     <h4>{{$category->available}}</h4>
-                    <a href="">Comanda apel</a>
+                    <a href="" data-target="#myModal2" data-toggle="modal">Comanda apel</a>
                 </div>
                 <div class="body-modal-content">
                     {!!$category->description!!}

@@ -15,7 +15,7 @@
                     <ul class="col-md-2 col-sm-4 ">
                         <li><a>Niagara Club</a></li>
                         <li><a href="{{route('mission_page')}}">Misiune</a></li>
-                        <li><a href="/management.php">Administrația</a></li>
+                        <li><a href="{{route('view_team')}}">Administrația</a></li>
                         <li><a href="{{route('view_partner') }}">Parteneri</a></li>
                         <li><a href="{{route('advertisement_page')}}">Publicitate</a></li>
                         <li><a href="{{route('press_show')}}">Presa</a></li>
@@ -24,8 +24,8 @@
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Fitness</a></li>
-                        <li><a href="/fitness_program.php">Antrenamente Fitness</a></li>
-                        <li><a href="/fitness_program.php">Alege Program</a></li>
+                        <li><a href="{{route('view_trainings')}}">Antrenamente Fitness</a></li>
+                        <li><a href="{{route('view_fitness_adult')}}">Alege Program</a></li>
                         <li><a href="/treners.php">Antrenamente Personale</a></li>
                         <li><a href="">Zone de antrenament</a></li>
                         <li><a href="">Aqua Zone</a></li>
@@ -34,8 +34,8 @@
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Kids Club</a></li>
-                        <li><a href="">Antrenamente Fitnes</a></li>
-                        <li><a href="">Alege Program</a></li>
+                        <li><a href="{{route('view_trainings_kids')}}">Antrenamente Kids</a></li>
+                        <li><a href="{{route('view_fitness_kids')}}">Alege Program</a></li>
                         <li><a href="">Antrenamente personale</a></li>
                         <li><a href="">Studiouri</a></li>
                         <li><a href="">Clase de creație</a></li>
@@ -44,11 +44,13 @@
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Club Carduri</a></li>
-                        <li><a href="{{route('show_oferts')}}">Alege Card</a></li>
-                        <li><a href="/corporativ.php">Carduri Corporative</a></li>
-                        <li><a href="">Program de Loialitate</a></li>
+                        <li><a href="{{route('view_membership')}}">Alege Card</a></li>
+                       <!--  <li><a href="">Carduri Corporative</a></li>
+                       <li><a href="">Program de Loialitate</a></li> -->
+                       <li><a href="{{route('show_oferts')}}">Bonus</a></li>
                         <li><a href="{{route('view_all_partners')}}">Privilegii de la Parteneri</a></li>
-                        <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">Reguli și norme de conduită</a></li>
+                        <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">Reguli și norme de conduită</a>
+                        </li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Beauty SPA</a></li>
@@ -63,8 +65,8 @@
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
                         <li><a>Lumea Niagara</a></li>
-                        <li><a href="/news.php">Noutăți</a></li>
-                        <li><a href="/events.php">Evenimente și competiții</a></li>
+                        <li><a href="{{route('view_news')}}">Noutăți</a></li>
+                        <li><a href="{{route('view_events')}}">Evenimente și competiții</a></li>
                         <li><a href="{{route('life_style')}}">Life Style</a></li>
                     </ul>
                 </div>

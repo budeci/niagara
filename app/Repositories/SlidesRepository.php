@@ -19,11 +19,12 @@ class SlidesRepository extends Repository
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPublic()
+    public function getPublic($type='home')
     {
         return self::getModel()
             ->active()
             ->orderBy('id', self::DESC)
+            ->whereType($type)
             ->get();
     }
 

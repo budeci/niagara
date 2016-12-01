@@ -16,6 +16,8 @@ return [
     'columns' => [
         'id',
         'name',
+        'image' => column_element('', true, '<img src="(:image)" width="100"/>'),
+        'type',
     ],
 
     /*
@@ -48,7 +50,7 @@ return [
     */
     'query' => function(Builder $query)
     {
-        return $query;
+         return $query->orderBy('id', 'desc');
     },
 
     /*
@@ -57,6 +59,12 @@ return [
     |-------------------------------------------------------
     */
     'filters' => [
+        'id' => filter_hidden(),
+        'type' => [
+            'label' => 'Page slider',
+            'type' => 'select',
+            'options' => ['home'=>'Home','membership'=>'Membership','membership'=>'Membership','beautyspa'=>'Beauty Spa']
+        ],
     ],
 
     /*
@@ -70,6 +78,11 @@ return [
     'edit_fields' => [
         'id'       => ['type' => 'key'],
         'name' => form_text(),
+        'type' => [
+            'label' => 'Page slider',
+            'type' => 'select',
+            'options' => ['home'=>'Home','membership'=>'Membership','membership'=>'Membership','beautyspa'=>'Beauty Spa']
+        ],
         'link' => form_text(),
         'image' => [
             'type' => 'image',

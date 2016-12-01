@@ -7,14 +7,14 @@
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             @foreach($faq as $item)
             <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="tab{{$item->id}}">
+                <div class="panel-heading" role="tab" id="heading{{$item->id}}">
                     <h4 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#tab{{$item->id}}" aria-expanded="false" aria-controls="tab{{$item->id}}">
                             {!! $item->name !!}
                         </a>
                     </h4>
                 </div>
-                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div id="tab{{$item->id}}" class="panel-collapse collapse" role="tabpanel" aria-expanded="false" aria-labelledby="heading{{$item->id}}">
                     <div class="panel-body">
                         {!! $item->body !!}
                     </div>
@@ -88,3 +88,6 @@
     </div>
 </section>
 @stop
+@section('js')
+    @include('faq.partials.js')
+@endsection

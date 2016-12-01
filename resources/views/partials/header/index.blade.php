@@ -37,7 +37,7 @@
             <ul class="menu">
                 <li><a href="{{route('view_fitness_adult')}}">Fitness</a></li>
                 <li><a href="{{route('view_fitness_kids')}}">Kids Club</a></li>
-                <li><a href="/cartele.php">Club Carduri</a></li>
+                <li><a href="{{route('view_membership')}}">Club Carduri</a></li>
                 <li><a href="{{route('beauty_show')}}">Spa&Beauty</a></li>
                 <li><a href="{{ route('view_world') }}">Lumea Niagara Club</a></li>
                 <li><a href="{{route('join_member')}}">Devină membru</a></li>
