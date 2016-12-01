@@ -26,7 +26,7 @@
                         <li><a>Fitness</a></li>
                         <li><a href="{{route('view_trainings')}}">Antrenamente Fitness</a></li>
                         <li><a href="{{route('view_fitness_adult')}}">Alege Program</a></li>
-                        <li><a href="/treners.php">Antrenamente Personale</a></li>
+                        <li><a href="{{route('show_trener_page',['static_page'=>'fitnes-with-personal-trener'])}}">Antrenamente Personale</a></li>
                         <li><a href="">Zone de antrenament</a></li>
                         <li><a href="">Aqua Zone</a></li>
                         <li><a href="">Fitness testare</a></li>

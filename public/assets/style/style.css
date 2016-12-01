@@ -2761,11 +2761,21 @@ footer img {
 }
 
 .treners_section li {
+    margin-top:50px;
     list-style: none;
     max-width: 240px;
     text-align: center;
     display: inline-block;
-    ;
+}
+
+.treners_section li > img{
+ border: 1px solid #f07626;
+    padding: 20px;
+    border-radius: 50px;
+    margin:10px auto;
+    max-height: 70px;
+    max-width:70px;
+
 }
 
 .treners_section li:last-child {

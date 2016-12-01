@@ -1,7 +1,6 @@
 <?php
 
 require_once base_path('vendor/keyhunter/administrator/src/helpers.php');
-//require_once base_path('packages/keyhunter/administrator/src/helpers.php');
 
 return [
     'title'  => 'Pages',
@@ -117,8 +116,27 @@ return [
 
         'title'    => form_text() + translatable(),
 
-//        'body'    => form_ckeditor() + translatable(),
         'body'    => form_ckeditor() + translatable(),
+
+        'more' => form_ckeditor() + translatable(),
+
+        'image' => [
+            'type' => 'image',
+            'location' => 'public/assets/personal_training'
+        ],
+        'anotation' => form_text() + translatable(),
+
+        'image1' => [
+            'type' => 'image',
+            'location' => 'public/assets/personal_training'
+        ],
+        'anotation1' => form_text() + translatable(),
+
+        'image2' => [
+            'type' => 'image',
+            'location' => 'public/assets/personal_training'
+        ],
+        'anotation2' => form_text() + translatable(),
 
         'active' => filter_select('Active', [
             0 => 'No',

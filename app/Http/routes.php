@@ -52,6 +52,10 @@ Route::multilingual(function () {
         'as' => 'show_page',
         'uses' => 'PagesController@show'
     ]);
+    Route::get('pages/{static_page}.html', [
+        'as' => 'show_trener_page',
+        'uses' => 'PagesController@trener'
+    ]);
 /*  Route::get('events', [
         'as' => 'events',
         'uses' => 'EventController@index'

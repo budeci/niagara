@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Repositories\AdvertisementRepository;
 use Illuminate\Http\Request;
 use App\Mission;
+use App\Page;
 use App\Http\Requests;
 
 class PagesController extends Controller
@@ -33,6 +34,13 @@ class PagesController extends Controller
     public function index()
     {
         //
+    }
+
+    public function trener($page)
+    {
+        $pages = Page::where('slug',$page)->first();
+
+        return view('pages.treners', compact('pages'));
     }
 
     /**
