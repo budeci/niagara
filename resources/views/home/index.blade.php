@@ -6,7 +6,7 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="content_slide">
                         <div class="news_slide">
-                        @foreach($slides as $item)
+                        @foreach($slides->getPublic($type='home') as $item)
                             @if(file_exists(public_path($item->image)))
                                 <div class="item"><img src="{{Image::url($item->image,680,440,array('crop',false))}}" alt="{{$item->name}}"></div>
                             @endif
@@ -98,19 +98,7 @@
             </ul>
         </div>
     </section>
-    <section class="section_video hidden-sm hidden-xs ">
-        <div class="container">
-            <h3>Видео</h3>
-            <div class="center_carousel">
-                <div id="carousel">
-                    <a id="" href="#"><img class="img-responsive" src="/assets/images/slide_play.jpg" /></a>
-                    <a id="" href="#"><img class="img-responsive" src="/assets/images/slide_play.jpg" /></a>
-                    <a id="" href="#"><img class="img-responsive" src="/assets/images/slide_play.jpg" /></a>
-                    <a id="" href="#"><img class="img-responsive" src="/assets/images/slide_play.jpg" /></a>
-                </div>
-            </div>
-        </div>
-    </section>
+   @include('home.partials.slide')
     <section class="last_section">
         <div class=" container ">
             <img src="/assets/images/logo2.png" alt="">

@@ -4,6 +4,8 @@
 {!!Html::script('/assets/js/slick.min.js')!!}
 {!!Html::script('/assets/js/isotope.pkgd.min.js')!!}
 {!!Html::script('/assets/js/jquery.waterwheelCarousel.js')!!}
+{!!Html::script('/assets/plugins/fancybox/jquery.fancybox.pack.js')!!}
+{!!Html::script('/assets/plugins/fancybox/jquery.fancybox.js')!!}
 <!-- End of initialize jQuery plugin -->
 
 <!-- bootstrap -->

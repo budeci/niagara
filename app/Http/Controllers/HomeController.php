@@ -37,7 +37,7 @@ class HomeController extends Controller
         $events        = $this->events->getExpire();
         $events_top    = $this->events->getTopHome();
         $news          = $this->news->getPublic();
-        $slides        = $this->slides->getPublic($type='home');
+        $slides        = $this->slides;
         return view('home.index', compact('opportunities','events','events_top','news','slides'));
     }
 

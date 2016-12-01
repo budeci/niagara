@@ -81,7 +81,7 @@ return [
         'type' => [
             'label' => 'Page slider',
             'type' => 'select',
-            'options' => ['home'=>'Home','membership'=>'Membership','membership'=>'Membership','beautyspa'=>'Beauty Spa']
+            'options' => ['home'=>'Home','membership'=>'Membership','membership'=>'Membership','beautyspa'=>'Beauty Spa','video'=>'Home Video']
         ],
         'link' => form_text(),
         'image' => [
