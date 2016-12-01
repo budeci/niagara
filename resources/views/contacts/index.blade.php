@@ -22,26 +22,24 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                         <div class="contacts_form_contain" style="position: relative">
-                            <div class="contact_form_succes">
-                                @if(Session::has('message'))
-                                    <div class="alert alert-success">
-                                        <ul style="list-style: none;">
-                                            <li>{{Session::get('message')}}</li>
-                                        </ul>
-                                    </div>
-                                @endif
-                            </div>
                             <p>Мы рады ответить на любой ваш вопрос, выслушать ваше предложение или замечание</p>
-                            <div class="contact-page-errors">@include('partials.errors.list')</div>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 ">
                         <div class="row">
                             <div class="col-xs-12">
-
+                                <div class="contact_form_succes">
+                                    @if(Session::has('message'))
+                                        <div class="alert alert-success">
+                                            <ul style="list-style: none;">
+                                                <li>{{Session::get('message')}}</li>
+                                            </ul>
+                                        </div>
+                                    @endif
+                                </div>
                             </div>
                         </div>
-                        <div class="contacts_for_form">
+                        <div class="contacts_for_form" style="@if(Session::has('message')) padding-top:0;@endif">
                             <form method="post" action="{{route('send_contact_form')}}">
                                 <div class="col-md-6 col-sm-6">
                                     <label for="name">Имя</label>
@@ -60,8 +58,8 @@
                                     <input type="text" id="e-mail" name="email" value="{{old('email')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label for="e-mail">Тема собшения</label>
-                                    <input type="text" name="theme" value="{{old('theme')}}">
+                                    <label for="select">Тема собшения</label>
+                                    <input type="text" name="select" id="select" value="{{old('select')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12">
                                     <label for="message">Сообщение</label>
@@ -77,6 +75,9 @@
                                     <input type="submit" value="Отправить" >
                                 </div>
                             </form>
+                            <div class="col-xs-12">
+                                @include('partials.errors.list')
+                            </div>
                         </div>
                     </div>
                 </div>

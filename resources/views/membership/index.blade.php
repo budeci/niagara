@@ -133,7 +133,7 @@
                         <h3>{{$category->name}}</h3>
                     </div>
                     <h4>{{$category->available}}</h4>
-                    <a href="" data-target="#myModal2" data-toggle="modal">Comanda apel</a>
+                    <a href="{{route('call_page',['id'=>$category->id,'slug'=>str_slug($category->name)])}}">Comanda apel</a>
                 </div>
                 <div class="body-modal-content">
                     {!!$category->description!!}

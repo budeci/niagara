@@ -4,30 +4,60 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AjaxFormRequest;
 use App\Http\Requests\ContactFormRequest;
 use App\Http\Requests\JoinClubRequest;
+use App\Repositories\MembershipRepository;
 use Redirect;
 use Request;
 
 class ContactController extends Controller
 {
+    /**
+     * @var
+     */
+    protected $membership;
 
+    /**
+     * ContactController constructor.
+     * @param MembershipRepository $membershipRepository
+     */
+    public function __construct(MembershipRepository $membershipRepository) {
+
+        $this->membership = $membershipRepository;
+    }
+
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('contacts.index');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function member()
     {
         return view('contacts.member');
     }
 
-    public function callBack()
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function callBack($id,$name)
     {
-        return view('contacts.call');
+        return view('contacts.call',['cards'=> $this->membership->getById($id)]);
     }
 
 
+    /**
+     * @param ContactFormRequest $request
+     * @return mixed
+     */
     public function sendForm(ContactFormRequest $request)
     {
+
         $post = 'entry.280285656='.$request->fname.
                 '&entry.856802493='.$request->lname.
                 '&entry.338069744='.$request->email.
@@ -50,6 +80,10 @@ class ContactController extends Controller
 
     }
 
+    /**
+     * @param JoinClubRequest $request
+     * @return mixed
+     */
     public function joinClub(JoinClubRequest $request) {
 
         $post = 'entry.280285656='.$request->name.
@@ -71,7 +105,9 @@ class ContactController extends Controller
     }
 
 
-
+    /**
+     * @param AjaxFormRequest $request
+     */
     public function ajaxForm(AjaxFormRequest $request)
     {
         $post = 'entry.280285656='.$request->name.
