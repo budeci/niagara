@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Database\Eloquent\Builder;
 return [
-    'title'  => 'Add home slide',
+    'title'  => 'Add beauty spa slide',
     'model'  => \App\Slides::class,
 
     /*
@@ -50,7 +50,7 @@ return [
     */
     'query' => function(Builder $query)
     {
-         return $query->orderBy('id', 'desc');
+         return $query->whereType('beautyspa')->orderBy('id', 'desc');
     },
 
     /*
@@ -59,12 +59,7 @@ return [
     |-------------------------------------------------------
     */
     'filters' => [
-        'id' => filter_hidden(),
-        'type' => [
-            'label' => 'Page slider',
-            'type' => 'select',
-            'options' => ['home'=>'Home','membership'=>'Membership','membership'=>'Membership','beautyspa'=>'Beauty Spa']
-        ],
+        'id' => filter_hidden()
     ],
 
     /*
@@ -78,10 +73,9 @@ return [
     'edit_fields' => [
         'id'       => ['type' => 'key'],
         'name' => form_text() + translatable(),
-        'type' => [
-            'label' => 'Page slider',
-            'type' => 'select',
-            'options' => ['home'=>'Home','membership'=>'Membership','membership'=>'Membership','beautyspa'=>'Beauty Spa']
+        'type' =>[
+            'type' => 'hidden',
+            'value' => 'beautyspa'
         ],
         'link' => form_text(),
         'image' => [

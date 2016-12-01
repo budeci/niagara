@@ -8,6 +8,7 @@ use App\Repositories\BeautySlideRepository;
  * Class BeautyController
  * @package App\Http\Controllers
  */
+use App\Repositories\SlidesRepository;
 class BeautyController extends Controller
 {
     /**
@@ -16,20 +17,18 @@ class BeautyController extends Controller
     protected $beauty;
 
     /**
-     * @var BeautySlideRepository
+     * @var SlidesRepository
      */
-    protected $slide;
+    protected $slides;
 
     /**
      * BeautyController constructor.
      * @param BeautyRepository $beautyRepository
      */
-    public function  __construct(BeautyRepository $beautyRepository,
-                                 BeautySlideRepository $beautySlideRepository
-    )
+    public function  __construct(BeautyRepository $beautyRepository, SlidesRepository $slidesRepository)
     {
-        $this->beauty=$beautyRepository;
-        $this->slide=$beautySlideRepository;
+        $this->beauty = $beautyRepository;
+        $this->slides = $slidesRepository;
     }
 
     /**
@@ -40,7 +39,7 @@ class BeautyController extends Controller
         return view('beauty.show',[
             'posts'=>$this->beauty->getPublic(),
             'category'=>$this->beauty->getCategoryPublic(),
-            'slide'=>$this->slide->getPublic()
+            'slides'=>$this->slides->getPublic($type='beautyspa')
         ]);
     }
 

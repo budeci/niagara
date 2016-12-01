@@ -67,13 +67,17 @@
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 ">
-                <div class="cartele_contain">
-                    <div class="cartele_slide">
-                        <img class="img-responsive" src="/assets/images/first1.jpg" alt="">
-                        <img class="img-responsive" src="/assets/images/first1.jpg" alt="">
-                        <img class="img-responsive" src="/assets/images/first1.jpg" alt="">
-                    </div>
-                </div>
+                @if(!$slides->isEmpty())
+                    <div class="cartele_contain">
+                        <div class="cartele_slide">
+                            @foreach($slides as $item)
+                                @if(file_exists(public_path($item->image)))
+                                    <img class="img-responsive" src="{{Image::url($item->image,680,440,array('crop',false))}}" alt="{{$item->name}}">
+                                @endif
+                            @endforeach
+                        </div>
+                     </div>
+                @endif
             </div>
         </div>
     </div>

@@ -75,7 +75,6 @@ return [
             'offert' => [
                 'icon' => 'fa fa-file-text-o'
             ],
-
             'lifestyle' => [
                 'icon' => 'fa fa-file-text-o'
             ],
@@ -88,14 +87,12 @@ return [
             'partner' => [
                 'icon' => 'fa fa-file-text-o'
             ],
-            'slides' => [
+            'slides-home' => [
                 'icon' => 'fa fa-file-text-o'
             ],
         ],
 
     ],
-
-
     'Presa' => [
       'icon' => 'fa fa-file-text-o',
         'pages' => [
@@ -157,7 +154,8 @@ return [
             'beauty' => [
                 'icon' => 'fa fa-circle-o'
             ],
-            'beautyslide' => [
+
+            'slides-beautyspa' => [
                 'icon' => 'fa fa-circle-o'
             ],
         ]
@@ -187,6 +185,9 @@ return [
                 'icon' => 'fa fa-circle-o'
             ],
             'privilege' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'slides-membership' => [
                 'icon' => 'fa fa-circle-o'
             ]
         ]

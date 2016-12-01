@@ -18,11 +18,15 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 ">
-                    <div class="first_slide">
-                        @foreach($slide as $item)
-                            <img class="img-responsive" src="{{$item->image}}" alt="{{$item->name}}">
-                        @endforeach
-                    </div>
+                    @if(!$slides->isEmpty())
+                        <div class="first_slide">
+                            @foreach($slides as $item)
+                                @if(file_exists(public_path($item->image)))
+                                    <img class="img-responsive" src="{{Image::url($item->image,680,440,array('crop',false))}}" alt="{{$item->name}}">
+                                @endif
+                            @endforeach
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
