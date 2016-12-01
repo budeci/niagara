@@ -24,7 +24,6 @@ class ContactFormRequest extends Request
             'lname'   => 'required|min:3',
             'phone'   => 'required',
             'email'   => 'required|email',
-            'message' => 'required',
             'check'   => 'required',
         ];
     }

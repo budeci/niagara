@@ -14,6 +14,17 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 ">
+                        <div class="col-xs-12">
+                            <div class="contact_form_succes">
+                                @if(Session::has('message'))
+                                    <div class="alert alert-success">
+                                        <ul style="list-style: none;">
+                                            <li>{{Session::get('message')}}</li>
+                                        </ul>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
                         <div class="contacts_for_form">
                             <form method="post" action="{{route('send_contact_form')}}">
                                 <div class="col-md-6 col-sm-6">
@@ -33,17 +44,18 @@
                                     <input type="text" id="e-mail" name="email" value="{{old('email')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label for="theme">Тип Карточки</label>
-                                    <select name="theme" id="theme">
-                                        <option value="">Card1</option>
-                                        <option value="">Card2</option>
+                                    <label for="type">Тип Карточки</label>
+                                    <select name="select" id="type">
+                                        @foreach($cards as $item)
+                                            <option value="{{$item->name}}">{{$item->name}}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="col-md-12 col-sm-12  contacts_for_checkbox ">
                                     <input type="checkbox" id="check" name="check" >
                                     <label for="check">Я согласен на обработку персональных данных </label>
                                 </div>
-                                <input type="hidden" name="form" value="Contact Form">
+                                <input type="hidden" name="form" value="Call me back">
                                 {{csrf_field()}}
                                 <div class="col-md-12 col-sm-12">
                                     <input type="submit" value="Отправить" >

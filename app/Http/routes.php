@@ -172,7 +172,7 @@ Route::multilingual(function () {
             'as' =>'contact_page',
             'uses' => 'ContactController@index'
         ]);
-    Route::get('call-back', [
+    Route::get('call-back/{id}/{name}', [
         'as' =>'call_page',
         'uses' => 'ContactController@callBack'
     ]);
