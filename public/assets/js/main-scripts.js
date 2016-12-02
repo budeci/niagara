@@ -266,9 +266,33 @@ $(document).ready(function() {
     });
   });
 
-  $(document).ready(function() {
+/*
     $(".fancybox").click(function() {
-      $.fancybox({
+        $.fancybox({
+            'padding'       : 0,
+            'autoScale'     : false,
+            'transitionIn'  : 'none',
+            'transitionOut' : 'none',
+            'title'         : this.title,
+            'width'         : 680,
+            'height'        : 495,
+            'href'          : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+            'type'          : "iframe",
+            'iframe'           : {
+                'wmode'        : 'transparent',
+                'allowfullscreen'   : 'true'
+            },
+            onComplete : function () {
+                $("#fancybox-frame").attr("allowfullscreen", "allowfullscreen")
+            }
+        });
+
+
+        return false;
+    });*/
+
+    $(".fancybox").fancybox({
+         'type' : "iframe",
         'padding'       : 0,
         'autoScale'     : false,
         'transitionIn'  : 'none',
@@ -276,23 +300,11 @@ $(document).ready(function() {
         'title'         : this.title,
         'width'         : 680,
         'height'        : 495,
-        'href'          : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-        'type'          : 'swf',
-        'swf'           : {
-          'wmode'        : 'transparent',
-          'allowfullscreen'   : 'true'
+       /* 'href'          : this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),*/
+        onComplete : function () {
+            $("#fancybox-frame").attr("allowfullscreen", "allowfullscreen")
         }
-      });
-
-      return false;
     });
-  });
-
-
-
-
-
-
 
 
 });

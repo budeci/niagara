@@ -1,8 +1,6 @@
 <script type="text/javascript">
-$(document).ready(function() {
-    var carousel = $("#carousel").waterwheelCarousel({
-        flankingItems: 1,
-    });
+    $(document).ready(function () {
+        var carousel = $("#carousel").featureCarousel({});
 
-});
+    });
 </script>
