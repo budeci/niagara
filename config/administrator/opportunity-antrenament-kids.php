@@ -56,7 +56,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query->whereCategoryType(0);
+        return $query->whereCategoryType('kids');
     },
 
     /*
@@ -85,23 +85,23 @@ return [
         'slug' => form_text() + translatable(),
         'category_type' =>[
             'type' => 'hidden',
-            'value' => '0'
+            'value' => 'adult'
         ],
         'image1' => [
             'type' => 'image',
-            'location' => '/upload/kids/(:id)/',
+            'location' => '/upload/kids',
         ],
         'annotation1'   => form_text() + translatable(),
 
         'image2' => [
             'type' => 'image',
-            'location' => '/upload/kids/(:id)/',
+            'location' => '/upload/kids',
         ],
         'annotation2'   => form_text() + translatable(),
 
         'image3' => [
             'type' => 'image',
-            'location' => '/upload/kids/(:id)/',
+            'location' => '/upload/kids',
         ],
         'annotation3'   => form_text() + translatable(),
 

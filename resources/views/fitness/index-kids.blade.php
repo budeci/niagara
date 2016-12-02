@@ -20,7 +20,7 @@
                         @foreach($services as $item)
                             <div class="col-md-4 col-sm-4 ">
                                 <div class="fitnes_block">
-                                    <a href="{{ route('view_fitness', ['slug' => $item->slug]) }}">
+                                    <a href="{{ route('view_fitness', ['slug' => $item->slug, 'name'=>'kids']) }}">
                                         @if($item->image1 != '')
                                             <div class="fitnes_block_head">
                                                 <img class="fitnes_offert_img" src="{{$item->image1}}" alt="">
@@ -40,7 +40,7 @@
                             @foreach($services as $item)
                                 @if($item->opportunities == 1)
                                     <div class="fitnes_ofert">
-                                        <a href="{{ route('view_fitness', ['slug' => $item->slug]) }}">
+                                        <a href="{{ route('view_fitness_service', ['slug' => $item->slug]) }}">
                                             <img src="/assets/images/ic4.png" alt="">
                                             <h4>{{ $item->present()->renderTitle() }}</h4>
                                             {!! $item->present()->renderShortDescription(200) !!}

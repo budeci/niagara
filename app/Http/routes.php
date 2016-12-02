@@ -42,7 +42,6 @@ Route::bind('post', function ($slug) {
 Route::bind('service', function ($slug) {
     return (new OpportunityAntrenamentRepository)->findBySlug($slug);
 });
-
 Route::multilingual(function () {
     Route::get('/', [
         'as' => 'home',
@@ -163,7 +162,11 @@ Route::multilingual(function () {
         'as' => 'view_fitness_kids',
         'uses' => 'FitnessOferteController@indexKids'
     ]);
-    Route::get('fitness/{service}', [
+    Route::get('fitness-service/{service}', [
+        'as' => 'view_fitness_service',
+        'uses' => 'FitnessOferteController@service'
+    ]);
+    Route::get('fitness/{service}/{type?}', [
         'as' => 'view_fitness',
         'uses' => 'FitnessOferteController@show'
     ]);

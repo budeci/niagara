@@ -31,7 +31,7 @@ class OpportunityAntrenamentRepository extends Repository
     {
         return self::getModel()
             ->active()
-            ->whereCategoryType(1)
+            ->whereCategoryType('adult')
             ->orderBy('id', self::DESC)
             ->get();
     }
@@ -39,8 +39,17 @@ class OpportunityAntrenamentRepository extends Repository
     {
         return self::getModel()
             ->active()
-            ->whereCategoryType(0)
+            ->whereCategoryType('kids')
             ->orderBy('id', self::DESC)
+            ->get();
+    }
+    public function getRandOffer($id,$type)
+    {
+        return self::getModel()
+            ->active()
+            ->where('category_type', $type)
+            ->where('id', '!=', $id)
+            ->inRandomOrder()
             ->get();
     }
     /**

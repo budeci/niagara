@@ -56,7 +56,7 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query->whereCategoryType(1);
+        return $query->whereCategoryType('adult');
     },
 
     /*
@@ -85,23 +85,23 @@ return [
         'slug' => form_text() + translatable(),
         'category_type' =>[
             'type' => 'hidden',
-            'value' => '1'
+            'value' => 'adult'
         ],
         'image1' => [
             'type' => 'image',
-            'location' => '/upload/kids/(:id)/',
+            'location' => '/upload/adult',
         ],
         'annotation1'   => form_text() + translatable(),
 
         'image2' => [
             'type' => 'image',
-            'location' => '/upload/kids/(:id)/',
+            'location' => '/upload/adult',
         ],
         'annotation2'   => form_text() + translatable(),
 
         'image3' => [
             'type' => 'image',
-            'location' => '/upload/kids/(:id)/',
+            'location' => '/upload/adult',
         ],
         'annotation3'   => form_text() + translatable(),
 

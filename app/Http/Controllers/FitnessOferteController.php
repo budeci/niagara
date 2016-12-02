@@ -33,7 +33,10 @@ class FitnessOferteController extends Controller
         $services = $this->services->getKidsPublic();
         return view('fitness.index-kids', compact('services'));
     }
-
+    public function service($service)
+    {
+        return view('fitness.opportunities', compact('service'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -61,7 +64,7 @@ class FitnessOferteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($offer)
+    public function show($offer,$type)
     {
         //dd($event);
         //Event::fire(new PostWasViewed($post));
@@ -69,8 +72,8 @@ class FitnessOferteController extends Controller
         //$post  = $this->posts->find($post->id);
         
         //return view('blog.post')->withItem($post);
-
-        return view('fitness.show', compact('offer'));
+        $offer_rand = $this->services->getRandOffer($offer->id,$type);
+        return view('fitness.show', compact('offer', 'offer_rand'));
     }
 
     /**

@@ -35,8 +35,27 @@ class OpportunityAntrenament extends Repository
      */
     public $translatedAttributes = ['annotation1','annotation2','annotation3','name','slug','body','meta_title','meta_description','meta_keyword'];
 
-
-
+    public function getImage1Attribute($value)
+    {
+        //add full path to image
+      if (!empty($value)) {
+        return str_replace('\\', '/', $value);
+      }
+    }
+    public function getImage2Attribute($value)
+    {
+        //add full path to image
+      if (!empty($value)) {
+        return str_replace('\\', '/', $value);
+      }
+    }
+    public function getImage3Attribute($value)
+    {
+        //add full path to image
+      if (!empty($value)) {
+        return str_replace('\\', '/', $value);
+      }
+    }
     public function delete(){
         if($this->attributes['image1']){
             $file1 = $this->attributes['image1'];
