@@ -34,8 +34,8 @@
     </section>
     <section class="news_niagara">
         <div class="container">
-            <h4 class="sub_title">Noutati Niagara Fitness
-            <a data-toggle="modal" data-target=".abonare_modal" href=""><img src="/assets/images/ic3.png" alt="">Aboneaza-te la noutati</a>
+            <h4 class="sub_title">{{$meta->getMeta('home_page_news_title')}}
+            <a data-toggle="modal" data-target=".abonare_modal" href=""><img src="/assets/images/ic3.png" alt="">{{$meta->getMeta('subscribe_news')}}</a>
             </h4>
             <div class="row">
                 <div class="news_niagara_slide">
@@ -52,12 +52,12 @@
                 <div class=" hidden-xs hidden-sm next"></div>
             </div>
             <div class="news_niagara_link">
-                <a href="{{ route('view_news') }}">Toate noutatile</a></div>
+                <a href="{{ route('view_news') }}">{{$meta->getMeta('home_all_news')}}</a></div>
             </div>
         </div>
     </section>
     <section class="events">
-        <h4 class="sub_title">Evenimente</h4>
+        <h4 class="sub_title">{{$meta->getMeta('home_events')}}</h4>
         <div class="index_center_slide_border"></div>
         <div class="index_center_slide">
             @foreach($events as $item)
@@ -73,7 +73,7 @@
                 </div>
             @endforeach
         </div>
-        <a href="{{ route('view_events') }}">Toate evenimentele si competitiile</a>
+        <a href="{{ route('view_events') }}">{{$meta->getMeta('home_all_events')}}</a>
     </section>
     <section class="home_main">
         <div class=" container ">
@@ -102,10 +102,8 @@
     <section class="last_section">
         <div class=" container ">
             <img src="/assets/images/logo2.png" alt="">
-            <h3>Познайте и раскройте мир
-            <strong>Niagara Fitness</strong>
-            </h3>
-            <a href="/enter_club.php"><img src="/assets/images/btn1.png" alt=""> Присоедениться
+            <h3>{!! $meta->getMeta('home_title_world_niagara') !!}</h3>
+            <a href="{{route('join_member')}}"><img src="/assets/images/btn1.png" alt="">{!! $meta->getMeta('home_join') !!}
             </a>
         </div>
     </section>
@@ -113,14 +111,14 @@
     <div class="modal fade abonare_modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm ">
             <div class="modal-content abonare_content">
-                <h3>Aboneaza-te la noutati</h3>
-                <h4>Lasa-ti adresa electronica, pentru a fi inregistrata abonarea</h4>
+                <h3>{!! $meta->getMeta('subscribe_news') !!}</h3>
+                <h4>{!! $meta->getMeta('subscribe_form_title') !!}</h4>
                 <form>
                     <div class="form-group">
-                        <label for="email">Email address</label>
+                        <label for="email">{!! $meta->getMeta('form_email') !!}</label>
                         <input type="email" class="form-control" id="email" aria-describedby="emailHelp" >
                     </div>
-                    <input type="submit" value="Trimite" >
+                    <input type="submit" value="{!! $meta->getMeta('form_submit') !!}" >
                 </form>
             </div>
         </div>

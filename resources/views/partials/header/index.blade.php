@@ -4,24 +4,28 @@
             <div class="col-md-6 col-sm-4 ">
                 <span class="for-phone">022 21 00 21</span>
                 <div class="lang">
-                    <a href="">RO</a>
-                    <a href="">RU</a>
+
+                    @if(isset($languages['other']))
+                        @foreach($languages['other'] as $lang)
+                        <a href="/{{ $lang->slug }}">{{$lang->slug}}</a>
+                        @endforeach
+                    @endif
                 </div>
             </div>
             <div class="col-md-6 col-sm-8 hidden-xs">
                 <ul class="for_aligne_head">
                     <li>
-                        <button class=" pulsate" style="font-size: 20px;">Hot offer</button>
+                        <button class=" pulsate" style="font-size: 20px;">{{$meta->getMeta('header_hot_offer')}}</button>
                     </li>
                     {{--<li class="hidden-xs ">
                         <a href="/orar.php">
                         <img class="hidden-xs" src="/assets/images/ic1.png" alt="">Orar</a>
                     </li>--}}
                     <li class="hidden-xs">
-                        <button  data-target="#myModal2" data-toggle="modal"> Sună-mă</button>
+                        <button  data-target="#myModal2" data-toggle="modal">{{$meta->getMeta('header_call_me')}}</button>
                     </li>
                     <li class="hidden-xs">
-                        <button >Feedback</button>
+                        <button>{{$meta->getMeta('header_feadback')}}</button>
                     </li>
                 </ul>
             </div>
@@ -35,17 +39,17 @@
             <div class="bar_header"></div>
             <!--a href="#" class="header__icon" id="header__icon"></a-->
             <ul class="menu">
-                <li><a href="{{route('view_fitness_adult')}}">Fitness</a></li>
-                <li><a href="{{route('view_fitness_kids')}}">Kids Club</a></li>
-                <li><a href="{{route('view_membership')}}">Club Carduri</a></li>
-                <li><a href="{{route('beauty_show')}}">Spa&Beauty</a></li>
-                <li><a href="{{ route('view_world') }}">Lumea Niagara Club</a></li>
-                <li><a href="{{route('join_member')}}">Devină membru</a></li>
-                <li class="visible-xs"><a href="">Orar</a></li>
-                <li class="visible-xs"><a href="">Hot offer</a></li>
-                <li class="visible-xs"><a href="">Sună-mă</a></li>
-                <li class="visible-xs"><a href="">Feedback</a></li>
-                <button class="for_btn" data-toggle="modal" data-target=".bs-example-modal-lg">Comandă un tur</button>
+                <li><a href="{{route('view_fitness_adult')}}">{{$meta->getMeta('header_fitness')}}</a></li>
+                <li><a href="{{route('view_fitness_kids')}}">{{$meta->getMeta('head_kids_club')}}</a></li>
+                <li><a href="{{route('view_membership')}}">{{$meta->getMeta('head_kids_club')}}</a></li>
+                <li><a href="{{route('beauty_show')}}">{{$meta->getMeta('head_spa_beauty')}}</a></li>
+                <li><a href="{{route('view_world') }}">{{$meta->getMeta('head_world_niagara')}}</a></li>
+                <li><a href="{{route('join_member')}}">{{$meta->getMeta('head_join')}}</a></li>
+                <li class="visible-xs"><a href="">{{$meta->getMeta('head_orar')}}</a></li>
+                <li class="visible-xs"><a href="">{{$meta->getMeta('header_hot_offer')}}</a></li>
+                <li class="visible-xs"><a href="">{{$meta->getMeta('head_call_me')}}</a></li>
+                <li class="visible-xs"><a href="">{{$meta->getMeta('header_feadback')}}</a></li>
+                <button class="for_btn" data-toggle="modal" data-target=".bs-example-modal-lg">{{$meta->getMeta('head_comand_tour')}}</button>
             </ul>
         </div>
     </div>

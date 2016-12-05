@@ -4,9 +4,9 @@
 
     <section class="head_jobs">
         <div class="container">
-            <h3 class="title">Posturi vacante</h3>
-            <button>Trimite CV</button>
-            <a data-toggle="modal" data-target=".modal_post" href=""> <img src="/assets/images/ic3.png" alt="">Aboneaza-te la posturi</a>
+            <h3 class="title">{{$meta->getMeta('vacancy_title')}}</h3>
+            <button>{{$meta->getMeta('vacancy_send_cv')}}</button>
+            <a data-toggle="modal" data-target=".modal_post" href=""> <img src="/assets/images/ic3.png" alt="">{{$meta->getMeta('vacancy_subscribe')}}</a>
         </div>
     </section>
     <section class="for_jobs">

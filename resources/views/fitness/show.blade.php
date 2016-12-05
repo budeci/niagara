@@ -11,7 +11,7 @@
 
 <section class="main_fitness_article">
     <div class="container">
-        <h3>Programe Asemanatoare</h3>
+        <h3>{!! $meta->getMeta('fitnes_programs') !!}</h3>
         <div class="row">
             @foreach($offer_rand as $item)
                 <div class="col-md-3 col-sm-4 element-item {{$item->slug}}">
@@ -28,7 +28,7 @@
             @endforeach
             <div class="col-md-12" style="display: none;">
                 <div class="for_fitnes_more">
-                    <a href="/fitness_program.php">Mai multe programe</a>
+                    <a href="/fitness_program.php">{!! $meta->getMeta('fitnes_show_all') !!}</a>
                 </div>
             </div>
         </div>
@@ -36,9 +36,9 @@
 </section>
 <section class="last_fitnes_article">
     <div class="container">
-        <h3>Отзывы клиентов</h3>
+        <h3>{!! $meta->getMeta('fitnes_clients') !!}</h3>
         <div class="for_fitnes_more">
-            <a href="">Оставить свой отзыв</a>
+            <a href="">{!! $meta->getMeta('fitnes_clients_related') !!}</a>
         </div>
     </div>
 </section>

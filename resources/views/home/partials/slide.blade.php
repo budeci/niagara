@@ -1,6 +1,6 @@
 <section class="section_video hidden-sm hidden-xs ">
     <div class="container">
-        <h3>Видео</h3>
+        <h3>{{$meta->getMeta('home_video')}}</h3>
         <div class="carousel-container">
             <div id="carousel">
                 @foreach($slides->getPublic($type='video') as $item)

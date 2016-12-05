@@ -104,7 +104,7 @@ return [
 
         'type' => form_text('Group'),
 
-        'value' => form_text() + translatable(),
+        'value' => form_textarea() + translatable(),
 
         'active' => [
             'title' => 'Active',

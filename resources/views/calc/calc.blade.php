@@ -2,8 +2,8 @@
 @section('content')
 <section class="calcul">
     <div class="container">
-        <h3 class="title">КАЛЬКУЛЯТОР КАЛОРИЙНОСТИ ПРОДУКТОВ ОТ NIAGARA</h3>
-        <h4>Здесь вы можете рассчитать количество калорий, которые вам нужно получить, и которые нужно потратить, чтобы достичь ваших целей</h4>
+        <h3 class="title">{{$meta->getMeta('calc_title')}}</h3>
+        <h4>{{$meta->getMeta('calc_subtitle')}}</h4>
         <ul class="citrus_list">
             @foreach($category_food as $key => $category)           
                 <li class="calcul_block">
@@ -30,10 +30,10 @@
             <div class="calories-move-step">
                 <form action="{{ route('view_calories') }}" method="GET">
                     <input type="hidden" name="food" value="">
-                    <input type="submit" value="Перейти на шаг 2">
+                    <input type="submit" value="{{$meta->getMeta('calc_submit')}}">
                 </form>
             </div>
-            <p class="calories-move-reset"><span class="js-calories-reset">Или сбросить все</span></p>
+            <p class="calories-move-reset"><span class="js-calories-reset">{{$meta->getMeta('calc_destroy')}}</span></p>
         </div>
 
     </div>

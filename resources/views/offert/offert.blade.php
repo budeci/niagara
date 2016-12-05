@@ -22,7 +22,6 @@
             <div class="oferts_article_bord"></div>
         </div>
     </section>
-
     <section class="special_oofert_last_section">
         <div class="container">
             <div class="row">

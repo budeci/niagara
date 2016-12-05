@@ -2,8 +2,8 @@
 @section('content')
     <section class="management">
         <div class="container">
-            <h3 class="title">Administrația</h3>
-            <p>Echipa Niagara Fitness Club este una complexă, alcătuită atât din sportivi de performanță, cu o vastă pregătire în activitatea pe care o desfășoară, cît și de manageri cu o experiență deosebită. Anume o echipă completă îți poate asigura cele mai bune ore dedicate minții și corpului tău. </p>
+            <h3 class="title">{{$meta->getMeta('team_title')}}</h3>
+            <p>{{$meta->getMeta('team_subtitle')}}</p>
             @foreach($teams as $item)
                 @if($item->director == 1)
                     <div class="management_block">

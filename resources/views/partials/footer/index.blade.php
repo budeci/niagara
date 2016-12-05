@@ -1,73 +1,73 @@
 <!-- </div> -->
 <section class="faq">
     <div class="container">
-        <a href="{{route('view_faq')}}">Часто задаваемые вопросы</a>
+        <a href="{{route('view_faq')}}">{{$meta->getMeta('footer_faq')}}</a>
     </div>
 </section>
 <footer>
     <div class="container">
-        <h3>Niagara Fitness Club. Best decision you can make.</h3>
+        <h3>{{$meta->getMeta('footer_title')}}</h3>
         <img src="/assets/images/line.png" alt="">
         <div class="row">
             <div class=" col-md-12 footer_links">
                 <div class="menu-collapsed_footer">
                     <div class="bar_footer"></div>
                     <ul class="col-md-2 col-sm-4 ">
-                        <li><a>Niagara Club</a></li>
-                        <li><a href="{{route('mission_page')}}">Misiune</a></li>
-                        <li><a href="{{route('view_team')}}">Administrația</a></li>
-                        <li><a href="{{route('view_partner') }}">Parteneri</a></li>
-                        <li><a href="{{route('advertisement_page')}}">Publicitate</a></li>
-                        <li><a href="{{route('press_show')}}">Presa</a></li>
-                        <li><a href="{{route('vacancy_show')}}">Posturi vacante</a></li>
-                        <li><a href="{{route('contact_page')}}">Contacte</a></li>
+                        <li><a>{{$meta->getMeta('footer_menu_club')}}</a></li>
+                        <li><a href="{{route('mission_page')}}">{{$meta->getMeta('footer_menu_mission')}}</a></li>
+                        <li><a href="{{route('view_team')}}">{{$meta->getMeta('footer_menu_administration')}}</a></li>
+                        <li><a href="{{route('view_partner') }}">{{$meta->getMeta('footer_menu_partners')}}</a></li>
+                        <li><a href="{{route('advertisement_page')}}">{{$meta->getMeta('footer_menu_publish')}}</a></li>
+                        <li><a href="{{route('press_show')}}">{{$meta->getMeta('footer_menu_press')}}</a></li>
+                        <li><a href="{{route('vacancy_show')}}">{{$meta->getMeta('footer_menu_posts')}}</a></li>
+                        <li><a href="{{route('contact_page')}}">{{$meta->getMeta('footer_menu_contacts')}}</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
-                        <li><a>Fitness</a></li>
-                        <li><a href="{{route('view_trainings')}}">Antrenamente Fitness</a></li>
-                        <li><a href="{{route('view_fitness_adult')}}">Alege Program</a></li>
-                        <li><a href="{{route('show_trener_page',['static_page'=>'fitnes-with-personal-trener'])}}">Antrenamente Personale</a></li>
-                        <li><a href="">Zone de antrenament</a></li>
+                        <li><a>{{$meta->getMeta('footer_menu_fitnes')}}</a></li>
+                        <li><a href="{{route('view_trainings')}}">{{$meta->getMeta('footer_menu_training_fitnes')}}</a></li>
+                        <li><a href="{{route('view_fitness_adult')}}">{{$meta->getMeta('footer_menu_choice_program')}}</a></li>
+                        <li><a href="{{route('show_trener_page',['static_page'=>'fitnes-with-personal-trener'])}}">{{$meta->getMeta('footer_menu_personal_training')}}</a></li>
+                        {{--<li><a href="">Zone de antrenament</a></li>
                         <li><a href="">Aqua Zone</a></li>
-                        <li><a href="">Fitness testare</a></li>
-                        <li><a href="{{ route('view_calc') }}">Calculator IMC</a></li>
+                        <li><a href="">Fitness testare</a></li>--}}
+                        <li><a href="{{ route('view_calc') }}">{{$meta->getMeta('footer_menu_calculator')}}</a></li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
-                        <li><a>Kids Club</a></li>
-                        <li><a href="{{route('view_trainings_kids')}}">Antrenamente Kids</a></li>
-                        <li><a href="{{route('view_fitness_kids')}}">Alege Program</a></li>
-                        <li><a href="">Antrenamente personale</a></li>
-                        <li><a href="">Studiouri</a></li>
+                        <li><a>{{$meta->getMeta('footer_menu_kids_club')}}</a></li>
+                        <li><a href="{{route('view_trainings_kids')}}">{{$meta->getMeta('footer_menu_kids_training')}}</a></li>
+                        <li><a href="{{route('view_fitness_kids')}}">{{$meta->getMeta('footer_menu_choice_program')}}</a></li>
+                        <li><a href="{{route('show_trener_page',['static_page'=>'fitnes-with-personal-trener'])}}">{{$meta->getMeta('footer_menu_personal_training')}}</a></li>
+                    {{--    <li><a href="">Studiouri</a></li>
                         <li><a href="">Clase de creație</a></li>
                         <li><a href="">Tabăra de Vară</a></li>
-                        <li><a href="">Fitness Testare</a></li>
+                        <li><a href="">Fitness Testare</a></li>--}}
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
-                        <li><a>Club Carduri</a></li>
-                        <li><a href="{{route('view_membership')}}">Alege Card</a></li>
+                        <li><a>{{$meta->getMeta('footer_menu_club_crads')}}</a></li>
+                        <li><a href="{{route('view_membership')}}">{{$meta->getMeta('footer_menu_choise_card')}}</a></li>
                        <!--  <li><a href="">Carduri Corporative</a></li>
                        <li><a href="">Program de Loialitate</a></li> -->
-                       <li><a href="{{route('show_oferts')}}">Bonus</a></li>
-                        <li><a href="{{route('view_all_partners')}}">Privilegii de la Parteneri</a></li>
-                        <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">Reguli și norme de conduită</a>
+                        <li><a href="{{route('show_oferts')}}">{{$meta->getMeta('footer_menu_offerts')}}</a></li>
+                        <li><a href="{{route('view_all_partners')}}">{{$meta->getMeta('footer_menu_privilegies_of_partners')}}</a></li>
+                        <li><a href="{{route('show_page',['static_page'=>'terms-and-conditions'])}}">{{$meta->getMeta('footer_menu_reglament')}}</a>
                         </li>
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
-                        <li><a>Beauty SPA</a></li>
-                        <li><a href="{{route('beauty_show')}}">Salon de Frumusețe</a></li>
-                        <li><a href="">Cosmetologia Feței</a></li>
+                        <li><a>{{$meta->getMeta('footer_menu_beauty_spa')}}</a></li>
+                        <li><a href="{{route('beauty_show')}}">{{$meta->getMeta('footer_menu_salon_beauty')}}</a></li>
+                       {{-- <li><a href="">Cosmetologia Feței</a></li>
                         <li><a href="">Cosmetologia Corpului</a></li>
                         <li><a href="">Cosmetologie cu Laser</a></li>
                         <li><a href="">Masaj</a></li>
                         <li><a href="">Peeling</a></li>
                         <li><a href="">Solar</a></li>
-                        <li><a href="">Saune</a></li>
+                        <li><a href="">Saune</a></li>--}}
                     </ul>
                     <ul class="col-md-2  col-sm-4 ">
-                        <li><a>Lumea Niagara</a></li>
-                        <li><a href="{{route('view_news')}}">Noutăți</a></li>
-                        <li><a href="{{route('view_events')}}">Evenimente și competiții</a></li>
-                        <li><a href="{{route('life_style')}}">Life Style</a></li>
+                        <li><a>{{$meta->getMeta('footer_menu_world_niagara')}}</a></li>
+                        <li><a href="{{route('view_news')}}">{{$meta->getMeta('footer_menu_news')}}</a></li>
+                        <li><a href="{{route('view_events')}}">{{$meta->getMeta('footer_menu_events')}}</a></li>
+                        <li><a href="{{route('life_style')}}">{{$meta->getMeta('footer_menu_life_style')}}</a></li>
                     </ul>
                 </div>
             </div>
@@ -75,15 +75,13 @@
             <div class="col-md-12">
                 <div class="footer_social">
                     <ul>
-                        <li><a href=""> <img class="img-responsive" src="/assets/images/social1.png" alt=""></a></li>
+                        <li><a href=""><img class="img-responsive" src="/assets/images/social1.png" alt=""></a></li>
                         <li><span class="footer_content_bord"> </span></li>
                         <li><a href=""><img class="img-responsive" src="/assets/images/social2.png" alt=""></a></li>
-                        <li><span class="footer_content_bord"> </span></li>
-                        <li>
-                            <a href=""><img class="img-responsive" src="/assets/images/social3.png" alt=""></a>
-                        </li>
+                        <li><span class="footer_content_bord"></span></li>
+                        <li><a href=""><img class="img-responsive" src="/assets/images/social3.png" alt=""></a></li>
                     </ul>
-                    <p>© Copyright 2016 Niagara. All rights reserved. </p>
+                    <p>{{$meta->getMeta('footer_copyright')}}</p>
                 </div>
             </div>
         </div>
@@ -97,7 +95,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content my_modal">
             <div class="modal_head">
-                <h3>Заказ клубного тура</h3>
+                <h3>{{$meta->getMeta('form_tour_title')}}</h3>
                 <div class="modal_line"></div>
             </div>
             <div class="my_content">
@@ -106,15 +104,15 @@
                         <form method="post">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="name">Nume</label>
+                                    <label for="name">{{$meta->getMeta('form_name')}}</label>
                                     <input type="text" class="form-control" id="name" name="name">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="phone">Telefon</label>
+                                    <label for="phone">{{$meta->getMeta('form_phone')}}</label>
                                     <input type="text" class="form-control" id="phone" name="phone">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="club">Клуб Niagara</label>
+                                    <label for="club">{{$meta->getMeta('form_club')}}</label>
                                     <select class="form-control" id="club" name="club">
                                         <option value="Club Niagara">Club Niagara</option>
                                         <option value="Club Fitness">Club Fitness</option>
@@ -122,12 +120,12 @@
                                 </div>
                                 <div class="col-md-12">
                                     <input type="checkbox" name="check" id="accord" value="checked" required>
-                                    <label for="accord">Я согласен на обработку персональных данных</label>
+                                    <label for="accord">{{$meta->getMeta('form_accept')}}</label>
                                 </div>
                                 <input type="hidden" name="form" value="Club Tour">
                                 {{csrf_field()}}
                                 <div class="col-md-12">
-                                    <input class="send-form" type="submit" value="Отправить">
+                                    <input class="send-form" type="submit" value="{{$meta->getMeta('form_submit')}}">
                                 </div>
                             </div>
                         </form>
@@ -154,25 +152,25 @@
     <div class="modal-dialog modal-sm modal_write">
         <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Написать Нам</h4>
+            <h4 class="modal-title">{{$meta->getMeta('form_contact_title')}}</h4>
             <div class="modal_write_border"></div>
             <div class="modal-body">
                 <form method="post">
                     <div class="form-group">
-                        <label for="name">Nume</label>
+                        <label for="name">{{$meta->getMeta('form_name')}}</label>
                         <input type="text" class="form-control" id="name" name="name">
                     </div>
                     <div class="form-group">
-                        <label for="phone">Teefon</label>
+                        <label for="phone">{{$meta->getMeta('form_phone')}}</label>
                         <input type="text" class="form-control" id="phone" name="phone">
                     </div>
                     <input type="hidden" name="form" value="Call Us">
                     <div class="form-group">
-                        <label for="textarea">Example textarea</label>
+                        <label for="textarea">{{$meta->getMeta('form_message')}}</label>
                         <textarea class="form-control" id="textarea" rows="3" name="message"></textarea>
                     </div>
                     {{csrf_field()}}
-                    <input class="send-form" type="submit" value="Trimite">
+                    <input class="send-form" type="submit" value="{{$meta->getMeta('form_submit')}}">
                 </form>
             </div>
         </div>

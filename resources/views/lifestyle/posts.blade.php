@@ -3,7 +3,7 @@
 @section('content')
     <section class="section_style_life">
         <div class="container">
-            <h3 class="title">Статьи</h3>
+            <h3 class="title">{{$meta->getMeta('lifestyle_posts')}}</h3>
             <div class="row">
                 @foreach($lifestyle as $item)
                 <div class=" section_style_block">
@@ -17,7 +17,7 @@
                 </div>
                 @endforeach
                 <div class="col-md-12" style="display: none;">
-                    <button class="show_div">Показать ещё</button>
+                    <button class="show_div">{{$meta->getMeta('lifestyle_show_all')}}</button>
                 </div>
             </div>
         </div>

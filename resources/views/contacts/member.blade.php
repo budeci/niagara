@@ -11,25 +11,25 @@
                             <form method="post" action="{{route('enter_club_send_form')}}">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 ">
-                                        <label for="name"> Nume</label>
+                                        <label for="name">{{$meta->getMeta('form_name')}}</label>
                                         <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}">
                                     </div>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <label for="phone">Telefon</label>
+                                        <label for="phone">{{$meta->getMeta('form_phone')}}</label>
                                         <input type="text" class="form-control" id="phone" name="phone" value="{{old('phone')}}">
                                     </div>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <label for="e-mail">E-mail</label>
+                                        <label for="e-mail">{{$meta->getMeta('form_email')}}</label>
                                         <input type="text"  class="form-control" id="e-mail" name="email" value="{{old('email')}}">
                                     </div>
                                     <div class="col-md-12 col-sm-12  enter_for_checkbox">
                                         <input type="checkbox" id="accord" name="check" required>
-                                        <label for="accord">Eu sunt de acord cu verificarea datelor personale </label>
+                                        <label for="accord">{{$meta->getMeta('form_accept')}}</label>
                                     </div>
                                     <input type="hidden" name="form" value="Devina Membru">
                                     {{csrf_field()}}
                                     <div class="col-md-12 col-sm-12 ">
-                                        <input type="submit" value="Trimite">
+                                        <input type="submit" value="{{$meta->getMeta('form_submit')}}">
                                     </div>
                                 </div>
                             </form>
@@ -38,12 +38,7 @@
                     </div>
                 <div class="col-md-6 col-sm-12 ">
                     <div class="enter_contain">
-                        <p>Приобретая клубную карту World Class, вы становитесь полноценным членом клуба, в полной мере пользуясь всеми его возможностями и привилегиями:</p>
-                        <br>
-                        <p>• Cвободное посещение тренажерного зала, бассейна, студии танцев, боевых искусств и йоги в рамках специально отобранных групповых программ;</p>
-                        <br>
-                        <p>• Участие в насыщенной спортивной и светской жизни World Class, тематических фитнес-турах, Outdoor-занятиях.
-                        </p>
+                        {!! $meta->getMeta('form_member_page_info') !!}
                     </div>
                 </div>
             </div>
