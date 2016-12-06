@@ -174,7 +174,17 @@ return [
             ]
         ]
     ],
-
+    'Orar' => [
+        'icon' => 'fa fa-calendar-o',
+        'pages' => [
+            'schedule' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'program' => [
+                'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
     'Carduri' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [

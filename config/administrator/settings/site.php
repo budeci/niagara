@@ -26,7 +26,7 @@ return [
 
         'site::logo' => [
             'type' => 'image',
-            'location' => '/upload/settings/(:tag_id)',
+            'location' => '/upload/settings',
 //            'sizes' => [
 //                'big'     => '1024x1024',
 //            ]

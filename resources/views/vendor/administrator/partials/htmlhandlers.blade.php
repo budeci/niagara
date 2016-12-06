@@ -12,7 +12,10 @@ $(function()
         clearBtn: true,
         multidate: true
     });
-
+    $('[data-filter-type="time"]').datetimepicker({
+        locale: 'ru',
+        format: 'LT'
+    });
     $('input[data-filter-type="number_range"]').slider({
         //
     });
