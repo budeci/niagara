@@ -2,11 +2,11 @@
 @section('content')
     <section class="for_events_main">
         <div class="container">
-            <h3 class="title">Мероприятия и соревнования</h3>
+            <h3 class="title">{{$meta->getmeta('page_event_title')}}</h3>
             <div class="filters for_events_tab">
                 <div class="ui-group">
                     <div class="button-group js-radio-button-group" data-filter-group="category">
-                        <button class="button is-checked" data-filter="">Все</button>
+                        <button class="button is-checked" data-filter="">{{$meta->getmeta('page_event_filter_all')}}</button>
                         @foreach($category_events as $category)
                             <button class="button" data-filter=".{{$category->slug}}">{{$category->name}}</button>
                         @endforeach
@@ -15,18 +15,15 @@
             </div>
         </div>
     </section>
-    
     <section class="filters for_events_tab_center">
         <div class="container">
-            
             <div class=" ui-group">
                 <div class="button-group js-radio-button-group" data-filter-group="filtr">
-                    <button class="button is-checked" data-filter="*">Все</button>
-                    <button class="button " data-filter=".soon">Ближайшие</button>
-                    <button class="button" data-filter=".past">Прошедшие</button>
+                    <button class="button is-checked" data-filter="*">{{$meta->getmeta('page_event_filter_all')}}</button>
+                    <button class="button " data-filter=".soon">{{$meta->getmeta('page_event_filter_soon')}}</button>
+                    <button class="button" data-filter=".past">{{$meta->getmeta('page_event_filter_past')}}</button>
                 </div>
             </div>
-            
             <div class="row grid-item">
                 @foreach($category_events as $category)
                     @foreach($category->event as $item)
@@ -49,7 +46,7 @@
                     @endforeach
                 @endforeach
                 <div class="col-md-12" style="display: none;">
-                    <button class="show_div">Показать ещё</button>
+                    <button class="show_div">{{$meta->getmeta('page_event_show_all')}}</button>
                 </div>
             </div>
         </div>

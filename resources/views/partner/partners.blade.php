@@ -2,8 +2,8 @@
 @section('content')
     <section class="partners_members">
         <div class="container">
-            <h3 class="title">Партнёры и привилегии для членов клуба</h3>
-            <h4>Генеральные партнёры</h4>
+            <h3 class="title">{{$meta->getMeta('partners_title')}}</h3>
+            <h4>{{$meta->getMeta('partners_subtitle')}}</h4>
             @foreach($general as $item)
                 <div class="for_partners_members">
                     <div class="row">
@@ -24,7 +24,7 @@
     </section>
     <section class="partners_section">
         <div class="container">
-            <h4>Партнёры с привилегиями для обладателей карты Niagara</h4>
+            <h4>{{$meta->getMeta('partner_card_title')}}</h4>
             <div class="row">
                 @foreach($notgeneral as $item)
                 <div class="col-md-3 col-sm-6">
@@ -39,7 +39,7 @@
                 @endforeach
                 <div class="col-md-12">
                     <div class="for_partners_btn">
-                        <a href="{{route('join_member')}}">Стать партнёром</a>
+                        <a href="{{route('join_member')}}">{{$meta->getMeta('partner_join')}}</a>
                     </div>
                 </div>
             </div>

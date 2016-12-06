@@ -2,7 +2,7 @@
 @section('content')
 <section class="news_article_page">
     <div class="container">
-        <h3 class="title">Noutati</h3>
+        <h3 class="title">{{$meta->getMeta('membership_news')}}</h3>
         <div class="row">
             <div class="col-md-2">
                 <span>{{ $post->present()->renderPublishedDate('j F') }}</span>

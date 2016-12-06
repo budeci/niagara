@@ -2,17 +2,17 @@
 @section('content')
     <section class="calcul_calories">
         <div class="container">
-            <h3 class="title">КАЛЬКУЛЯТОР КАЛОРИЙНОСТИ ПРОДУКТОВ ОТ NIAGARA</h3>
-            <h4>Укажите примерное количество выбранных продуктов, чтобы узнать общее количество калорий</h4>
+            <h3 class="title">{{$meta->getMeta('calories_title')}}</h3>
+            <h4>{{$meta->getMeta('calories_subtitle')}}</h4>
             <div class="row">
                 <div class="col-md-6">
                     <div class="calories-table static-text js-calories-table">
                         <table class="table-responsive">
                             <thead>
                                 <tr>
-                                    <th class="cell-title">ПРОДУКТ</th>
-                                    <th class="cell-weight">ВЕС В ГРАММАХ</th>
-                                    <th class="cell-amount">КОЛИЧЕСТВО КАЛОРИЙ</th>
+                                    <th class="cell-title">{{$meta->getMeta('calories_product')}}</th>
+                                    <th class="cell-weight">{{$meta->getMeta('calories_weight')}}</th>
+                                    <th class="cell-amount">{{$meta->getMeta('calories_calories')}}</th>
                                 </tr>
                             </thead>
                             @foreach ($food as $item)
@@ -22,7 +22,7 @@
                                         <span class="calories-table-weight">
                                             <label for="ct-{{$item->id}}">
                                                 <input type="text" id="ct-{{$item->id}}" class="iText js-calories-table-weight-value" value="{{$item->weight}}" data-cal="{{$item->calories}}" maxlength="7">
-                                                грамм
+                                                {{$meta->getMeta('calories_gram')}}
                                             </label>
                                         </span>
                                     </td>
@@ -34,82 +34,82 @@
                             <tfoot>
                                 <tr>
                                     <td colspan="3">
-                                        <span class="calories-table-total">Общий вес –
-                                            <span class="calories-table-total-w js-calories-table-total-w">{{$food->sum('weight')}} КГ</span> и общее количество калорий –
+                                        <span class="calories-table-total">{{$meta->getMeta('calories_total_weight')}} –
+                                            <span class="calories-table-total-w js-calories-table-total-w">{{$food->sum('weight')}} {{$meta->getMeta('calories_kg')}}</span> {{$meta->getMeta('calories_total_count_calories')}} –
                                             <span class="calories-table-total-c js-calories-table-total-c">{{$food->sum('calories')}}</span>
                                         </span>
                                     </td>
                                 </tr>
                             </tfoot>                     
                         </table>
-                        <a href="{{ url()->previous() }}">Вернуться назад</a>
+                        <a href="{{ url()->previous() }}">{{$meta->getMeta('calorories_go_back')}}</a>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="calories-calc">
                         <div class="calories-calc-title">
-                            <h3>Хотите узнать, много это или мало для вас?</h3>
-                            <p>Укажите свои данные. <sup class="star">*</sup> Все поля обязательны для заполнения</p>
+                            <h3>{{$meta->getMeta('calories_form_title')}}</h3>
+                             <p>{{$meta->getMeta('calories_form_subtitle')}} <sup class="star">*</sup> </p>
                         </div>
                         <div class="weight-calc js-calories-calc">
                             <form action="#!" id="calories-form" novalidate="novalidate">
                                 <div class="content">
                                     <div class="row gender sr">
                                         <div class="item active man" data-value="man">
-                                            <span>Вы мужчина?</span>
+                                            <span>{{$meta->getMeta('calories_men')}}</span>
                                         </div>
                                         <div class="item woman" data-value="woman">
-                                            <span>Вы женщина?</span>
+                                            <span>{{$meta->getMeta('calories_women')}}</span>
                                         </div>
                                     </div>
                                     <div class="row data sr">
                                         <div class="item">
-                                            <label for="c-age">Ваш возраст</label>
+                                            <label for="c-age">{{$meta->getMeta('calories_age')}}</label>
                                             <input class="iText js-age" type="text" name="c-age" id="c-age">
                                         </div>
                                         <div class="item">
-                                            <label for="c-growth">Рост</label>
+                                            <label for="c-growth">{{$meta->getMeta('calories_height')}}</label>
                                             <input class="iText js-growth" type="text" name="c-growth" id="c-growth">
                                         </div>
                                         <div class="item">
-                                            <label for="c-weight">И вес</label>
+                                            <label for="c-weight">{{$meta->getMeta('calories_your_weight')}}</label>
                                             <input class="iText js-weight" type="text" name="c-weight" id="c-weight">
                                         </div>
                                     </div>
                                     <div class="row activity">
-                                        <label for="c-activity">Физическая активность в течение дня</label>
+                                        <label for="c-activity">{{$meta->getMeta('calories_lifestyle')}}</label>
                                         <select name="c-activity" id="c-activity">
-                                            <option selected="selected" value="1.2">Веду сидячий образ жизни</option>
-                                            <option value="1.375">Гуляю с собакой, хожу в магазин</option>
-                                            <option value="1.55">Делаю зарядку, бегаю по утрам, плаваю в бассейне</option>
-                                            <option value="1.725">Регулярно занимаюсь фитнесом</option>
-                                            <option value="1.9">Я спортсмен</option>
+                                            <option selected="selected" value="1.2">{{$meta->getMeta('calories_select_value_1')}}</option>
+                                            <option value="1.375">{{$meta->getMeta('calories_select_value_2')}}</option>
+                                            <option value="1.55">{{$meta->getMeta('calories_select_value_3')}}</option>
+                                            <option value="1.725">{{$meta->getMeta('calories_select_value_4')}}</option>
+                                            <option value="1.9">{{$meta->getMeta('calories_select_value_5')}}</option>
                                         </select>
                                     </div>
                                     <div class="row phys sr">
                                         <div class="item infit active" data-value="0">
-                                            <span>Вы хотите остаться в форме?</span>
+                                            <span>{{$meta->getMeta('calories_form')}}</span>
                                         </div>
                                         <div class="item slim" data-value="500">
-                                            <span>Или сбросить вес?</span>
+                                            <span>{{$meta->getMeta('calories_form_lose_weight')}}</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="submit">
-                                    <span class="js-submit">Рассчитать</span>
+                                    <span class="js-submit">{{$meta->getMeta('calories_form_submit')}}</span>
                                 </div>
                             </form>
                             <div class="result js-result">
-                                <span class="close js-close" title="Закрыть результат"></span>
-                                <h2 class="js-result-total" data-template="Вы получили [resultCalories] калорий"></h2>
+                                <span class="close js-close" title="{{$meta->getMeta('calories_form_close_result')}}"></span>
+                                <h2 class="js-result-total" data-template="{{$meta->getMeta('calories_result_you_have')}} [resultCalories] {{$meta->getMeta('calories_result_calories')}}"></h2>
                                 @foreach ($result_calories as $key => $item)
                                     <div class="variant active" data-var="{{$key}}">
                                         {!!$item->body!!}
                                     </div>
                                 @endforeach
                                 <div class="ok-close">
-                                    <span class="pseudo js-close">Все ясно!</span>
-                                    <p class="hint">Закрыть окно</p>
+                                    <span class="pseudo js-close">{{$meta->getMeta('calories_all_ok')}}</span>
+                                    <p class="hint">{{$meta->getMeta('calories_close_modal')}}</p>
                                 </div>
                             </div>
                         </div>

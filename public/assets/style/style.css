@@ -694,6 +694,8 @@ footer h3 {
 .footer_content_bord {
     display: inline-block;
     border: 1px solid #41668e;
+    position: relative;
+    top: -4px;
 }
 
 .footer_social {
@@ -710,7 +712,7 @@ footer p {
     font-weight: 400;
     font-size: 13px;
     color: #fff;
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
 footer img {
@@ -1908,6 +1910,21 @@ footer img {
     border-radius: 5px;
 }
 
+.world_button.show_div {
+    display: block;
+    margin: 0 auto;
+    width: 140px;
+    height: 40px;
+    padding-top: 10px;
+    background: #f07626;
+    font-weight: 400;
+    font-size: 14px;
+    color: #fefefe;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
 .show_div:hover {
     text-decoration: none;
     color: #fefefe;
@@ -2833,7 +2850,6 @@ footer img {
 }
 
 .special_oferts_block img {
-    max-height: auto;
     width: 100%;
 }
 
@@ -3580,7 +3596,6 @@ footer img {
     cursor: pointer;
     position: relative;
     vertical-align: top;
-}
 }
 
 ul.products_list_ .citrus_list {

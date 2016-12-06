@@ -175,6 +175,11 @@ Route::multilingual(function () {
         'uses' => 'BeautyController@show'
     ]);
 
+    Route::post('subscribe',[
+        'as'  =>'subscribe',
+        'uses'=>'SubscribersController@subscribe'
+    ]);
+
     Route::get('contacts', [
             'as' =>'contact_page',
             'uses' => 'ContactController@index'

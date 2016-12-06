@@ -10,7 +10,7 @@
 
 <section class="main_fitness_article">
     <div class="container">
-        <h3>Programe Asemanatoare</h3>
+        <h3>{{$meta->getMeta('training_single_title')}}</h3>
         <div class="row">
             @foreach($trainings_same as $item)
                 <div class="col-md-3 col-sm-4 element-item {{$item->slug}}">
@@ -27,7 +27,7 @@
             @endforeach
             <div class="col-md-12" style="display: none;">
                 <div class="for_fitnes_more">
-                    <a href="/fitness_program.php">Mai multe programe</a>
+                    <a href="/fitness_program.php">{{$meta->getMeta('training_single_show_more')}}</a>
                 </div>
             </div>
         </div>
@@ -35,9 +35,9 @@
 </section>
 <section class="last_fitnes_article">
     <div class="container">
-        <h3>Отзывы клиентов</h3>
+        <h3>{{$meta->getMeta('training_single_clients')}}</h3>
         <div class="for_fitnes_more">
-            <a href="">Оставить свой отзыв</a>
+            <a href="">{{$meta->getMeta('training_single_paste_your_recall')}}</a>
         </div>
     </div>
 </section>

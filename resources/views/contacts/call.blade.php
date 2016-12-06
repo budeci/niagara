@@ -6,11 +6,11 @@
             <div class="contacts_form_block">
                 <div class="row">
                     <div style="margin-left: 60px;">
-                    <h1 class="title">Заказать обратный звонок</h1>
+                    <h1 class="title">{{$meta->getMeta('form_callback_title')}}</h1>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="contacts_form_contain" style="position: relative">
-                            <p>Мы рады ответить на любой ваш вопрос, выслушать ваше предложение или замечание</p>
+                            <p>{{$meta->getMeta('form_callback_subtitle')}}</p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6 ">
@@ -28,23 +28,23 @@
                         <div class="contacts_for_form">
                             <form method="post" action="{{route('send_contact_form')}}">
                                 <div class="col-md-6 col-sm-6">
-                                    <label for="name">Имя</label>
+                                    <label for="name">{{$meta->getMeta('form_callback_fname')}}</label>
                                     <input id="name" type="text" name="fname" value="{{old('fname')}}">
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <label for="first_name">Фамилия</label>
+                                    <label for="first_name">{{$meta->getMeta('form_callback_lname')}}</label>
                                     <input type="text" id="first_name" name="lname" value="{{old('lname')}}">
                                 </div>
                                 <div class=" col-md-6 col-sm-6">
-                                    <label for="phone">Телефон</label>
+                                    <label for="phone">{{$meta->getMeta('form_callback_phone')}}</label>
                                     <input type="text" id="phone" name="phone" value="{{old('phone')}}">
                                 </div>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <label for="e-mail">Электронная почта</label>
+                                    <label for="e-mail">{{$meta->getMeta('form_callback_email')}}</label>
                                     <input type="text" id="e-mail" name="email" value="{{old('email')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label for="type">Тип Карточки</label>
+                                    <label for="type">{{$meta->getMeta('form_callback_card')}}</label>
                                     <select name="select" id="type">
                                         @foreach($cards as $item)
                                             <option value="{{$item->name}}">{{$item->name}}</option>
@@ -53,12 +53,12 @@
                                 </div>
                                 <div class="col-md-12 col-sm-12  contacts_for_checkbox ">
                                     <input type="checkbox" id="check" name="check" >
-                                    <label for="check">Я согласен на обработку персональных данных </label>
+                                    <label for="check">{{$meta->getMeta('form_callback_accord')}}</label>
                                 </div>
                                 <input type="hidden" name="form" value="Call me back">
                                 {{csrf_field()}}
                                 <div class="col-md-12 col-sm-12">
-                                    <input type="submit" value="Отправить" >
+                                    <input type="submit" value="{{$meta->getMeta('form_callback_submit')}}" >
                                 </div>
                             </form>
                         </div>

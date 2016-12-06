@@ -2,14 +2,7 @@
 @section('content')
 <section class="for_news_page">
     <div class="container">
-        <h3 class="title">Новости</h3>
-        <form action="" style="display: none;">
-            <select>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2016</option>
-            </select>
-        </form>
+        <h3 class="title">{{$meta->getMeta('news_title')}}</h3>
         <ul class=" for_news_page_tab" >
             <li class="active"><a data-toggle="tab" href=".all">Все</a></li>
             @foreach($category_news as $key => $category)
@@ -33,7 +26,7 @@
                 </div>
             @endforeach
             <div class="col-md-12" style="display: none;">
-                <button class="show_div">Показать ещё</button>
+                <button class="show_div">{{$meta->getMeta('new_show_all')}}</button>
             </div>
         </div>
     </div>

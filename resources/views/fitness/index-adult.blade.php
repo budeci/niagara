@@ -2,18 +2,18 @@
 @section('content')
     <section class="fitnes">
         <div class="container">
-            <h3 class="title">Fitness Antrenamente</h3>
-            <h4>Alege Fitness Antrenamente</h4>
+            <h3 class="title">{{$meta->getMeta('fitnes_adult_title')}}</h3>
+            <h4>{{$meta->getMeta('fitnes_adult_subtitle')}}</h4>
             <div class="row">
                 <div class="col-md-8 col-sm-12 col-xs-12">
                     <div class="col-md-4 col-sm-4">
                         <div class="for_fitnes">
                             <div class="for_fitnes_head">
-                                <h3>Mai mult de <br><strong> 30</strong><br> fitness antrenamente</h3>
+                                <h3>{!! $meta->getMeta('fitnes_training_text') !!}</h3>
                             </div>
                             <div class="fitness_content_t">
-                                <p>În funcție de recomandările făcute în cadrul procesului de testare, te îndemnăm să alegi unul dintre antrenamentele de mai jos</p>
-                                <a href="{{ route('view_trainings') }}">Alege Fitness Antrenamente</a>
+                                <p>{!! $meta->getMeta('fitnes_training_info') !!}</p>
+                                <a href="{{ route('view_trainings') }}">{!! $meta->getMeta('fitnes_training_choice') !!}</a>
                             </div>
                         </div>
                     </div>
@@ -35,8 +35,7 @@
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">
                     <div class="fitnes_containt">
-                        <h3>Oportunitatile clubului</h3>
-
+                        <h3>{!! $meta->getMeta('fitnes_club_opportunity') !!}</h3>
                             @foreach($services as $item)
                                 @if($item->opportunities == 1)
                                     <div class="fitnes_ofert">

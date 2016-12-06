@@ -2,18 +2,18 @@
 @section('content')
    <section class="abonamente">
     <div class="container">
-    <h3>Абонементы Niagara Fitness</h3>
+    <h3>{{$meta->getMeta('membership_title')}}</h3>
         <div class="row">
             <div class="col-md-6 col-sm-6 ">
-                <p>Приобретая клубную карту, вы становитесь членом клуба Niagara Fitness со всеми возможностями и привилегиями. Клубная карта позволяет посещать тренажерный зал, бассейн и более 50 специально отобранных групповых программ: программы Les Mills, антигравити-йогу, пилатес, танцевальные классы, спортивные секции, боевые искусства, - а также иметь доступ к насыщенной спортивной и светской жизни Niagara Fitness, тематическим фитнес-турам и занятиям Outdoor.</p>
+                <p>{{$meta->getMeta('membership_info')}}</p>
             </div>
             <div class="col-md-6 col-sm-6 ">
                 <div class="row abonamente_block">
                     <div class="col-md-6  col-sm-6 col-xs-6">
-                        <a href=""><img class="img-responsive" src="/assets/images/pdf1.png" alt="">Типовая форма контракта</a>
+                        <a href=""><img class="img-responsive" src="/assets/images/pdf1.png" alt="">{{$meta->getMeta('membership_form')}}</a>
                     </div>
                     <div class="col-md-6 col-sm-6 col-xs-6">
-                        <a href=""><img class="img-responsive" src="/assets/images/pdf1.png" alt="">Правила посещения клубов</a>
+                        <a href=""><img class="img-responsive" src="/assets/images/pdf1.png" alt="">{{$meta->getMeta('membership_club')}}</a>
                     </div>
                 </div>
             </div>
@@ -22,10 +22,10 @@
 </section>
 <section class="parteneriat">
     <div class="container">
-        <h4>Виды членства</h4>
+        <h4>{{$meta->getMeta('membership_partners')}}</h4>
         <!-- <ul>
             <li>
-               <button id="btnCard" ><img src="/assets/images/1.jpg" alt=""></button> 
+               <button id="btnCard" ><img src="/assets/images/1.jpg" alt=""></button>
                 <h5>STANDARD</h5>
             </li>
             <li>
@@ -53,7 +53,7 @@
                 </div>
             @endforeach
         </div>
-        <a href="" data-target="#myModal2" data-toggle="modal">Заказать обратный звонок</a>
+        <a href="" data-target="#myModal2" data-toggle="modal">{{$meta->getMeta('membership_get_call')}}</a>
     </div>
     </div>
 </section>
@@ -62,8 +62,8 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 ">
                 <div class="cartele_block">
-                    <h4>Хотите заниматься в клубах Niagara Fitness по особой цене?</h4>
-                    <h5>Следите за спецпредложениями на нашем сайте и приобретайте годовые фитнес-карты с полным набором услуг со скидкой.</h5>
+                    <h4>{{$meta->getMeta('membership_card_title')}}</h4>
+                    <h5>{{$meta->getMeta('membership_card_subtitle')}}</h5>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6 ">
@@ -84,7 +84,7 @@
 </section>
 <section class="cartele_oferts">
     <div class=" container ">
-        <h3>Привилегии для владельцев любой клубной<br> карты Niagara Fitness</h3>
+        <h3>{!! $meta->getMeta('membership_card_offerts_title') !!}</h3>
         <ul>
             @foreach($privilege as $key => $item)
                 <li>
@@ -102,21 +102,19 @@
         <div class="row">
             <div class="col-md-6 col-sm-6 ">
                 <div class="cartele_last_block">
-                    <h3>Частые вопросы</h3>
+                    <h3>{!! $meta->getMeta('membership_questions') !!}</h3>
                     <ul>
                         @foreach($faq as $item)
                             <li><a href="{{route('view_faq')}}#tab{{$item->id}}">{{$item->name}}</a></li>
                         @endforeach
                     </ul>
-                    <a href="">Все вопросы</a>
+                    <a href="">{!! $meta->getMeta('membership_all_questions') !!}</a>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="cartele_last_contain">
-                    <h3>Преимущества Niagara Fitness</h3>
-                    <p>Niagara Fitness — крупнейшая фитнес-корпорация в Молдове, признанный лидер по оказанию фитнес-услуг в сегментах «люкс» и «премиум».
-                        <br>
-                        <br>На протяжении многих лет Niagara Fitness является членом IHRSA международной ассоциации, объединяющей ведущие мировые фитнес-клубы. В 2014 году сеть Niagara стала поставщиком в категории «Услуги для фитнеса».</p>
+                    <h3>{!! $meta->getMeta('membership_info_block_title') !!}</h3>
+                    <p>{!! $meta->getMeta('membership_info_block_body') !!}</p>
                 </div>
             </div>
         </div>
@@ -137,7 +135,7 @@
                         <h3>{{$category->name}}</h3>
                     </div>
                     <h4>{{$category->available}}</h4>
-                    <a href="{{route('call_page',['id'=>$category->id,'slug'=>str_slug($category->name)])}}">Comanda apel</a>
+                    <a href="{{route('call_page',['id'=>$category->id,'slug'=>str_slug($category->name)])}}">{!! $meta->getMeta('membership_comand_call') !!}</a>
                 </div>
                 <div class="body-modal-content">
                     {!!$category->description!!}

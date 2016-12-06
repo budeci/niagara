@@ -3,7 +3,7 @@
 @section('content')
 <section class="news_article_page">
     <div class="container">
-        <h3 class="title">Статьи</h3>
+        <h3 class="title">{{$meta->getMeta('lifestyle_posts')}}</h3>
         <div class="row">
             <div class="col-md-2">
                 <span>{!! $lifestyle->present()->renderDate('d F') !!}</span>

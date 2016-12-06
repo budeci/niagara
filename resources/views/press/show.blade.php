@@ -3,20 +3,14 @@
 @section('content')
 <section class="press">
     <div class="container">
-        <h3 class="title">Пресса</h3>
-       {{-- <select>
-            <option class="selected">Все годы</option>
-            <option>2016</option>
-            <option>2015</option>
-            <option>2014</option>
-        </select>--}}
+        <h3 class="title">{{$meta->getMeta('press_title')}}</h3>
     </div>
 </section>
 <section class="for_press">
     <div class="container">
         <ul class="press_btn">
-            <li class="active"><a data-toggle="tab" href="#press_about">Пресс-релизы</a></li>
-            <li><a data-toggle="tab" href="#press_releases">Пресса о нас</a></li>
+            <li class="active"><a data-toggle="tab" href="#press_about">{{$meta->getMeta('press_tab_release')}}</a></li>
+            <li><a data-toggle="tab" href="#press_releases">{{$meta->getMeta('press_tab_about_us')}}</a></li>
         </ul>
         <div class="tab-content">
             <div id="press_about" class="tab-pane fade in active">
@@ -37,7 +31,7 @@
                 @endforeach
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="show_div">Показать еще</button>
+                        <button class="show_div">{{$meta->getMeta('press_show_all')}}</button>
                     </div>
                 </div>
             </div>
@@ -59,7 +53,7 @@
                 @endforeach
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="show_div">Показать еще</button>
+                        <button class="show_div">{{$meta->getMeta('press_show_all')}}</button>
                     </div>
                 </div>
             </div>

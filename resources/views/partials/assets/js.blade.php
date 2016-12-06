@@ -6,6 +6,7 @@
 {!!Html::script('/assets/plugins/fancybox/jquery.fancybox.pack.js')!!}
 {!!Html::script('/assets/plugins/fancybox/jquery.fancybox.js')!!}
 {!!Html::script('/assets/js/jquery.featureCarousel.js')!!}
+{!!Html::script('/assets/js/toastr.min.js')!!}
 <!-- End of initialize jQuery plugin -->
 
 <!-- bootstrap -->

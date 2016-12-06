@@ -20,7 +20,7 @@ trait Metaable
             $meta = $this->whereKey($key)->active()->first();
         }
 
-        return ($asModel) ? $meta : $meta->value;
+        return ($meta) ? ($asModel) ? $meta : $meta->value : '';
     }
 
     /**

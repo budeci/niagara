@@ -2,8 +2,8 @@
 @section('content')
 <section class="partners_page">
     <div class="container">
-        <h3 class="title">Партнёры и привилегии для членов клуба</h3>
-        <h4 class="sub_title">Генеральные партнёры</h4>
+        <h3 class="title">{{$meta->getMeta('partners_title')}}</h3>
+        <h4 class="sub_title">{{$meta->getMeta('partners_subtitle')}}</h4>
         <div class="row">
             @foreach($partners as $item)
                 <div class="col-md-3 col-sm-6 ">

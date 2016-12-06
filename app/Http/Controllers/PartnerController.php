@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\PartnerRepository;
-
 use Illuminate\Http\Request;
 
 use App\Http\Requests;

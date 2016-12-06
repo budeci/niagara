@@ -3,7 +3,7 @@
 @section('content')
 <section class="faq_head">
     <div class="container">
-        <h3 class="title">Часто задаваемые вопросы</h3>
+        <h3 class="title">{{$meta->getMeta('faq_page_title')}}</h3>
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
             @foreach($faq as $item)
             <div class="panel panel-default">
@@ -26,37 +26,37 @@
 </section>
 <section class="faq_last">
     <div class="container">
-        <h3 class="title">Не нашли ответ на свой вопрос?</h3>
+        <h3 class="title">{{$meta->getMeta('faq_form_title')}}</h3>
         <section class="contacts_form">
             <div class="container">
                 <div class="contacts_form_block">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="contacts_form_contain">
-                                <p>Мы рады ответить на любой ваш вопрос, выслушать ваше предложение или замечание</p>
+                                <p>{{$meta->getMeta('faq_form_subtitle')}}</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 ">
                             <div class="contacts_for_form">
                                 <form method="post" action="{{route('send_contact_form')}}">
                                     <div class="col-md-6 col-sm-6">
-                                        <label for="name">Имя</label>
+                                        <label for="name">{{$meta->getMeta('form_callback_fname')}}</label>
                                         <input id="name" type="text" name="fname" value="{{old('fname')}}">
                                     </div>
                                     <div class="col-md-6 col-sm-6">
-                                        <label for="first_name">Фамилия</label>
+                                        <label for="first_name">{{$meta->getMeta('form_callback_lname')}}</label>
                                         <input type="text" id="first_name" name="lname" value="{{old('lname')}}">
                                     </div>
                                     <div class=" col-md-6 col-sm-6">
-                                        <label for="phone">Телефон</label>
+                                        <label for="phone">{{$meta->getMeta('form_phone')}}</label>
                                         <input type="text" id="phone" name="phone" value="{{old('phone')}}">
                                     </div>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <label for="e-mail">Электронная почта</label>
+                                        <label for="e-mail">{{$meta->getMeta('form_email')}}</label>
                                         <input type="text" id="e-mail" name="email" value="{{old('email')}}">
                                     </div>
                                     <div class="col-md-12 col-sm-12 ">
-                                        <label for="e-mail">Тема собшения</label>
+                                        <label for="e-mail">{{$meta->getMeta('form_theme')}}</label>
                                         <input type="text" name="theme" value="{{old('theme')}}">
                                     </div>
                                     <div class="col-md-12 col-sm-12">
@@ -65,12 +65,12 @@
                                     </div>
                                     <div class="col-md-12 col-sm-12  contacts_for_checkbox ">
                                         <input type="checkbox" id="check" name="check" >
-                                        <label for="check">Я согласен на обработку персональных данных </label>
+                                        <label for="check">{{$meta->getMeta('form_accept')}}</label>
                                     </div>
                                     <input type="hidden" name="form" value="Contact Form">
                                     {{csrf_field()}}
                                     <div class="col-md-12 col-sm-12 ">
-                                        <input type="submit" value="Отправить" >
+                                        <input type="submit" value="{{$meta->getMeta('form_submit')}}">
                                     </div>
                                 </form>
                             </div>

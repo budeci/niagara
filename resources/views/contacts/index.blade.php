@@ -4,13 +4,13 @@
     <section class="contacts_map">
         <div class="container">
             <div class="contacts_map_block">
-                <h3>Центральный офис Niagara Fitness</h3>
+                <h3>{{$meta->getMeta('form_contact_title')}}</h3>
                 <div class="contacts_map_contain">
                     <ul>
-                        <li>str. Ghidighici 5, Chișinău, Republica Moldova</li>
+                        <li>{{settings()->getOption('contacts::adress')}}</li>
                         <br>
                         <br>
-                        <li>luni-vineri de la 10:00 pana la 18:00</li>
+                        <li>{{settings()->getOption('contacts::orar')}}</li>
                     </ul>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                         <div class="contacts_form_contain" style="position: relative">
-                            <p>Мы рады ответить на любой ваш вопрос, выслушать ваше предложение или замечание</p>
+                            <p>{{$meta->getMeta('form_contact_info')}}</p>
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-6 ">
@@ -42,37 +42,37 @@
                         <div class="contacts_for_form" style="@if(Session::has('message')) padding-top:0;@endif">
                             <form method="post" action="{{route('send_contact_form')}}">
                                 <div class="col-md-6 col-sm-6">
-                                    <label for="name">Имя</label>
+                                    <label for="name">{{$meta->getMeta('form_callback_fname')}}</label>
                                     <input id="name" type="text" name="fname" value="{{old('fname')}}">
                                 </div>
                                 <div class="col-md-6 col-sm-6">
-                                    <label for="first_name">Фамилия</label>
+                                    <label for="first_name">{{$meta->getMeta('form_callback_lname')}}</label>
                                     <input type="text" id="first_name" name="lname" value="{{old('lname')}}">
                                 </div>
                                 <div class=" col-md-6 col-sm-6">
-                                    <label for="phone">Телефон</label>
+                                    <label for="phone">{{$meta->getMeta('form_callback_phone')}}</label>
                                     <input type="text" id="phone" name="phone" value="{{old('phone')}}">
                                 </div>
                                 <div class="col-md-6 col-sm-6 ">
-                                    <label for="e-mail">Электронная почта</label>
+                                    <label for="e-mail">{{$meta->getMeta('form_callback_email')}}</label>
                                     <input type="text" id="e-mail" name="email" value="{{old('email')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12 ">
-                                    <label for="select">Тема собшения</label>
+                                    <label for="select">{{$meta->getMeta('form_contact_theme')}}</label>
                                     <input type="text" name="select" id="select" value="{{old('select')}}">
                                 </div>
                                 <div class="col-md-12 col-sm-12">
-                                    <label for="message">Сообщение</label>
+                                    <label for="message">{{$meta->getMeta('form_contact_message')}}</label>
                                     <textarea id="message" name="message">{{old('message')}}</textarea>
                                 </div>
                                 <div class="col-md-12 col-sm-12  contacts_for_checkbox ">
                                     <input type="checkbox" id="check" name="check" >
-                                    <label for="check">Я согласен на обработку персональных данных </label>
+                                    <label for="check">{{$meta->getMeta('form_accept')}}</label>
                                 </div>
                                 <input type="hidden" name="form" value="Contact Form">
                                 {{csrf_field()}}
                                 <div class="col-md-12 col-sm-12 ">
-                                    <input type="submit" value="Отправить" >
+                                    <input type="submit" value="{{$meta->getMeta('form_submit')}}" >
                                 </div>
                             </form>
                             <div class="col-xs-12">
