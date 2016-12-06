@@ -75,11 +75,11 @@
             <div class="col-md-12">
                 <div class="footer_social">
                     <ul>
-                        <li><a href=""><img class="img-responsive" src="/assets/images/social1.png" alt=""></a></li>
+                        <li><a href="{{settings()->getOption('social::twitter')}}" target="_blank"><img class="img-responsive" src="/assets/images/social1.png" alt=""></a></li>
                         <li><span class="footer_content_bord"> </span></li>
-                        <li><a href=""><img class="img-responsive" src="/assets/images/social2.png" alt=""></a></li>
+                        <li><a href="{{settings()->getOption('social::facebook')}}" target="_blank"><img class="img-responsive" src="/assets/images/social2.png" alt=""></a></li>
                         <li><span class="footer_content_bord"></span></li>
-                        <li><a href=""><img class="img-responsive" src="/assets/images/social3.png" alt=""></a></li>
+                        <li><a href="{{settings()->getOption('social::linkedin')}}" target="_blank"><img class="img-responsive" src="/assets/images/social3.png" alt=""></a></li>
                     </ul>
                     <p>{{$meta->getMeta('footer_copyright')}}</p>
                 </div>

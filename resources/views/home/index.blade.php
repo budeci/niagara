@@ -113,12 +113,14 @@
             <div class="modal-content abonare_content">
                 <h3>{!! $meta->getMeta('subscribe_news') !!}</h3>
                 <h4>{!! $meta->getMeta('subscribe_form_title') !!}</h4>
-                <form>
+                <form method="post">
                     <div class="form-group">
                         <label for="email">{!! $meta->getMeta('form_email') !!}</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" >
+                        <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" >
+                        <input type="hidden" name="type" value="news">
+                        {{csrf_field()}}
                     </div>
-                    <input type="submit" value="{!! $meta->getMeta('form_submit') !!}" >
+                    <input class="subscribe" type="submit" value="{!! $meta->getMeta('form_submit') !!}" >
                 </form>
             </div>
         </div>

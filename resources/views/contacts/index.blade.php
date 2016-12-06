@@ -7,10 +7,10 @@
                 <h3>{{$meta->getMeta('form_contact_title')}}</h3>
                 <div class="contacts_map_contain">
                     <ul>
-                        <li>str. Ghidighici 5, Chișinău, Republica Moldova</li>
+                        <li>{{settings()->getOption('contacts::adress')}}</li>
                         <br>
                         <br>
-                        <li>luni-vineri de la 10:00 pana la 18:00</li>
+                        <li>{{settings()->getOption('contacts::orar')}}</li>
                     </ul>
                 </div>
             </div>

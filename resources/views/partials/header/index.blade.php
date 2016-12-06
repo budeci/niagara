@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-4 ">
-                <span class="for-phone">022 21 00 21</span>
+                <span class="for-phone">{{settings()->getOption('site::phone')}}</span>
                 <div class="lang">
 
                     @if(isset($languages['other']))
@@ -25,7 +25,7 @@
                         <button  data-target="#myModal2" data-toggle="modal">{{$meta->getMeta('header_call_me')}}</button>
                     </li>
                     <li class="hidden-xs">
-                        <button>{{$meta->getMeta('header_feadback')}}</button>
+                        <a href="{{route('contact_page')}}">{{$meta->getMeta('header_feadback')}}</a>
                     </li>
                 </ul>
             </div>
@@ -47,8 +47,8 @@
                 <li><a href="{{route('join_member')}}">{{$meta->getMeta('head_join')}}</a></li>
                 <li class="visible-xs"><a href="">{{$meta->getMeta('head_orar')}}</a></li>
                 <li class="visible-xs"><a href="">{{$meta->getMeta('header_hot_offer')}}</a></li>
-                <li class="visible-xs"><a href="">{{$meta->getMeta('head_call_me')}}</a></li>
-                <li class="visible-xs"><a href="">{{$meta->getMeta('header_feadback')}}</a></li>
+                <li class="visible-xs"><a href="#" data-target="#myModal2" data-toggle="modal">{{$meta->getMeta('head_call_me')}}</a></li>
+                <li class="visible-xs"><a href="{{route('contact_page')}}">{{$meta->getMeta('header_feadback')}}</a></li>
                 <button class="for_btn" data-toggle="modal" data-target=".bs-example-modal-lg">{{$meta->getMeta('head_comand_tour')}}</button>
             </ul>
         </div>

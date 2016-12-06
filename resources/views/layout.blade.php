@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
 @include('partials.header.index')
 
     @include('partials.notification')
