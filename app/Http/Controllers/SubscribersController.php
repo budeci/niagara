@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Repositories\SubscribeRepository;
 use Request;
 use Response;
+use Validator;
 
 
 class SubscribersController extends Controller
@@ -27,11 +28,13 @@ class SubscribersController extends Controller
      */
     public function subscribe()
     {
-      $request =  Request::all();
-        if(!$request['email']) {
+        $request =  Request::all();
+        $validator = Validator::make($request, [
+            'email' => 'required|email|max:50',
+        ]);
+        if ($validator->fails()) {
             return Response::json('invalid');
-        }
-        else {
+        }else {
             if($this->subscribe->getByEmail($request['email'])) {
                 if($this->subscribe->getByEmail($request['email'])->active != 1){
                     $this->subscribe->update($request['email']);
