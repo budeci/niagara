@@ -1,4 +1,7 @@
-/vendor
+/vendor/*
+!vendor/keyhunter/
+
+
 /node_modules
 /public/storage
 Homestead.yaml

@@ -26,6 +26,13 @@ class Event extends Repository
     /**
      * @var string
      */
+    public function getImageAttribute($value)
+    {
+        //add full path to image
+      if (!empty($value)) {
+        return str_replace('\\', '/', $value);
+      }
+    }
     protected $table = 'event';
 
     /**

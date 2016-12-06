@@ -1,0 +1,29 @@
+{
+    "name": "keyhunter/translatable",
+    "description": "A Laravel package for multilingual models",
+    "keywords": ["laravel", "translation", "language", "database"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "John",
+            "email": "withoutgmail@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~2.0",
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Keyhunter\\Translatable\\": "src/Keyhunter/Translatable/"
+        },
+        "classmap": [
+            "tests"
+        ]
+    },
+
+    "minimum-stability": "dev"
+}
