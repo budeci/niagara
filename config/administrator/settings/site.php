@@ -18,19 +18,34 @@ return [
 
         'support::email' => ['type' => 'email'],
 
+        'contacts::adress' => ['type' => 'text'],
+
+        'contacts::orar' => ['type' => 'text'],
+
         'site::phone'    => ['type' => 'text'],
+
+        'social::facebook'    => ['type' => 'text'],
+
+        'social::twitter'    => ['type' => 'text'],
+
+        'social::linkedin'    => ['type' => 'text'],
 
         'map::gps'    => ['type' => 'text'],
 
         'site::about' => ['type' => 'textarea'],
 
-        'site::logo' => [
+        /*'site::logo' => [
             'type' => 'image',
             'location' => '/upload/settings',
 //            'sizes' => [
 //                'big'     => '1024x1024',
 //            ]
         ],
+        'location' => '/upload/settings/(:tag_id)',
+            'sizes' => [
+                'big'     => '1024x1024',
+            ]
+        ],*/
 
 //        'site::roles' => [
 //            'type'    => 'select',
