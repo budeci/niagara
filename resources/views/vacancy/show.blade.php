@@ -30,3 +30,7 @@
    @include('vacancy.partials.modal')
 
 @endsection
+
+@section('js')
+    @include('home.partials.js')
+@endsection

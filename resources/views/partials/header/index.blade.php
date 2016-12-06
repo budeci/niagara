@@ -41,7 +41,7 @@
             <ul class="menu">
                 <li><a href="{{route('view_fitness_adult')}}">{{$meta->getMeta('header_fitness')}}</a></li>
                 <li><a href="{{route('view_fitness_kids')}}">{{$meta->getMeta('head_kids_club')}}</a></li>
-                <li><a href="{{route('view_membership')}}">{{$meta->getMeta('head_kids_club')}}</a></li>
+                <li><a href="{{route('view_membership')}}">{{$meta->getMeta('head_club_card')}}</a></li>
                 <li><a href="{{route('beauty_show')}}">{{$meta->getMeta('head_spa_beauty')}}</a></li>
                 <li><a href="{{route('view_world') }}">{{$meta->getMeta('head_world_niagara')}}</a></li>
                 <li><a href="{{route('join_member')}}">{{$meta->getMeta('head_join')}}</a></li>

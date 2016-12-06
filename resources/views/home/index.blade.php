@@ -119,6 +119,7 @@
                         <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" >
                         <input type="hidden" name="type" value="news">
                         {{csrf_field()}}
+                        <span class="error" style="color: red; font-size: 12px;"></span>
                     </div>
                     <input class="subscribe" type="submit" value="{!! $meta->getMeta('form_submit') !!}" >
                 </form>
