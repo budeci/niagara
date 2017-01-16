@@ -4,7 +4,7 @@
     <div class="container">
         <h3 class="title">{{$meta->getMeta('training_title')}}</h3>
         <div class="for_fitness_link">
-            <div class="pull-right filter-button-group">
+            <div class="filter-button-group">
                 <button class="is-checked" data-filter="*">{{$meta->getMeta('training_title')}}</button>
                 @foreach($category_trainings as $category)
                     <button data-filter=".{{$category->slug}}">{{$category->name}}</button>

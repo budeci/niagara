@@ -20,6 +20,34 @@ $(function()
         //
     });
 
+
+    $('select[multiple]').each(function ()
+    {
+        var $this = $(this);
+        var nullable = $this.data('nullable');
+        $this.chosen({
+            allow_single_deselect: nullable,
+           /* no_results_text: window.admin.lang.select.nothing,
+            placeholder_text_single: window.admin.lang.select.placeholder,
+            placeholder_text_multiple: window.admin.lang.select.placeholder,*/
+        });
+    });
+    var colorpicker = $('.colorpicker-component');
+    colorpicker.colorpickerplus({
+        color: "#000000",
+        format: "hex"
+    });
+    colorpicker.on('changeColor', function(e,color){
+        if(color==null) {
+          //when select transparent color
+          $(this).find('input').val('transparent');
+          $(this).find('i').css('background-color', 'transparent');//tranparent
+        } else {
+            $(this).find('input').val(color);
+            $(this).find('i').css('background-color', color);
+        }
+    });
+
     // activate language switcher
     $('button[data-locale]').click(function() {
         var fn = $(this), locale = fn.data('locale');
@@ -38,7 +66,7 @@ $(function()
     $(document).ready(function(){
         $('input[type=checkbox]').iCheck({
             checkboxClass: 'icheckbox_minimal-purple',
-            radioClass: 'iradio_minimal-purple',
+            //radioClass: 'iradio_minimal-purple',
             increaseArea: '20%' // optional
         });
         $('input[name="1[slug]"], input[name="slug"]').parents('tr').hide();

@@ -66,7 +66,7 @@ return [
     */
     'query' => function(Builder $query)
     {
-        return $query;
+        return $query->orderBy('id','desc');
     },
 
     /*

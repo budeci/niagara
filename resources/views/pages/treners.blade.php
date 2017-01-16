@@ -5,7 +5,7 @@
         <div class="container">
             <h3 class="title">{{$pages->title}}</h3>
             {!! $pages->body !!}
-            {!! $pages->more !!}
+            {!!$pages->more!!}
             <div class="slider_for_treners">
                 <div class="treners_slide">
                     <div class="treners_slide_block" style="background:url({{str_replace("\\", "/",$pages->image)}}) no-repeat center center; background-size:cover;">

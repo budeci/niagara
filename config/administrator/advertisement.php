@@ -78,13 +78,12 @@ return [
     |
     */
     'edit_fields' => [
-        'id'          => ['type' => 'key'],
-        'slug'        => form_text() + translatable(),
-        'name'        => form_text() + translatable(),
-
+        'id'            => ['type' => 'key'],
+        'slug'          => form_text() + translatable(),
+        'name'          => form_text() + translatable(),
         'opportunities' => form_ckeditor() + translatable(),
-        'inside_club' => form_ckeditor() + translatable(),
-        'sponsors' => form_ckeditor() + translatable(),
-        'active' => form_boolean(),
+        'inside_club'   => form_ckeditor() + translatable(),
+        'sponsors'      => form_ckeditor() + translatable(),
+        'active'        => form_boolean(),
     ]
 ];

@@ -10,6 +10,9 @@ use Request;
 use File;
 class Schedule extends Repository
 {
+    protected $hour = [
+        'hour',
+    ];
     use HasTranslations,Presenterable, HasImages ,ActivateableTrait;
 
     /**
@@ -28,7 +31,7 @@ class Schedule extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','image','trainer_id','hour','type','day'];
+    protected $fillable = ['active','image','trainer_id','hour','type','day_id'];
 
     /**
      * @var array
@@ -41,6 +44,34 @@ class Schedule extends Repository
       if (!empty($value)) {
         return str_replace('\\', '/', $value);
       }
+    }
+    /*public function scheduleProgram()
+    {
+        return $this->hasMany(ScheduleProgram::class, 'id', 'program_id');
+    }*/
+    public function days()
+    {
+        return $this->hasOne(Day::class, 'id', 'day_id');
+    }
+    public function getProgram()
+    {
+        return $this->belongsToMany(Program::class, 'schedule_program', 'schedule_id', 'program_id');
+    }
+    public function program()
+    {
+        return $this->belongsToMany(Program::class, 'schedule_program', 'schedule_id', 'program_id');
+    }
+    public function getProgramAttribute($program)
+    {
+        return array_pluck($this->program()->get()->toArray(), 'id');
+    }
+    public function setProgramAttribute($program)
+    {
+        // перепрописываем отношения с таблицей категорий
+        $this->program()->detach();
+        if (!$program) return;
+        if (!$this->exists) $this->save();
+        $this->program()->attach($program);
     }
 
     public function delete(){

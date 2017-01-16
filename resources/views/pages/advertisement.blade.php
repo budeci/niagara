@@ -3,6 +3,7 @@
 @section('content')
     <section class="advertising">
         <div class="container">
+            <h3 class="title">{{ ($advertisement) ?  $advertisement->name : '' }}</h3>
             {!! ($advertisement) ? $advertisement->opportunities : ''!!}
         </div>
     </section>

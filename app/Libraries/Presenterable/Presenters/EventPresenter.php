@@ -18,7 +18,8 @@ class EventPresenter extends Presenter
      */
     public function renderShortDescription($range = 75)
     {
-        return sprintf('%s... </p>', substr($this->model->about, 0, $range));
+        //return sprintf('%s... </p>', substr($this->model->about, 0, $range));
+        return mb_substr(strip_tags($this->model->about), 0, 120);
     }
 
     /**

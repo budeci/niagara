@@ -40,8 +40,8 @@ class EventRepository extends Repository
     {
         return self::getModel()
             ->active()
-            ->orderBy('expire_date', self::ASC)
-            ->where('expire_date','>=',Carbon::now())
+            ->orderBy('expire_date', self::DESC)
+            //->where('expire_date','>=',Carbon::now())
             ->paginate($paginate);
     }
     public function getTopHome($paginate = 4)
@@ -49,8 +49,8 @@ class EventRepository extends Repository
         return self::getModel()
             ->active()
             ->orderBy('home_show', self::DESC)
-            ->orderBy('expire_date', self::ASC)
-            ->where('expire_date','>=',Carbon::now())
+            ->orderBy('expire_date', self::DESC)
+            //->where('expire_date','>=',Carbon::now())
             ->paginate($paginate);
     }
     /**

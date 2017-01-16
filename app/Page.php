@@ -10,6 +10,6 @@ class Page extends MainPage
     use ActivateableTrait;
 
     protected $fillable = [
-        'slug', 'title', 'body', 'active', 'show_in_footer', 'show_in_header','image','image1','image2','anotation'
+        'slug', 'title', 'body', 'active', 'show_in_footer', 'show_in_header'
     ];
 }

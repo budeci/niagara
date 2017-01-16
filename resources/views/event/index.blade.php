@@ -37,7 +37,7 @@
                                     <p>{{ $item->present()->renderPublishedDate() }} - {{ $item->present()->renderExpiredDate() }}<br><br>
                                     {{ $item->present()->renderTitle() }}</p>
                                 </div>
-                                <div class="for_pin_events">
+                                <div class="for_pin_events" style="padding: 15px 5px 0 5px;">
                                     <img class="img-resposive" src="/assets/images/pink.png" alt="">
                                     {!! $item->present()->renderShortDescription(200) !!}
                                 </div>

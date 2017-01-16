@@ -8,4 +8,5 @@
 {!!Html::style('/assets/css/toastr.min.css') !!}
 @yield('css')
 {!!Html::style('/assets/style/style.css')!!}
+{!!Html::style('/assets/css/custom.css')!!}
 <!-- End of adding styles  -->

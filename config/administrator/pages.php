@@ -26,7 +26,11 @@ return [
             'slug'
         ]),
 
-        'body',
+        'body'=> [
+            'output'=> function($row){
+                return sprintf('%s ...', substr($row->body, 0, 275));
+            }
+        ],
 
         'active' => column_element('Active', false, function($row)
         {
@@ -122,21 +126,21 @@ return [
 
         'image' => [
             'type' => 'image',
-            'location' => 'public/assets/personal_training'
+            'location' => '/upload/pages'
         ],
-        'anotation' => form_text() + translatable(),
+        'anotation' => form_textarea() + translatable(),
 
         'image1' => [
             'type' => 'image',
-            'location' => 'public/assets/personal_training'
+            'location' => '/upload/pages'
         ],
-        'anotation1' => form_text() + translatable(),
+        'anotation1' => form_textarea() + translatable(),
 
         'image2' => [
             'type' => 'image',
-            'location' => 'public/assets/personal_training'
+            'location' => '/upload/pages'
         ],
-        'anotation2' => form_text() + translatable(),
+        'anotation2' => form_textarea() + translatable(),
 
         'active' => filter_select('Active', [
             0 => 'No',

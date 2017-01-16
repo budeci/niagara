@@ -1,0 +1,83 @@
+<?php
+use App\Day;
+return [
+    'title'  => 'Add Day',
+    'model'  => Day::class,
+
+    /*
+    |-------------------------------------------------------
+    | Columns/Groups
+    |-------------------------------------------------------
+    |
+    | Describe here full list of columns that should be presented
+    | on main listing page
+    |
+    */
+    'columns' => [
+        'id',
+        'name'
+    ],
+
+    /*
+    |-------------------------------------------------------
+    | Actions available to do, including global
+    |-------------------------------------------------------
+    |
+    | Global actions
+    | @todo
+    */
+    'actions' => [
+    ],
+
+    /*
+    |-------------------------------------------------------
+    | Eloquent With Section
+    |-------------------------------------------------------
+    |
+    | Eloquent lazy data loading, just list relations that should be preloaded
+    |
+    */
+    'with' => [],
+
+    /*
+    |-------------------------------------------------------
+    | QueryBuilder
+    |-------------------------------------------------------
+    |
+    | Extend the main scaffold index query
+    |
+    */
+    /*'query' => function(Builder $query)
+    {
+        $query->where('role_id', '!=', Role::whereName('admin')->first()->id);
+    },*/
+    'query' => function($query)
+    {
+        return $query->orderBy('id', 'asc');
+    },
+
+    /*
+    |-------------------------------------------------------
+    | Global filter
+    |-------------------------------------------------------
+    |
+    | Filters should be defined here
+    |
+    */
+    'filters' => [
+        'id' => filter_hidden(),
+    ],
+
+    /*
+    |-------------------------------------------------------
+    | Editable area
+    |-------------------------------------------------------
+    |
+    | Describe here all fields that should be editable
+    |
+    */
+    'edit_fields' => [
+        'id'   => ['type' => 'key'],
+        'name' => form_text() + translatable()
+    ]
+];

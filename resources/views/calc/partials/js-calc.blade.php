@@ -13,7 +13,10 @@
       $(this).unbind().submit();
   });
 
-  
+  $('.js-calories-reset').click(function(event) {
+    $('.citrus_products_list_items li').removeClass('list_active');
+    $('input[name="food"]').val('');
+  });
   var $calcul_block = $('.calcul_block'),
       $body = $('html,body'),
       openSearch = function(target) {

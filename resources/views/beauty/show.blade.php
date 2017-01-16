@@ -33,7 +33,7 @@
     <section class="beauty">
         <div class="container ">
             <h4 class="sub_title">{!! $meta->getMeta('beauty_spa_filters_title') !!}</h4>
-            <div id="isotope_tab" class="pull-right filter-button-group">
+            <div id="isotope_tab" class="filter-button-group">
                 <button class="beauty_btn filter_active" data-filter="*">{!! $meta->getMeta('beauty_spa_filters_all') !!}</button>
                 @foreach($category as $item)
                     <button class="beauty_btn" data-filter=".{{$item->id}}">{!! $item->name !!}</button>

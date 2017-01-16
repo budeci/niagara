@@ -28,7 +28,7 @@ class Team extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','image'];
+    protected $fillable = ['active','image','type'];
 
     public $translatedAttributes = ['name','slug','body','job','meta_title','meta_description','meta_keyword'];
     public $imgPath  = 'upload/team/';

@@ -6,6 +6,6 @@ class PageTranslation extends Model {
 
     public $timestamps = false;
 
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body', 'more','anotation','anotation1','anotation2'];
 
 }

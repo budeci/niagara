@@ -17,10 +17,10 @@
                     <li>
                         <button class=" pulsate" style="font-size: 20px;">{{$meta->getMeta('header_hot_offer')}}</button>
                     </li>
-                    {{--<li class="hidden-xs ">
-                        <a href="/orar.php">
+                    <li class="hidden-xs ">
+                        <a href="{{ route('view_schedule') }}">
                         <img class="hidden-xs" src="/assets/images/ic1.png" alt="">Orar</a>
-                    </li>--}}
+                    </li>
                     <li class="hidden-xs">
                         <button  data-target="#myModal2" data-toggle="modal">{{$meta->getMeta('header_call_me')}}</button>
                     </li>

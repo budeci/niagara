@@ -1,0 +1,156 @@
+.schedule{
+    padding: 60px 0;
+    background-color: #f1f2f2;
+}
+.nav-tabs-schedule li a{
+    font-size: 26px;
+    color: #d1d3d4;
+}
+.nav-tabs-schedule li.active a{
+    color: #000;
+}
+.nav-tabs-schedule>li>a:hover, .nav-tabs-schedule>li>a:focus{
+    background-color:transparent;
+    color: #000;
+}
+.schedule-col{
+    display: inline-block;
+    padding: 0 10px;
+    width: 180px;
+    vertical-align: top;
+}
+.schedule ul{
+    list-style-type: none;
+}
+.schedule-col h3{
+    font-size: 14px;
+    color: #bcbfc3;
+    text-align: center;
+    margin: 25px 0;
+}
+@media (max-width: 536px){
+    .nav-tabs-schedule li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 380px){
+    .nav-tabs-schedule li a{
+        font-size: 14px;
+    }
+    .schedule-col{
+        width: 100%;
+    }
+}
+.schedule-cell li a{
+    text-decoration: none;
+}
+.schedule-cell li a:focus{
+    outline: none;
+}
+.schedule-cell>li>a:hover, .schedule-cell>li>a:focus{
+    background-color:transparent;
+}
+.schedule-cell > li{
+    margin-bottom: 20px;
+    min-height: 160px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 1px 15px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    1px 1px 15px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         1px 1px 15px 0px rgba(50, 50, 50, 0.5);
+}
+.orar-top{
+    padding: 10px 15px;
+    font-size: 18px;
+    background-color: #f7941d
+}
+.orar-top a{
+    color: #fff;
+}
+.orar-body a{
+    color: #000;
+    display: block;
+}
+.orar-body{
+    padding: 10px 15px;
+}
+.color-skill{
+    margin: 5px 0;
+}
+.color-skill li{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.orar-body p{
+    margin: 0;
+}
+.orar-body p.orar-body-title{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.schedule-modal .loader{
+    display: block;
+    margin: 0 auto;
+}
+.export-schedule, .orar-header,.advertising ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.orar-header li{
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.modal-hall{
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+.advertising ul li{
+    display: inline-block;
+    width: 430px;
+    vertical-align: top;
+    padding: 15px;
+}
+.advertising ul li:before {
+    color: #f07626; /* Цвет маркера */
+    content: "• "; /* Сам маркер */
+    margin-left: -15px; /* Расстояние от маркера до текста */
+    font-size: 25px;
+    float: left;
+    margin-top: -6px;
+}
+@media (min-width: 64em){
+    .schedule-event-modal {
+        width: 970px;
+    }  
+}
+
+@media (min-width: 48em){
+    .schedule-event-modal {
+        width: 740px;
+    }
+}
+.schedule-event-modal {
+    position: relative;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 22px;
+    color: #000;
+    background-color: #fff;
+}
+.label-checkbox-event{
+    margin: 0;
+    float: right;
+}
+.schedule_events_toGoogle-box {
+    min-height: 200px;
+    width: 100%;
+    text-align: left;
+    background-color: #eceded;
+    margin-bottom: 20px;
+    padding: 7px;
+}

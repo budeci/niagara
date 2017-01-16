@@ -16,6 +16,9 @@ return [
     'columns' => [
         'id',
         'name',
+        'type' => [
+            'title' => 'Status'
+        ],
         'job',
 /*        'belongs' => [
             'title' => 'Belongs to',
@@ -24,16 +27,6 @@ return [
             }
         ],*/
         'image' => column_element('', true, '<img src="(:image)" width="100" />'),
-
-/*        'user_id' => [
-            'title' => 'Participant',
-            'output' => function ($row) {
-                if($user = $row->user)
-                    return $user->name;
-
-                return 'no user';
-            }
-        ]*/
     ],
 
     /*
@@ -71,7 +64,8 @@ return [
     },*/
     'query' => function($query)
     {
-        return $query;
+        //return $query->where('type','management');
+        return $query->orderBy('type');
     },
 
     /*
@@ -84,6 +78,9 @@ return [
     */
     'filters' => [
         'id' => filter_hidden(),
+        'type' => filter_select('Status', function () {
+            return collect([''=>'-- Any --','management'=>'Management','administration'=>'Administration','trener'=>'Trener']);
+        })
     ],
 
     /*
@@ -99,6 +96,11 @@ return [
         'name' => form_text() + translatable(),
         'slug' => form_text() + translatable(),
         'job'  => form_text() + translatable(),
+        'type' => [
+            'label' => 'Status',
+            'type' => 'select',
+            'options' => ['management'=>'Management','administration'=>'Administration','trener'=>'Trener']
+        ],
         'image' => [
             'type' => 'image',
             'location' => '/',
@@ -107,7 +109,7 @@ return [
 //            ]
         ],
         'body'   => form_ckeditor() + translatable(),
-        'director' => form_boolean(),
+        //'director' => form_boolean(),
         'active' => form_boolean(),
     ]
 ];

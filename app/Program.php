@@ -28,7 +28,7 @@ class Program extends Repository
      * @var array
      */
 
-    protected $fillable = ['active','image'];
+    protected $fillable = ['active','image','color'];
 
     /**
      * @var array
@@ -42,7 +42,10 @@ class Program extends Repository
         return str_replace('\\', '/', $value);
       }
     }
-
+    public function schedule()
+    {
+        return $this->belongsToMany(Schedule::class);
+    }
     public function delete(){
         if($this->attributes['image']){
             $file = $this->attributes['image'];

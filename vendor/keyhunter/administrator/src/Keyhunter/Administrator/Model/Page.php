@@ -9,9 +9,9 @@ class Page extends Repository implements Translatable
 {
     use HasTranslations;
 
-    protected $translatedAttributes = ['title', 'body'];
+    protected $translatedAttributes = ['title', 'body', 'more','anotation','anotation1','anotation2'];
 
-    protected $fillable = ['slug', 'title', 'body', 'active'];
+    protected $fillable = ['slug', 'title', 'body', 'active','image','image1','image2'];
 
     protected $table = 'pages';
 

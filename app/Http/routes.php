@@ -1,6 +1,7 @@
 <?php
 use App\Repositories\OffertRepository;
 use App\Repositories\LifeStyleRepository;
+use App\Repositories\ScheduleRepository;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -29,20 +30,45 @@ use App\Repositories\PostRepository;
 use App\Repositories\OpportunityAntrenamentRepository;
 
 Route::bind('event', function ($slug) {
-    return (new EventRepository)->findBySlug($slug);
+    if ($event = (new EventRepository)->findBySlug($slug))
+        return $event;
+    abort('404');
 });
 
 Route::bind('training', function ($slug) {
-    return (new TrainingRepository)->findBySlug($slug);
+    if ($training = (new TrainingRepository)->findBySlug($slug))
+        return $training;
+    abort('404');
 });
 Route::bind('post', function ($slug) {
-    return (new PostRepository)->findBySlug($slug);
+    if ($post = (new PostRepository)->findBySlug($slug))
+        return $post;
+    abort('404');
 });
-
 Route::bind('service', function ($slug) {
-    return (new OpportunityAntrenamentRepository)->findBySlug($slug);
+    if ($service = (new OpportunityAntrenamentRepository)->findBySlug($slug))
+        return $service;
+    abort('404');
+});
+Route::bind('schedule', function ($slug) {
+    if ($schedule = (new ScheduleRepository)->findBySlug($slug))
+        return $schedule;
+    abort('404');
 });
 Route::multilingual(function () {
+    Route::get('oauth', [
+        'as' => 'oauthCallback',
+        'uses' => 'gCalendarController@oauth'
+    ]);
+    Route::get('add-google-event/{gevent}', [
+        'as' => 'add-to-calendar',
+        'uses' => 'gCalendarController@store'
+    ]);
+    Route::get('calendar', [
+        'as' => 'get_calendar',
+        'uses' => 'gCalendarController@index'
+    ]);
+
     Route::get('/', [
         'as' => 'home',
         'uses' => 'HomeController@index'
@@ -99,6 +125,19 @@ Route::multilingual(function () {
     Route::get('teams/{slug?}', [
         'as' => 'view_team',
         'uses' => 'TeamController@index'
+    ]);
+    Route::get('trener/{slug?}', [
+        'as' => 'view_trener',
+        'uses' => 'TeamController@trener'
+    ]);
+    Route::get('schedule', [
+        'as' => 'view_schedule',
+        'uses' => 'ScheduleController@index'
+    ]);
+    Route::get('schedule/{schedule?}', [
+        'as' => 'get_schedule',
+        'middleware' => 'accept-ajax',
+        'uses' => 'ScheduleController@show'
     ]);
     Route::get('partners/{slug?}', [
         'as' => 'view_partner',

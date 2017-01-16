@@ -52,6 +52,15 @@ class MainPresenter extends Presenter
         return $date->format($format);
     }
 
+    public function renderHour($format = 'H:i')
+    {
+        //return Carbon::createFromFormat('H:i:s', $this->model->hour)->toTimeString();
+        return date('H:i', strtotime($this->model->hour));
+    }
+    public function renderDescriptionEvent($range = 75)
+    {
+        return sprintf('%s', htmlspecialchars(trim(strip_tags($this->model->body))));
+    } 
 
     public function renderPublishedDate($format = 'd F Y')
     {

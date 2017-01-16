@@ -27,12 +27,13 @@ class TeamRepository extends Repository
      *
      * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function getPublic()
+    public function getPublic($type=null)
     {
-        return self::getModel()
-            ->active()
-            ->orderBy('id', self::DESC)
-            ->get();
+        $query = self::getModel()->active()->orderBy('id', self::DESC);
+        if ($type != null) {
+            $query->whereType($type);
+        }
+        return $query->get();
     }
 
     /**

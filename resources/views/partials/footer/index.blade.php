@@ -16,6 +16,7 @@
                         <li><a>{{$meta->getMeta('footer_menu_club')}}</a></li>
                         <li><a href="{{route('mission_page')}}">{{$meta->getMeta('footer_menu_mission')}}</a></li>
                         <li><a href="{{route('view_team')}}">{{$meta->getMeta('footer_menu_administration')}}</a></li>
+                        <li><a href="{{route('view_trener')}}">{{$meta->getMeta('footer_menu_trener')}}</a></li>
                         <li><a href="{{route('view_partner') }}">{{$meta->getMeta('footer_menu_partners')}}</a></li>
                         <li><a href="{{route('advertisement_page')}}">{{$meta->getMeta('footer_menu_publish')}}</a></li>
                         <li><a href="{{route('press_show')}}">{{$meta->getMeta('footer_menu_press')}}</a></li>
@@ -36,7 +37,7 @@
                         <li><a>{{$meta->getMeta('footer_menu_kids_club')}}</a></li>
                         <li><a href="{{route('view_trainings_kids')}}">{{$meta->getMeta('footer_menu_kids_training')}}</a></li>
                         <li><a href="{{route('view_fitness_kids')}}">{{$meta->getMeta('footer_menu_choice_program')}}</a></li>
-                        <li><a href="{{route('show_trener_page',['static_page'=>'fitnes-with-personal-trener'])}}">{{$meta->getMeta('footer_menu_personal_training')}}</a></li>
+<!--                         <li><a href="{{route('show_trener_page',['static_page'=>'fitnes-with-personal-trener'])}}">{{$meta->getMeta('footer_menu_personal_training')}}</a></li> -->
                     {{--    <li><a href="">Studiouri</a></li>
                         <li><a href="">Clase de creație</a></li>
                         <li><a href="">Tabăra de Vară</a></li>

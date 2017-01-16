@@ -42,8 +42,8 @@
                     @foreach($news as $item)
                         <div class="col-md-3 col-sm-3 col-xs-6">
                             <div class="news_niagara_block">
-                                <a href="{{ route('view_post', ['slug' => $item->slug]) }}">{{ $item->present()->renderTitle() }}</a>
                                 <span>{{ $item->present()->renderPublishedDate($format = 'd F') }}</span>
+                                <a href="{{ route('view_post', ['slug' => $item->slug]) }}">{{ $item->present()->renderTitle() }}</a>
                             </div>
                         </div>
                     @endforeach
@@ -79,7 +79,7 @@
         <div class=" container ">
             <div id="my-tab-content" class="tab-content">
                 @foreach($opportunities as $key => $item)
-                    <div class="tab-pane {{$key == 0 ? 'active' : ''}}" id="nav{{$key}}">
+                    <div class="tab-pane home_main_block {{$key == 0 ? 'active' : ''}}" id="nav{{$key}}">
                         <img src="/assets/images/ic2.png" alt="">
                         {!!$item->body!!}
                     </div>

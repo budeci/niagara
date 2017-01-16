@@ -16,7 +16,13 @@ return [
     */
     'columns' => [
         'id',
-        'name'
+        'name',
+        'color' => [
+            'title' => 'Color',
+            'output' => function($row){
+                return sprintf("<i style='background-color:%s;display: inline-block;cursor: pointer;height: 16px;vertical-align: middle;width: 16px;'></i>", $row->color);
+            }
+        ]
     ],
 
     /*
@@ -77,10 +83,11 @@ return [
     |
     */
     'edit_fields' => [
-        'id'       => ['type' => 'key'],
-        'name'     => form_text() + translatable(),
-        'slug'     => form_text() + translatable(),
-        'body'     => form_ckeditor() + translatable(),
+        'id'    => ['type' => 'key'],
+        'name'  => form_text() + translatable(),
+        'slug'  => form_text() + translatable(),
+        'color' => form_color(),
+        'body'  => form_ckeditor() + translatable(),
         /*'image'  => [
         'type'     => 'image',
         'location' => '/upload/calc',

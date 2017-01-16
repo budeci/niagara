@@ -83,19 +83,17 @@
     </div>
 </section>
 <section class="cartele_oferts">
-    <div class=" container ">
-        <h3>{!! $meta->getMeta('membership_card_offerts_title') !!}</h3>
-        <ul>
-            @foreach($privilege as $key => $item)
-                <li>
-                    <div class="cartele_oferts_block">
-                        <img class="img-responsive" src="{{$item->image}}" alt="">
-                        <span>{{$item->name}}</span>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
-    </div>
+    <h3>{!! $meta->getMeta('membership_card_offerts_title') !!}</h3>
+    <ul class="cartele_oferts_slide">
+        @foreach($privilege as $key => $item)
+            <li class="cartele_oferts_block">
+                <div  style="background:url({{$item->image}})no-repeat top center;background-size: cover;width: 100%;height: 150px;">
+                    <!-- <img class="img-responsive" src="{{$item->image}}" alt=""> -->
+                </div>
+                <span>{{$item->name}}</span>
+            </li>
+        @endforeach
+    </ul>
 </section>
 <section class="cartele_last">
     <div class=" container ">

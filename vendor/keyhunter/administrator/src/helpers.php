@@ -324,6 +324,10 @@ if (! function_exists('form_key'))
     {
         return input('time', $label, $attributes);
     }
+    function form_color($label = '', array $attributes = [])
+    {
+        return input('color', $label, $attributes);
+    }
     /**
      * Build file input
      *

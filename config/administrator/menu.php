@@ -50,7 +50,20 @@ return [
             ]
         ]
     ]*/
-
+    'Home'=> [
+      'icon' => 'fa fa-file-text-o',
+        'pages' => [
+            'slides-home' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+            'video-home' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+            'opportunities' => [
+                'icon' => 'fa fa-file-text-o'
+            ],
+        ]
+    ],
     'Pages' => [
         'icon' => 'fa fa-file-text-o',
         'pages'=> [
@@ -78,16 +91,7 @@ return [
             'lifestyle' => [
                 'icon' => 'fa fa-file-text-o'
             ],
-            'opportunities' => [
-                'icon' => 'fa fa-file-text-o'
-            ],
-            'team' => [
-                'icon' => 'fa fa-file-text-o'
-            ],
             'partner' => [
-                'icon' => 'fa fa-file-text-o'
-            ],
-            'slides-home' => [
                 'icon' => 'fa fa-file-text-o'
             ],
         ],
@@ -177,7 +181,10 @@ return [
     'Orar' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
-            'schedule' => [
+            'schedule-adult' => [
+                'icon' => 'fa fa-circle-o'
+            ],
+            'schedule-kids' => [
                 'icon' => 'fa fa-circle-o'
             ],
             'program' => [
@@ -185,6 +192,7 @@ return [
             ]
         ]
     ],
+
     'Carduri' => [
         'icon' => 'fa fa-calendar-o',
         'pages' => [
@@ -214,12 +222,23 @@ return [
             ]
         ]
     ],*/
+    'Administratia' => [
+        'icon' => 'fa fa-calendar-o',
+        'pages' => [
+            'team' => [
+                'icon' => 'fa fa-circle-o'
+            ]
+        ]
+    ],
     'General settings' => [
         'icon' => 'fa fa-gears',
         'pages' => [
             'metas' => [
                 'icon' => 'fa fa-globe'
-            ]
+            ],
+            /*'day' => [
+              'icon' => 'fa fa-circle-o'
+            ]*/
         ]
     ],
 ];

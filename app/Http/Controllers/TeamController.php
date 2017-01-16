@@ -27,7 +27,11 @@ class TeamController extends Controller
         $teams = $this->teams->getPublic();
         return view('team.index', compact('teams'));
     }
-
+    public function trener()
+    {
+        $trener = $this->teams->getPublic('trener');
+        return view('team.trener', compact('trener'));
+    }
     /**
      * Show the form for creating a new resource.
      *
