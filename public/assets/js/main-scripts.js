@@ -180,7 +180,7 @@ $(document).ready(function() {
       breakpoint: 1024,
       settings: {
       arrows: false,
-      lidesToScroll: 4,
+      slidesToScroll: 4,
       centerMode: true,
       centerPadding: '40px',
       slidesToShow: 3
@@ -262,42 +262,44 @@ $(document).ready(function() {
   //end Footer menu
 
   $('.submit_form, .close_calcul_block').click(function(){
-    var resultBlock = $('.calculator_count_block').find('.result_calcul');
-
-    if(resultBlock.hasClass('hidden')){
-      resultBlock.removeClass('hidden');
-    }
-    else {
-      resultBlock.addClass('hidden');
-    }
-
+    $('.calculator_count_block').find('.result_calcul').toggleClass('hidden');
   });
 
   $('.send-form').click(function(event){
     event.preventDefault();
-    var form = $(this).parents('form').serialize();
-    var response = $(this).parents('form').find('.response');
     var thisForm = $(this).parents('form');
+    var form = thisForm.serialize();
+    
+    // Clear previous alerts
+    thisForm.find('.alert').remove();
+
     $.ajax({
-      url : '/call-us',
+      url : thisForm.attr('action') || '/call-us',
       method : 'POST',
       dataType : 'json',
       data : form,
       success : function(data){
-        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent Succesful!</li> </ul> </div>');
+        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent successfully!</li> </ul> </div>');
       },
       error: function (data) {
-        var r = jQuery.parseJSON(data.responseText);
-        if(!r.name) {
-          r.name = '';
+        var r = {};
+        try {
+          r = jQuery.parseJSON(data.responseText);
+        } catch(e) {
+          r = { error: 'An unexpected error occurred.' };
         }
-        if(!r.phone) {
-          r.phone = '';
-        }
-        thisForm.append('<div class="alert alert-danger"><ul><li>' +r.name + '</li><li>' + r.phone + '</li></ul></div>');
+
+        var errorHtml = '<div class="alert alert-danger"><ul>';
+        if (r.name) errorHtml += '<li>' + r.name + '</li>';
+        if (r.phone) errorHtml += '<li>' + r.phone + '</li>';
+        if (r.error) errorHtml += '<li>' + r.error + '</li>';
+        errorHtml += '</ul></div>';
+        
+        thisForm.append(errorHtml);
         thisForm.find('input[type=submit]').prop('disabled', true);
+        
         setTimeout(function(){
-            $("div").remove(".alert");
+            thisForm.find(".alert").fadeOut(function() { $(this).remove(); });
             thisForm.find('input[type=submit]').prop('disabled', false);
         } , 4000);
       }
