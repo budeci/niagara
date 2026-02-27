@@ -279,7 +279,7 @@ $(document).ready(function() {
       dataType : 'json',
       data : form,
       success : function(data){
-        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent successfully successfully successfully!</li> </ul> </div>');
+        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent successfully!</li> </ul> </div>');
       },
       error: function (data) {
         var r = {};
