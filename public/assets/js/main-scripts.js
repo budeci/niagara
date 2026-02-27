@@ -246,7 +246,7 @@ $(document).ready(function() {
   }
  });
 
-  //   
+  //
 
   //Header menu
   $(".menu-collapsed_header").click(function() {
@@ -269,7 +269,7 @@ $(document).ready(function() {
     event.preventDefault();
     var thisForm = $(this).parents('form');
     var form = thisForm.serialize();
-    
+
     // Clear previous alerts
     thisForm.find('.alert').remove();
 
@@ -279,7 +279,7 @@ $(document).ready(function() {
       dataType : 'json',
       data : form,
       success : function(data){
-        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent successfully!</li> </ul> </div>');
+        thisForm.append('<div class="alert alert-success"> <ul> <li>Message sent successfully successfully successfully!</li> </ul> </div>');
       },
       error: function (data) {
         var r = {};
@@ -294,10 +294,10 @@ $(document).ready(function() {
         if (r.phone) errorHtml += '<li>' + r.phone + '</li>';
         if (r.error) errorHtml += '<li>' + r.error + '</li>';
         errorHtml += '</ul></div>';
-        
+
         thisForm.append(errorHtml);
         thisForm.find('input[type=submit]').prop('disabled', true);
-        
+
         setTimeout(function(){
             thisForm.find(".alert").fadeOut(function() { $(this).remove(); });
             thisForm.find('input[type=submit]').prop('disabled', false);
