@@ -1,0 +1,30 @@
+{
+  "cli_version": "0.4.7",
+  "checkpoint_id": "747c90b02f5b",
+  "session_id": "766d7eed-262d-4133-befb-193470d72cb3",
+  "strategy": "manual-commit",
+  "created_at": "2026-02-27T06:29:17.449395Z",
+  "branch": "master",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "public/assets/js/main-scripts.js"
+  ],
+  "agent": "Gemini CLI",
+  "turn_id": "5d6122e9e7e5",
+  "token_usage": {
+    "input_tokens": 93100,
+    "cache_creation_tokens": 0,
+    "cache_read_tokens": 58231,
+    "output_tokens": 3690,
+    "api_call_count": 8
+  },
+  "initial_attribution": {
+    "calculated_at": "2026-02-27T06:29:17.426406Z",
+    "agent_lines": 24,
+    "human_added": 0,
+    "human_modified": 0,
+    "human_removed": 0,
+    "total_committed": 24,
+    "agent_percentage": 100
+  }
+}

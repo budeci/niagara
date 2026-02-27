@@ -1,0 +1,13 @@
+can you please review public/assets/js/main-scripts.js
+
+---
+
+yep
+
+---
+
+apply please changes
+
+---
+
+commit please this changes and push it
